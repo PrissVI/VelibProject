@@ -38,10 +38,6 @@
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_G-d6oJnKEeqoguC7sxkWiA" name="ConcreteBicycleFactory">
     <generalization xmi:type="uml:Generalization" xmi:id="_LNJaMJnNEeqoguC7sxkWiA" general="_E0ldAJnKEeqoguC7sxkWiA"/>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_rhcLgpnOEeqoguC7sxkWiA" name="abstractfactory" type="_E0ldAJnKEeqoguC7sxkWiA" association="_rhbkcJnOEeqoguC7sxkWiA">
-      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rhcLg5nOEeqoguC7sxkWiA"/>
-      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rhcLhJnOEeqoguC7sxkWiA" value="1"/>
-    </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_9zl3wpnPEeqoguC7sxkWiA" name="abstractbicycle" type="_kU96kJnKEeqoguC7sxkWiA" association="_9zlQsJnPEeqoguC7sxkWiA">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9zl3w5nPEeqoguC7sxkWiA"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9zl3xJnPEeqoguC7sxkWiA" value="1"/>
@@ -84,12 +80,6 @@
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VE_zopnOEeqoguC7sxkWiA" key="nature" value="UML_Nature"/>
     </eAnnotations>
     <ownedEnd xmi:type="uml:Property" xmi:id="_VFAaspnOEeqoguC7sxkWiA" name="concretecardfactory" type="_TiKEsJnKEeqoguC7sxkWiA" association="_VE_zoJnOEeqoguC7sxkWiA"/>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Association" xmi:id="_rhbkcJnOEeqoguC7sxkWiA" memberEnd="_rhcLgpnOEeqoguC7sxkWiA _rhcLhZnOEeqoguC7sxkWiA">
-    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_rhcLgJnOEeqoguC7sxkWiA" source="org.eclipse.papyrus">
-      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_rhcLgZnOEeqoguC7sxkWiA" key="nature" value="UML_Nature"/>
-    </eAnnotations>
-    <ownedEnd xmi:type="uml:Property" xmi:id="_rhcLhZnOEeqoguC7sxkWiA" name="concretebicyclefactory" type="_G-d6oJnKEeqoguC7sxkWiA" association="_rhbkcJnOEeqoguC7sxkWiA"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_3OzxkJnOEeqoguC7sxkWiA" memberEnd="_3O0YoJnOEeqoguC7sxkWiA _3O0Yo5nOEeqoguC7sxkWiA">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3OzxkZnOEeqoguC7sxkWiA" source="org.eclipse.papyrus">
@@ -138,9 +128,6 @@
     <ownedEnd xmi:type="uml:Property" xmi:id="_qT8dEKCyEeqR5MuaOp_i2g" name="myvelibnetwork" type="_6c7ssJnJEeqoguC7sxkWiA" association="_qTWAIKCyEeqR5MuaOp_i2g"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_yrPfMKCyEeqR5MuaOp_i2g" name="AbstractStation"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_1w_IIKCyEeqR5MuaOp_i2g" name="Station">
-    <generalization xmi:type="uml:Generalization" xmi:id="_B--H8KCzEeqR5MuaOp_i2g" general="_yrPfMKCyEeqR5MuaOp_i2g"/>
-  </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_82cH4KCyEeqR5MuaOp_i2g" memberEnd="_82dWAqCyEeqR5MuaOp_i2g _82d9EqCyEeqR5MuaOp_i2g">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_82dWAKCyEeqR5MuaOp_i2g" source="org.eclipse.papyrus">
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_82dWAaCyEeqR5MuaOp_i2g" key="nature" value="UML_Nature"/>
@@ -172,5 +159,11 @@
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bdM10qCzEeqR5MuaOp_i2g" key="nature" value="UML_Nature"/>
     </eAnnotations>
     <ownedEnd xmi:type="uml:Property" xmi:id="_bdNc46CzEeqR5MuaOp_i2g" name="concretestationfactory" type="_GNxqsKCzEeqR5MuaOp_i2g" association="_bdM10KCzEeqR5MuaOp_i2g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_6CzGIKCzEeqU67QHyqwKYA" name="PlusStation">
+    <generalization xmi:type="uml:Generalization" xmi:id="_YhhSYKC0EeqU67QHyqwKYA" general="_yrPfMKCyEeqR5MuaOp_i2g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_8bD-AKCzEeqU67QHyqwKYA" name="StdStation">
+    <generalization xmi:type="uml:Generalization" xmi:id="_XbFOwKC0EeqU67QHyqwKYA" general="_yrPfMKCyEeqR5MuaOp_i2g"/>
   </packagedElement>
 </uml:Model>
