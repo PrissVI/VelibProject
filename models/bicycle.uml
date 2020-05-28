@@ -21,6 +21,14 @@
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YEQII5nQEeqoguC7sxkWiA"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_YEQIJJnQEeqoguC7sxkWiA" value="1"/>
     </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_qTi0cKCyEeqR5MuaOp_i2g" name="abstractuser" type="_ZgfuAKCyEeqR5MuaOp_i2g" association="_qTWAIKCyEeqR5MuaOp_i2g">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qT72AKCyEeqR5MuaOp_i2g"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qT72AaCyEeqR5MuaOp_i2g" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_82dWAqCyEeqR5MuaOp_i2g" name="abstractstation" type="_yrPfMKCyEeqR5MuaOp_i2g" association="_82cH4KCyEeqR5MuaOp_i2g">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_82d9EKCyEeqR5MuaOp_i2g"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_82d9EaCyEeqR5MuaOp_i2g" value="1"/>
+    </ownedAttribute>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_E0ldAJnKEeqoguC7sxkWiA" name="AbstractFactory">
     <ownedOperation xmi:type="uml:Operation" xmi:id="_YaBykJnKEeqoguC7sxkWiA" name="createCard"/>
@@ -118,5 +126,51 @@
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_YEQIIZnQEeqoguC7sxkWiA" key="nature" value="UML_Nature"/>
     </eAnnotations>
     <ownedEnd xmi:type="uml:Property" xmi:id="_YEQIJZnQEeqoguC7sxkWiA" name="myvelibnetwork" type="_6c7ssJnJEeqoguC7sxkWiA" association="_YEPhEJnQEeqoguC7sxkWiA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_ZgfuAKCyEeqR5MuaOp_i2g" name="AbstractUser"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_gYrGwKCyEeqR5MuaOp_i2g" name="User">
+    <generalization xmi:type="uml:Generalization" xmi:id="_lmJ4QKCyEeqR5MuaOp_i2g" general="_ZgfuAKCyEeqR5MuaOp_i2g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_qTWAIKCyEeqR5MuaOp_i2g" memberEnd="_qTi0cKCyEeqR5MuaOp_i2g _qT8dEKCyEeqR5MuaOp_i2g">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_qTX1UKCyEeqR5MuaOp_i2g" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_qTX1UaCyEeqR5MuaOp_i2g" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_qT8dEKCyEeqR5MuaOp_i2g" name="myvelibnetwork" type="_6c7ssJnJEeqoguC7sxkWiA" association="_qTWAIKCyEeqR5MuaOp_i2g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_yrPfMKCyEeqR5MuaOp_i2g" name="AbstractStation"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_1w_IIKCyEeqR5MuaOp_i2g" name="Station">
+    <generalization xmi:type="uml:Generalization" xmi:id="_B--H8KCzEeqR5MuaOp_i2g" general="_yrPfMKCyEeqR5MuaOp_i2g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_82cH4KCyEeqR5MuaOp_i2g" memberEnd="_82dWAqCyEeqR5MuaOp_i2g _82d9EqCyEeqR5MuaOp_i2g">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_82dWAKCyEeqR5MuaOp_i2g" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_82dWAaCyEeqR5MuaOp_i2g" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_82d9EqCyEeqR5MuaOp_i2g" name="myvelibnetwork" type="_6c7ssJnJEeqoguC7sxkWiA" association="_82cH4KCyEeqR5MuaOp_i2g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_GNxqsKCzEeqR5MuaOp_i2g" name="ConcreteStationFactory">
+    <generalization xmi:type="uml:Generalization" xmi:id="_QGHo0KCzEeqR5MuaOp_i2g" general="_E0ldAJnKEeqoguC7sxkWiA"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_bdNc4KCzEeqR5MuaOp_i2g" name="abstractstation" type="_yrPfMKCyEeqR5MuaOp_i2g" association="_bdM10KCzEeqR5MuaOp_i2g">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bdNc4aCzEeqR5MuaOp_i2g"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bdNc4qCzEeqR5MuaOp_i2g" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_J2JfkKCzEeqR5MuaOp_i2g" name="ConcreteUserFactory">
+    <generalization xmi:type="uml:Generalization" xmi:id="_REJ-YKCzEeqR5MuaOp_i2g" general="_E0ldAJnKEeqoguC7sxkWiA"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_V9UswaCzEeqR5MuaOp_i2g" name="abstractuser" type="_ZgfuAKCyEeqR5MuaOp_i2g" association="_V9S3kKCzEeqR5MuaOp_i2g">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_V9VT0KCzEeqR5MuaOp_i2g"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_V9VT0aCzEeqR5MuaOp_i2g" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_V9S3kKCzEeqR5MuaOp_i2g" memberEnd="_V9UswaCzEeqR5MuaOp_i2g _V9V64KCzEeqR5MuaOp_i2g">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_V9UFsKCzEeqR5MuaOp_i2g" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_V9UswKCzEeqR5MuaOp_i2g" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_V9V64KCzEeqR5MuaOp_i2g" name="concreteuserfactory" type="_J2JfkKCzEeqR5MuaOp_i2g" association="_V9S3kKCzEeqR5MuaOp_i2g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_bdM10KCzEeqR5MuaOp_i2g" memberEnd="_bdNc4KCzEeqR5MuaOp_i2g _bdNc46CzEeqR5MuaOp_i2g">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bdM10aCzEeqR5MuaOp_i2g" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bdM10qCzEeqR5MuaOp_i2g" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_bdNc46CzEeqR5MuaOp_i2g" name="concretestationfactory" type="_GNxqsKCzEeqR5MuaOp_i2g" association="_bdM10KCzEeqR5MuaOp_i2g"/>
   </packagedElement>
 </uml:Model>
