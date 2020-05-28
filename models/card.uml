@@ -10,7 +10,7 @@
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7TBBUZnjEeqoguC7sxkWiA"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7TBBUpnjEeqoguC7sxkWiA" value="1"/>
     </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_A70c4pnkEeqoguC7sxkWiA" name="card" type="_85ynUJniEeqoguC7sxkWiA" association="_A7z10JnkEeqoguC7sxkWiA">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_A70c4pnkEeqoguC7sxkWiA" name="card" type="__6OdcKC8EeqU67QHyqwKYA" association="_A7z10JnkEeqoguC7sxkWiA">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_A71D8JnkEeqoguC7sxkWiA"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_A71D8ZnkEeqoguC7sxkWiA" value="1"/>
     </ownedAttribute>
@@ -23,12 +23,11 @@
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_fl6oIJnjEeqoguC7sxkWiA" name="Vmax"/>
     </ownedOperation>
   </packagedElement>
-  <packagedElement xmi:type="uml:Interface" xmi:id="_85ynUJniEeqoguC7sxkWiA" name="Card"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_igsXMJnjEeqoguC7sxkWiA" name="Vlibre">
-    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_noeJUJnjEeqoguC7sxkWiA" client="_igsXMJnjEeqoguC7sxkWiA" supplier="_85ynUJniEeqoguC7sxkWiA" contract="_85ynUJniEeqoguC7sxkWiA"/>
+    <generalization xmi:type="uml:Generalization" xmi:id="_TSOz8KC9EeqU67QHyqwKYA" general="__6OdcKC8EeqU67QHyqwKYA"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_kHYoMJnjEeqoguC7sxkWiA" name="Vmax">
-    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_miAQgJnjEeqoguC7sxkWiA" client="_kHYoMJnjEeqoguC7sxkWiA" supplier="_85ynUJniEeqoguC7sxkWiA" contract="_85ynUJniEeqoguC7sxkWiA"/>
+    <generalization xmi:type="uml:Generalization" xmi:id="_T7PUsKC9EeqU67QHyqwKYA" general="__6OdcKC8EeqU67QHyqwKYA"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_pGyhcJnjEeqoguC7sxkWiA" name="ConcreteCardVisitor">
     <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_xaL7AJnjEeqoguC7sxkWiA" client="_pGyhcJnjEeqoguC7sxkWiA" supplier="_7aszIJniEeqoguC7sxkWiA" contract="_7aszIJniEeqoguC7sxkWiA"/>
@@ -45,4 +44,5 @@
     </eAnnotations>
     <ownedEnd xmi:type="uml:Property" xmi:id="_A71D8pnkEeqoguC7sxkWiA" name="user" type="_sV3iAJniEeqoguC7sxkWiA" association="_A7z10JnkEeqoguC7sxkWiA"/>
   </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="__6OdcKC8EeqU67QHyqwKYA" name="Card" isAbstract="true"/>
 </uml:Model>
