@@ -6,13 +6,14 @@ import java.util.HashMap;
  * Represents an abstract station.
  * @author Mathieu Sibué
 */
-public abstract class Station {
+public abstract class Station implements Observer {
 	
 	/*ATTRIBUTES*/
 	private static int counterToGenerateIDs = 0;
 	private int ID;
 	private boolean isOnline;
 	private boolean isTerminalOutOfOrder;
+	private int nbOfOutOfOrderParkingSlots;
 	private double x;
 	private double y;
 	private HashMap<Integer,ParkingSlot> parkingSlots;
@@ -34,6 +35,13 @@ public abstract class Station {
 		this.x = x;
 		this.y = y;
 		this.parkingSlots = parkingSlots;
+		nbOfOutOfOrderParkingSlots = 0;
+		for (ParkingSlot ps: this.parkingSlots.values()) {
+			ps.registerObserver(this);
+			if (ps.isOutOfOrder()) {
+				nbOfOutOfOrderParkingSlots += 1;
+			}
+		}
 		isOnline = true;
 		isTerminalOutOfOrder = false;
 		ID = this.generateID();
@@ -47,6 +55,13 @@ public abstract class Station {
 		this.y = y;
 		//or just leave it null?
 		parkingSlots = new HashMap<Integer,ParkingSlot>();
+		nbOfOutOfOrderParkingSlots = 0;
+		for (ParkingSlot ps: this.parkingSlots.values()) {
+			ps.registerObserver(this);
+			if (ps.isOutOfOrder()) {
+				nbOfOutOfOrderParkingSlots += 1;
+			}
+		}
 		isOnline = true;
 		isTerminalOutOfOrder = false;
 		ID = this.generateID();
@@ -57,13 +72,15 @@ public abstract class Station {
 	
 	/*METHODS*/
 	//getters and setters
+	public int getNbOfOutOfOrderParkingSlots() {
+		return nbOfOutOfOrderParkingSlots;
+	}
+	
 	public boolean isOnline() {
 		return isOnline;
 	}
 
-	public void setOnline(boolean isOnline) {
-		this.isOnline = isOnline;
-	}
+	//no setOnline: indeed, to setOnline to true, it is needed to set isTerminalOutOfOrder to false and repair at least one of the parking slots
 
 	public boolean isTerminalOutOfOrder() {
 		return isTerminalOutOfOrder;
@@ -71,6 +88,7 @@ public abstract class Station {
 
 	public void setTerminalOutOfOrder(boolean isTerminalOutOfOrder) {
 		this.isTerminalOutOfOrder = isTerminalOutOfOrder;
+		isOnline = (nbOfOutOfOrderParkingSlots == parkingSlots.size() && isTerminalOutOfOrder)? false: true;
 	}
 
 	public double getX() {
@@ -93,8 +111,20 @@ public abstract class Station {
 		return parkingSlots;
 	}
 
+	//when parkingSlots HashMap is updated, we need to go through all the parking slots store in 
 	public void setParkingSlots(HashMap<Integer, ParkingSlot> parkingSlots) {
+		if (this.parkingSlots.equals(parkingSlots)) {
+			return;
+		}
 		this.parkingSlots = parkingSlots;
+		nbOfOutOfOrderParkingSlots = 0;
+		for (ParkingSlot ps: this.parkingSlots.values()) {
+			ps.registerObserver(this);
+			if (ps.isOutOfOrder()) {
+				nbOfOutOfOrderParkingSlots += 1;
+			}
+		}
+		isOnline = (nbOfOutOfOrderParkingSlots == parkingSlots.size() && isTerminalOutOfOrder)? false: true;
 	}
 
 	public int getID() {
@@ -197,5 +227,18 @@ public abstract class Station {
 	 */
 	abstract void chargeUser(User user, int duration);
 	//comment gérer le cas où le user n'a pas de carte ? genre pour la tarification... FAIRE EN FONCTION DU TYPE DE STATION
+
+	
+	//implemented method from interface Observer
+	@Override
+	public void update(boolean newIsOutOfOrder) {
+		if (newIsOutOfOrder) {
+			nbOfOutOfOrderParkingSlots += 1;
+		} else {
+			nbOfOutOfOrderParkingSlots -= 1;
+		}
+		isOnline = (nbOfOutOfOrderParkingSlots == parkingSlots.size() && isTerminalOutOfOrder)? false: true;
+		
+	}
 
 }

@@ -34,7 +34,10 @@ public class StdStation extends Station {
 					cost = duration/60 * Station.getFeesForUserWithNoCard().get("electrical");
 				}
 			} else {
+				CardVisitor cardVisitor = new ConcreteCardVisitor();
 				//utiliser la fonction d'Ali
+				Card userCard = user.getRegistrationCard();
+				cost = userCard.accept(cardVisitor, duration);		//est censée être modifiée
 			}
 			user.setCreditCardBalance(user.getCreditCardBalance() - cost);
 			user.setMyVelibTotalCharges(user.getMyVelibTotalCharges() + cost);

@@ -40,7 +40,7 @@ public class PlusStation extends Station {
 				CardVisitor cardVisitor = new ConcreteCardVisitor();
 				//utiliser la fonction d'Ali
 				Card userCard = user.getRegistrationCard();
-				cost = userCard.accept(cardVisitor, duration);
+				cost = userCard.accept(cardVisitor, duration);		//est censée être modifiée
 				userCard.setTimeCredit(userCard.getTimeCredit() + additionalTimeCredit);
 			}
 			user.setCreditCardBalance(user.getCreditCardBalance() - cost);
