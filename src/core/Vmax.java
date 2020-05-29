@@ -12,9 +12,13 @@ import java.util.ArrayList;
 public class Vmax extends Card {
 
 	/**
-	 * Constructor of the Vmax object.
+	 * Constructors of the Vmax object.
 	 * @param timeCreditBalance
 	 */
+	public Vmax() {
+		super();
+	}
+	
 	public Vmax(int timeCreditBalance) {
 		super(timeCreditBalance);
 	}
