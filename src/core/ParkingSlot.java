@@ -71,7 +71,7 @@ public class ParkingSlot implements Observable {
 	@Override
 	public String toString() {
 		return "ParkingSlot " + ID + ":\n"
-				+ "- bicycleStored: " + bicycleStored.toString() 
+				+ "- bicycleStored: " + ((bicycleStored == null) ? bicycleStored : bicycleStored.toString())
 				+ "- " + (isOutOfOrder? "": "not ") + "out of order";
 	}	
 	
