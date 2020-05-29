@@ -3,15 +3,15 @@ package core;
 /** 
  * Represents a parking slot in a station.
  * @author Mathieu Sibué
- * @version 1.0
 */
-public abstract class ParkingSlot {
+public abstract class ParkingSlot implements Observable {
 	
 	/*ATTRIBUTES*/
 	private static int counterToGenerateIDs = 0;
 	private int ID;
 	private Bicycle bicycleStored;
 	private boolean isOutOfOrder;
+	private Observer uniqueStationObserver;
 	//
 	
 	
@@ -40,7 +40,8 @@ public abstract class ParkingSlot {
 
 	public void setBicycleStored(Bicycle bicycleStored) throws RuntimeException {
 		if (isOutOfOrder) {
-			throw new RuntimeException("Cannot set stored bike: parking bay is out of order");
+			throw new RuntimeException("Cannot set stored bike of parking slot " + ID + ": parking bay is out of order");
+			//ou sysout?
 		} else {
 			this.bicycleStored = bicycleStored;
 		}
@@ -50,9 +51,16 @@ public abstract class ParkingSlot {
 		return isOutOfOrder;
 	}
 
-	public void setOutOfOrder(boolean isOutOfOrder) {
-		//if has a bicycle in it?
-		this.isOutOfOrder = isOutOfOrder;
+	public void setOutOfOrder(boolean isOutOfOrder) throws RuntimeException {
+		if (bicycleStored != null) {
+			throw new RuntimeException("Cannot set parking slot "+ID+" to out of order: it is storing bicycle "+bicycleStored.getID());
+			//ou sysout?
+		} else {
+			if (isOutOfOrder != this.isOutOfOrder) {
+				this.isOutOfOrder = isOutOfOrder;
+				this.notifyObserver(isOutOfOrder);
+			}	// si pas de chgt on ne fait RIEN
+		}
 	}
 
 	public int getID() {
@@ -63,7 +71,8 @@ public abstract class ParkingSlot {
 	@Override
 	public String toString() {
 		return "ParkingSlot " + ID + ":\n"
-				+ "- bicycleStored=" + bicycleStored + ", isOutOfOrder=" + isOutOfOrder + "]";
+				+ "- bicycleStored: " + bicycleStored.toString() 
+				+ "- " + (isOutOfOrder? "": "not ") + "out of order";
 	}	
 	
 	//equals and hashCode
@@ -88,5 +97,19 @@ public abstract class ParkingSlot {
 		return counterToGenerateIDs;
 	}
 
+	//
+	@Override
+	public void registerObserver(Observer observer) {
+		uniqueStationObserver = observer;
+	}
 
+	@Override
+	public void removeObserver(Observer observer) {
+		uniqueStationObserver = null;
+	}
+
+	@Override
+	public void notifyObserver(boolean newIsOutOfOrder) {
+		uniqueStationObserver.update(newIsOutOfOrder);
+	}
 }
