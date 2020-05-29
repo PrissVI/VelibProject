@@ -5,30 +5,47 @@ import java.util.HashMap;
 /** 
  * Represents a concrete plus station.
  * @author Mathieu Sibué
- * @version 1.0
 */
 public class PlusStation extends Station {
 	
 	/*ATTRIBUTES*/
-	static private int additionalTimeCredit = 5;	//in minutes
+	final static private int additionalTimeCredit = 5;	//in minutes
 
 	/*CONSTRUCTORS*/
 	public PlusStation(double x, double y) {
 		super(x, y);
-		//additionalTimeCredit = 5;	
 	}
 
 	public PlusStation(double x, double y, HashMap<Integer, ParkingSlot> parkingSlots) {
 		super(x, y, parkingSlots);
-		//additionalTimeCredit = 5;
 	}
 
 	/*METHODS*/
-	//explicit from superclass
+	//explicit method from superclass
+	//POURQUOI NE PAS LA METTRE DANS LA CLASSE ABSTRAITE PARENTE PUIS JUSTE METTRE UN TRY CATCH QD ON OVERRIDE LA METHODE?
 	@Override
-	void chargeUser(User user) {
-		// TODO Auto-generated method stub
-		
+	void chargeUser(User user, int duration) {
+		if (super.isTerminalOutOfOrder()) {
+			throw new RuntimeException("Terminal of station "+super.getID()+" not working: go to closest station");
+			//or just print something?
+		} else {
+			double cost;
+			if (user.getRegistrationCard() == null) {
+				if (user.getRentedBicycle() instanceof MechanicalBicycle) {
+					cost = duration/60 * Station.getFeesForUserWithNoCard().get("mechanical");	
+				} else if (user.getRentedBicycle() instanceof ElectricalBicycle) {
+					cost = duration/60 * Station.getFeesForUserWithNoCard().get("electrical");
+				}
+			} else {
+				CardVisitor cardVisitor = new ConcreteCardVisitor();
+				//utiliser la fonction d'Ali
+				Card userCard = user.getRegistrationCard();
+				cost = userCard.accept(cardVisitor, duration);
+				userCard.setTimeCredit(userCard.getTimeCredit() + additionalTimeCredit);
+			}
+			user.setCreditCardBalance(user.getCreditCardBalance() - cost);
+			user.setMyVelibTotalCharges(user.getMyVelibTotalCharges() + cost);
+		}
 	}
 	
 	//getters and setters

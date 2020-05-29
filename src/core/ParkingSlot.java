@@ -3,7 +3,6 @@ package core;
 /** 
  * Represents a parking slot in a station.
  * @author Mathieu Sibué
- * @version 1.0
 */
 public abstract class ParkingSlot {
 	
@@ -40,7 +39,7 @@ public abstract class ParkingSlot {
 
 	public void setBicycleStored(Bicycle bicycleStored) throws RuntimeException {
 		if (isOutOfOrder) {
-			throw new RuntimeException("Cannot set stored bike: parking bay is out of order");
+			throw new RuntimeException("Cannot set stored bike of parking slot " + ID + ": parking bay is out of order");
 		} else {
 			this.bicycleStored = bicycleStored;
 		}
@@ -50,8 +49,10 @@ public abstract class ParkingSlot {
 		return isOutOfOrder;
 	}
 
-	public void setOutOfOrder(boolean isOutOfOrder) {
-		//if has a bicycle in it?
+	public void setOutOfOrder(boolean isOutOfOrder) throws RuntimeException {
+		if (bicycleStored != null) {
+			throw new RuntimeException("Cannot set parking slot "+ID+" to out of order: it is storing bicycle "+bicycleStored.getID());
+		}
 		this.isOutOfOrder = isOutOfOrder;
 	}
 
@@ -63,7 +64,8 @@ public abstract class ParkingSlot {
 	@Override
 	public String toString() {
 		return "ParkingSlot " + ID + ":\n"
-				+ "- bicycleStored=" + bicycleStored + ", isOutOfOrder=" + isOutOfOrder + "]";
+				+ "- bicycleStored: " + bicycleStored.toString() 
+				+ "- " + (isOutOfOrder? "": "not ") + "out of order";
 	}	
 	
 	//equals and hashCode
@@ -87,6 +89,4 @@ public abstract class ParkingSlot {
 		counterToGenerateIDs += 1;
 		return counterToGenerateIDs;
 	}
-
-
 }
