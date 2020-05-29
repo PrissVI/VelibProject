@@ -4,7 +4,7 @@ package core;
  * Represents a parking slot in a station.
  * @author Mathieu Sibué
 */
-public abstract class ParkingSlot implements Observable {
+public class ParkingSlot implements Observable {
 	
 	/*ATTRIBUTES*/
 	private static int counterToGenerateIDs = 0;
@@ -26,7 +26,7 @@ public abstract class ParkingSlot implements Observable {
 	public ParkingSlot() {
 		super();
 		//or just leave it null?
-		bicycleStored = new Bicycle();
+		bicycleStored = null;
 		isOutOfOrder = false;
 		ID = this.generateID();
 	}

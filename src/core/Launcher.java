@@ -19,7 +19,6 @@ public class Launcher {
 		double bla = random.nextDouble();
 		double randomAngle = random.nextDouble();
 		System.out.println(bla+"et"+randomAngle);
-
 	}
 	
 	private static double compute(Card card) {
