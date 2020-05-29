@@ -11,7 +11,7 @@ import java.util.ArrayList;
 returning bicycles to “plus” stations.</li>
  * </ul>
  * </p>
- * <p>
+ * @author Ali Raïki
  * 
  */
 
@@ -75,5 +75,5 @@ public abstract class Card {
 		return "Card [timeCreditBalance=" + timeCreditBalance + "]";
 	}
 
-	public abstract ArrayList<Double> accept(CardVisitor visitor, int rideDuration);	
+	public abstract double accept(CardVisitor visitor, int rideDuration, Bicycle bike);	
 }

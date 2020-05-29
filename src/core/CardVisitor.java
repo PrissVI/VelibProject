@@ -13,7 +13,7 @@ public interface CardVisitor {
 	 *				Time spent on the bike
 	 * @return an ArrayList corresponding to the cost of the ride if the bike is mechanical (index 0) or electrical (index 1).
 	 */
-	ArrayList<Double> visit(Vlibre vlibreCard, int rideDuration);
+	double visit(Vlibre vlibreCard, int rideDuration, Bicycle bike);
 	
 	/**
 	 * Computes the corresponding cost of the ride based on the ride duration (in minutes), 
@@ -24,5 +24,5 @@ public interface CardVisitor {
 	 *				Time spent on the bike
 	 * @return an ArrayList corresponding to the cost of the ride if the bike is mechanical (index 0) or electrical (index 1).
 	 */
-	ArrayList<Double> visit(Vmax vmaxCard, int rideDuration);
+	double visit(Vmax vmaxCard, int rideDuration, Bicycle bike);
 }

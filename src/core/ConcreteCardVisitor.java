@@ -1,83 +1,70 @@
 package core;
 
-import java.util.ArrayList;
-
 public class ConcreteCardVisitor implements CardVisitor {
 
 	@Override
-	public ArrayList<Double> visit(Vlibre vlibreCard, int rideDuration) {
+	public double visit(Vlibre vlibreCard, int rideDuration, Bicycle bike) {
 		//Initializing the variables
-				int excessTimeBalance; //To compute the timeCredit left after the ride
-				double mechanicalCost = 0;
-				double electricalCost = 1;
-				ArrayList<Double> cost = new ArrayList<Double>(); //To store the different costs
-				
-				if (rideDuration <= 60) { 
-					cost.add(mechanicalCost);
-					cost.add(electricalCost);
-					return cost;
-				}
+		double excessTimeBalance; // To compute the timeCredit left after the ride
+		double mechanicalCost = 0;
+		double electricalCost = 1;
+
+		if (rideDuration <= 60) {
+			if(bike instanceof MechanicalBike) {return mechanicalCost;} 
+			else {return electricalCost;}
+		} else {
+			if (vlibreCard.getTimeCredit() == 0) {
+				if(bike instanceof MechanicalBike) {
+					mechanicalCost = (rideDuration - 60) / 60;
+					return mechanicalCost;}
 				else {
-					if(vlibreCard.getTimeCredit() == 0) {
-						mechanicalCost = (rideDuration - 60)/60;
-						electricalCost = (rideDuration - 60)/30;
-						cost.add(mechanicalCost);
-						cost.add(electricalCost);
-						return cost;
-					}
+					electricalCost = (rideDuration - 60) / 30;
+					return electricalCost;}
+			} else {
+				excessTimeBalance = 60 - (rideDuration - vlibreCard.getTimeCredit());
+				if (excessTimeBalance <= 0) {
+					vlibreCard.setTimeCredit(0);
+					if(bike instanceof MechanicalBike) {
+						mechanicalCost = -excessTimeBalance / 60;
+						return mechanicalCost;}
 					else {
-						excessTimeBalance = 60 - (rideDuration - vlibreCard.getTimeCredit());
-						if(excessTimeBalance <= 0) {
-							mechanicalCost = -excessTimeBalance/60;
-							electricalCost = -excessTimeBalance/30;
-							vlibreCard.setTimeCredit(0);
-							cost.add(mechanicalCost);
-							cost.add(electricalCost);
-							return cost;
-						}
-						else{
-							vlibreCard.setTimeCredit(excessTimeBalance);
-							cost.add(mechanicalCost);
-							cost.add(electricalCost);
-							return cost;
-						}
-					}
+						electricalCost = -excessTimeBalance / 30;
+						return electricalCost;}
+				} else {
+					vlibreCard.setTimeCredit((int) excessTimeBalance);
+					if(bike instanceof MechanicalBike) {
+						return mechanicalCost;}
+					else {
+						return electricalCost;}
 				}
+			}
+		}
 	}
 
 	@Override
-	public ArrayList<Double> visit(Vmax vmaxCard, int rideDuration) {
+	public double visit(Vmax vmaxCard, int rideDuration, Bicycle bike) {
 		//Initializing the variables
-		int excessTimeBalance; //To compute the timeCredit left after the ride
+		double excessTimeBalance; //To compute the timeCredit left after the ride
 		double rideCost = 0;
-		ArrayList<Double> cost = new ArrayList<Double>(); //To store the different costs
 		
 		if (rideDuration <= 60) { 
-			cost.add(rideCost);
-			cost.add(rideCost);
-			return cost;
+			return rideCost;
 		}
 		else {
 			if(vmaxCard.getTimeCredit() == 0) {
 				rideCost = (rideDuration - 60)/60;
-				cost.add(rideCost);
-				cost.add(rideCost);
-				return cost;
+				return rideCost;
 			}
 			else {
 				excessTimeBalance = 60 - (rideDuration - vmaxCard.getTimeCredit());
 				if(excessTimeBalance <= 0) {
 					rideCost = -excessTimeBalance/60;
 					vmaxCard.setTimeCredit(0);
-					cost.add(rideCost);
-					cost.add(rideCost);
-					return cost;
+					return rideCost;
 				}
 				else{
-					vmaxCard.setTimeCredit(excessTimeBalance);
-					cost.add(rideCost);
-					cost.add(rideCost);
-					return cost;
+					vmaxCard.setTimeCredit((int) excessTimeBalance);
+					return rideCost;
 				}
 			}
 		}
