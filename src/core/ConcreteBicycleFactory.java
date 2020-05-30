@@ -2,6 +2,10 @@ package core;
 
 import java.util.ArrayList;
 
+/** 
+ * User to instantiate Bicycles (thus ElectricalBikes and MechanicalBikes), extending the AbstractFactory abstract class
+ * @author Mathieu Sibué
+*/
 public class ConcreteBicycleFactory extends AbstractFactory {
 
 	@Override

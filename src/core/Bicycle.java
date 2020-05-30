@@ -11,7 +11,7 @@ package core;
  * @author Ali Raïki
  *
  */
-public class Bicycle {
+public abstract class Bicycle {
 
 	private int ID;
 	private static int counter = 0; //for the ID
@@ -31,5 +31,9 @@ public class Bicycle {
 	public int getID() {
 		return ID;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Bicycle " + ID;
+	}
 }

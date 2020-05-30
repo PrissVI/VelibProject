@@ -11,9 +11,13 @@ package core;
 public class Vlibre extends Card {
 	
 	/**
-	 * Constructor of the Vlibre object.
+	 * Constructors of the Vlibre object.
 	 * @param timeCreditBalance
 	 */
+	public Vlibre() {
+		super();
+	}
+	
 	public Vlibre(int timeCreditBalance) {
 		super(timeCreditBalance);
 	}

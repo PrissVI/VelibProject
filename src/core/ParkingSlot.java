@@ -5,7 +5,7 @@ package core;
  * @author Mathieu Sibué
 */
 public class ParkingSlot extends Slot implements ParkingSlotObservable {
-	
+
 	/*ATTRIBUTES*/
 	private static int counterToGenerateIDs = 0;
 	private int ID;

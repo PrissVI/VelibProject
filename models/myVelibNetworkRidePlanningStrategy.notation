@@ -168,6 +168,10 @@
         <element xmi:type="uml:Property" href="myVelibNetworkRidePlanningStrategy.uml#_rrY60KGnEeqCkJE6t619Zw"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_rrrOsaGnEeqCkJE6t619Zw"/>
       </children>
+      <children xmi:type="notation:Shape" xmi:id="_kVZwYKKGEeqTb8QkBN4-Fg" type="Property_ClassAttributeLabel">
+        <element xmi:type="uml:Property" href="myVelibNetworkRidePlanningStrategy.uml#_kVIqoKKGEeqTb8QkBN4-Fg"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_kVZwYaKGEeqTb8QkBN4-Fg"/>
+      </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_Pd6N5KGmEeqCkJE6t619Zw"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_Pd6N5aGmEeqCkJE6t619Zw"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_Pd6N5qGmEeqCkJE6t619Zw"/>

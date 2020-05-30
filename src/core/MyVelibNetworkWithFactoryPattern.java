@@ -7,13 +7,13 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Random;
 
-public class MyVelibNetwork {
+public class MyVelibNetworkWithFactoryPattern {
 	private double side;
 	private HashMap<Integer,Bicycle> bicycles = new HashMap<Integer, Bicycle>();
 	private HashMap<Integer,Station> stations = new HashMap<Integer, Station>();
 	private HashMap<Integer,User> users = new HashMap<Integer, User>();
 	
-	public MyVelibNetwork(double side) {
+	public MyVelibNetworkWithFactoryPattern(double side) {
 		this.side = side;
 		this.bicycles = new HashMap<Integer, Bicycle>();
 		this.stations = new HashMap<Integer, Station>();
@@ -24,9 +24,11 @@ public class MyVelibNetwork {
 		return side;
 	}
 
+	/*
 	public void setSide(double side) {
 		this.side = side;
 	}
+	*/
 
 	public HashMap<Integer, Bicycle> getBicycles() {
 		return bicycles;
@@ -283,7 +285,7 @@ public class MyVelibNetwork {
 	}
 
 	public static void main(String[] args) {
-		MyVelibNetwork network = new MyVelibNetwork(10);
+		MyVelibNetworkWithFactoryPattern network = new MyVelibNetworkWithFactoryPattern(10);
 		network.addStations(3, 10);
 		network.addUsers(10);
 		network.addBicyclePercentage(0.9);

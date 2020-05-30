@@ -24,9 +24,13 @@ public abstract class Card {
 	private int timeCreditBalance; //in minutes
 	
 	/**
-	 * Constructor of the object.
+	 * Constructors of the object.
 	 * @param timeCreditBalance
 	 */
+	public Card() {
+		this.timeCreditBalance = 0;
+	}
+	
 	public Card(int timeCreditBalance) {
 		this.timeCreditBalance = timeCreditBalance;
 	}
