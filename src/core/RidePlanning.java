@@ -1,7 +1,5 @@
 package core;
 
-import java.util.ArrayList;
-
 public interface RidePlanning {
-	public ArrayList<Double> planRide(ArrayList<Double> start, ArrayList<Double> finish);
+	public void planRide(double x1, double y1, double x2, double y2, String bicycleType, MyVelibNetwork network);
 }
