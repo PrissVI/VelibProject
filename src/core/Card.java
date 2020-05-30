@@ -1,7 +1,5 @@
 package core;
 
-import java.util.ArrayList;
-
 /**
  * <b>Card is a class that represents the registration card of a user.</b>
  * <p>
@@ -72,7 +70,7 @@ public abstract class Card {
 	
 	@Override
 	public String toString() {
-		return "Card [timeCreditBalance=" + timeCreditBalance + "]";
+		return "Card with a time credit balance of " + timeCreditBalance;
 	}
 
 	public abstract double accept(CardVisitor visitor, int rideDuration, Bicycle bike);	

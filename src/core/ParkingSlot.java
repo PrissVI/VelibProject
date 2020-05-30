@@ -4,15 +4,16 @@ package core;
  * Represents a parking slot in a station.
  * @author Mathieu Sibué
 */
-public abstract class ParkingSlot implements Observable {
+public class ParkingSlot extends Slot implements ParkingSlotObservable {
 	
 	/*ATTRIBUTES*/
 	private static int counterToGenerateIDs = 0;
 	private int ID;
 	private Bicycle bicycleStored;
 	private boolean isOutOfOrder;
-	private Observer uniqueStationObserver;
-	//
+	private StationObserver uniqueStationObserver;
+	//for statistics:
+	//faire une liste de log d'activité
 	
 	
 	/*CONSTRUCTORS*/
@@ -26,7 +27,7 @@ public abstract class ParkingSlot implements Observable {
 	public ParkingSlot() {
 		super();
 		//or just leave it null?
-		bicycleStored = new Bicycle();
+		bicycleStored = null;
 		isOutOfOrder = false;
 		ID = this.generateID();
 	}
@@ -71,7 +72,7 @@ public abstract class ParkingSlot implements Observable {
 	@Override
 	public String toString() {
 		return "ParkingSlot " + ID + ":\n"
-				+ "- bicycleStored: " + bicycleStored.toString() 
+				+ "- bicycleStored: " + (bicycleStored == null? "no bicycle stored": bicycleStored.toString())
 				+ "- " + (isOutOfOrder? "": "not ") + "out of order";
 	}	
 	
@@ -92,19 +93,19 @@ public abstract class ParkingSlot implements Observable {
 	 * Increments the static counter to generate a unique ID for each Station.
 	 * @return the incremented static counter, i.e. a new ID
 	 */
-	public int generateID() {
+	final public int generateID() {
 		counterToGenerateIDs += 1;
 		return counterToGenerateIDs;
 	}
 
-	//
+	//methods to override to implement the ParkingSlotObservable interface
 	@Override
-	public void registerObserver(Observer observer) {
+	public void registerObserver(StationObserver observer) {
 		uniqueStationObserver = observer;
 	}
 
 	@Override
-	public void removeObserver(Observer observer) {
+	public void removeObserver(StationObserver observer) {
 		uniqueStationObserver = null;
 	}
 

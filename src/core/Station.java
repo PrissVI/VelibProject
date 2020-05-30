@@ -6,7 +6,7 @@ import java.util.HashMap;
  * Represents an abstract station.
  * @author Mathieu Sibué
 */
-public abstract class Station implements Observer {
+public abstract class Station implements StationObserver {
 	
 	/*ATTRIBUTES*/
 	private static int counterToGenerateIDs = 0;
@@ -170,7 +170,7 @@ public abstract class Station implements Observer {
 				+ "- the station is " + (isOnline? "online": "offline") + "\n"
 				+ "- its payment terminal is " + (isTerminalOutOfOrder? "out of order": "working fine") + "\n"
 				+ "- the station is located at (" + x + ", " + y + ")" + "\n"
-				+ "- its parking slots are " + parkingSlots;
+				+ "- it has " + parkingSlots.size() + " parking slots, " + nbOfOutOfOrderParkingSlots + " of which are out of order.";
 	}
 	
 	//custom methods
@@ -178,7 +178,7 @@ public abstract class Station implements Observer {
 	 * Increments the static counter to generate a unique ID for each Station.
 	 * @return int: the incremented static counter, i.e. a new ID
 	 */
-	public int generateID() {
+	final public int generateID() {
 		counterToGenerateIDs += 1;
 		return counterToGenerateIDs;
 	}
@@ -186,37 +186,12 @@ public abstract class Station implements Observer {
 	/**
 	 * Identifies a user via the station's terminal.
 	 * @param User: the user willing to rent a bike
-	 * @return boolean: true if identification worked, false otherwise
 	 */
-	public boolean identifyUser(User user) /*throws RuntimeException*/ {
-		
-		//en fait, ne pas forcément lui faire retourner qlq chose ! thrower une erreur
-		//A FINIR
-		
-		// faire un check pour voir si des bicycles sont dispos ; renvoyer false sinon
-		if (!isOnline) {
-			throw new RuntimeException("The station is offline");
-		}
-		int nbOfParkingSlotsOutOfOrder = 0;
-		for (ParkingSlot parkingSlot: parkingSlots.values()) {
-			if (parkingSlot.isOutOfOrder()) nbOfParkingSlotsOutOfOrder++;
-		}
-		if (nbOfParkingSlotsOutOfOrder == parkingSlots.size()) {
-			
-		}
-		//|| isTerminalOutOfOrder && "toutes les places out of service"
-		if (!isOnline) {
-			System.out.println("Station "+ID+" is offline");
-			return false;
-			//on set isOnline en false
-			//throw new RuntimeException("Station  is offline");
+	public void identifyUser(User user) {
+		if (user.getRegistrationCard() != null) {
+			System.out.println("User "+user.getID()+" registrated with "+user.getRegistrationCard().getClass()+" card.");
 		} else {
-			if (user.getRegistrationCard() != null) {
-				System.out.println("User "+user.getID()+" registrated with "+user.getRegistrationCard().getClass()+" card.");
-			} else {
-				System.out.println("User "+user.getID()+" registrated with his credit card.");
-			}
-			return true;
+			System.out.println("User "+user.getID()+" registrated with his credit card.");
 		}
 	}
 	
@@ -225,9 +200,31 @@ public abstract class Station implements Observer {
 	 * @param User: the user willing to return a bike after using it
 	 * @param double: the time (in minutes) spent on the bike
 	 */
+	/*
 	abstract void chargeUser(User user, int duration);
 	//comment gérer le cas où le user n'a pas de carte ? genre pour la tarification... FAIRE EN FONCTION DU TYPE DE STATION
-
+	*/
+	public void chargeUser(User user, int duration) throws RuntimeException {
+		if (isTerminalOutOfOrder) {
+			throw new RuntimeException("Terminal of station "+ID+" not working: go to closest station");
+			//or just print something?
+		} else {
+			double cost = 0;
+			if (user.getRegistrationCard() == null) {
+				if (user.getRentedBicycle() instanceof MechanicalBike) {
+					cost = duration/60 * feesForUserWithNoCard.get("mechanical");	
+				} else if (user.getRentedBicycle() instanceof ElectricalBike) {
+					cost = duration/60 * feesForUserWithNoCard.get("electrical");
+				}
+			} else {
+				CardVisitor cardVisitor = new ConcreteCardVisitor();
+				Card userCard = user.getRegistrationCard();
+				cost = userCard.accept(cardVisitor, duration, user.getRentedBicycle());
+			}
+			user.setCreditCardBalance(user.getCreditCardBalance() - cost);
+			user.setMyVelibTotalCharges(user.getMyVelibTotalCharges() + cost);
+		}
+	}
 	
 	//implemented method from interface Observer
 	@Override
@@ -238,7 +235,6 @@ public abstract class Station implements Observer {
 			nbOfOutOfOrderParkingSlots -= 1;
 		}
 		isOnline = (nbOfOutOfOrderParkingSlots == parkingSlots.size() && isTerminalOutOfOrder)? false: true;
-		
 	}
 
 }

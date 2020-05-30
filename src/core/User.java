@@ -4,7 +4,7 @@ package core;
  * Represents a user of the myVelib network
  * @author Mathieu Sibué
  */
-public class User {
+public class User extends Person {
 
 	private int ID;
 	private static int counter = 0; //for the ID
@@ -189,8 +189,8 @@ public class User {
 		if (rentedBicycle != null) {
 			throw new RuntimeException("Cannot rent bicycle if user is already renting one.");
 		}
-		try {
-			station.identifyUser(this);		//can throw error in certain cases?
+		try {	//what's the point of having a try-catch there if identifyUser does not send errors? Let it throw errors as in other cases!
+			station.identifyUser(this);		//can throw error in certain cases? NO
 			for (ParkingSlot ps: station.getParkingSlots().values()) {
 				if (!ps.isOutOfOrder() && ps.getBicycleStored() != null) {
 					this.setRentedBicycle(ps.getBicycleStored());
@@ -200,7 +200,7 @@ public class User {
 			}
 			throw new RuntimeException("Cannot rent bicycle if station " + station.getID() + " has no available bicycle.");
 		} catch (RuntimeException e) {
-			System.out.println(e);
+			System.out.println(e.getMessage());
 			return;
 		}
 	}
@@ -219,12 +219,12 @@ public class User {
 		if (rentedBicycle == null) {
 			throw new RuntimeException("Cannot return bicycle if user is not currently renting one.");
 		}
-		try {
+		try {	//what's the point of having a try-catch there if identifyUser does not send errors? Let it throw errors as in other cases!
 			for (ParkingSlot ps: station.getParkingSlots().values()) {
 				if (!ps.isOutOfOrder() && ps.getBicycleStored() == null) {
+					station.chargeUser(this, tripDuration); 	//doit pouvoir throw des exceptions ici (si terminal ne fonctionne pas par ex)
 					ps.setBicycleStored(rentedBicycle);
 					this.setRentedBicycle(null);
-					station.chargeUser(this, tripDuration); //doit pouvoir throw des exceptions ici (si terminal ne fonctionne pas par ex)
 					this.setTotalNbOfRides(totalNbOfRides + 1);
 					this.setTotalTimeSpentOnBike(totalTimeSpentOnBike + tripDuration);
 					return;
@@ -232,7 +232,7 @@ public class User {
 			}
 			throw new RuntimeException("Cannot return bicycle if station " + station.getID() + " has no free parking slots. Go to another one.");
 		} catch (RuntimeException e) {
-			System.out.println(e);
+			System.out.println(e.getMessage());
 			return;
 		}
 	}

@@ -1,6 +1,5 @@
 package core;
 
-import java.util.ArrayList;
 
 /**
  * <b>Vmax is a type of Card, and represents a type of registration card of a user.</b>
