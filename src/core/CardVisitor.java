@@ -1,7 +1,5 @@
 package core;
 
-import java.util.ArrayList;
-
 public interface CardVisitor {
 	
 	/**
@@ -11,7 +9,9 @@ public interface CardVisitor {
 	 *				Registration card of type Vlibre
 	 * @param rideDuration
 	 *				Time spent on the bike
-	 * @return an ArrayList corresponding to the cost of the ride if the bike is mechanical (index 0) or electrical (index 1).
+	 *@param bike
+	 *				The bicycle that was rented (to get the type of bicycle)
+	 * @return an double corresponding to the cost of the ride.
 	 */
 	double visit(Vlibre vlibreCard, int rideDuration, Bicycle bike);
 	
@@ -22,7 +22,9 @@ public interface CardVisitor {
 	 *				Registration card of type Vmax
 	 * @param rideDuration
 	 *				Time spent on the bike
-	 * @return an ArrayList corresponding to the cost of the ride if the bike is mechanical (index 0) or electrical (index 1).
+	 * *@param bike
+	 *				The bicycle that was rented (to get the type of bicycle)
+	 * @return a double corresponding to the cost of the ride.
 	 */
 	double visit(Vmax vmaxCard, int rideDuration, Bicycle bike);
 }
