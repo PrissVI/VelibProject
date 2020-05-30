@@ -1,17 +1,13 @@
 package core;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Random;
 
 public class MyVelibNetwork {
 	private double side;
-	private HashMap<Integer,Bicycle> bicycles = new HashMap<Integer, Bicycle>();
-	private HashMap<Integer,Station> stations = new HashMap<Integer, Station>();
-	private HashMap<Integer,User> users = new HashMap<Integer, User>();
+	private HashMap<Integer,Bicycle> bicycles;
+	private HashMap<Integer,Station> stations;
+	private HashMap<Integer,User> users;
 	
 	public MyVelibNetwork(double side) {
 		this.side = side;
@@ -119,6 +115,7 @@ public class MyVelibNetwork {
 	}
 	
 	public void addBicyclePercentage(double percentage) {
+		
 		if (percentage>1) {
 			throw new RuntimeException("Cannot populate parking slots more than 100% (there are more bicycles than parkingslots available).");
 		}
@@ -168,128 +165,33 @@ public class MyVelibNetwork {
 	}
 	
 	public void addBicycleNumber(int nbOfBikes) {
-		int totalBicycles = nbOfBikes;
-		for (int i = 0; i < totalBicycles; i++) {
-			Random random = new Random();
-			double typeOfBicycle = random.nextDouble();
-			if (typeOfBicycle >= 0.3) {
-				Bicycle bike = new MechanicalBike();
-				this.getBicycles().put(bike.getID(), bike);
-			}
-			else {
-				Bicycle bike = new ElectricalBike();
-				this.getBicycles().put(bike.getID(), bike);
-			}
-		}
-		
-		//Assign bicycle to a parking slot:
-		HashMap<Integer,Bicycle> bicyclesCopy = (HashMap<Integer, Bicycle>) this.getBicycles().clone();
-		Object[] bicycleCopyKeys = bicyclesCopy.keySet().toArray();
-		int j = 0;
-		
-		Object[] stations = this.getStations().keySet().toArray();
-		Random generator = new Random();
-		while(bicyclesCopy.size() != 0) {
-			//Choose a random station and a random parking slot
-			int randomStationIndex = generator.nextInt(stations.length);
-			Station randomStation = this.getStations().get(stations[randomStationIndex]);
-			Object[] parkingSlots = randomStation.getParkingSlots().keySet().toArray();
-			int randomSlotIndex = generator.nextInt(parkingSlots.length);
-			//If random parking slot is empty, put a bicycle in it
-			if(this.getStations().get(stations[randomStationIndex]).getParkingSlots().get(parkingSlots[randomSlotIndex]).getBicycleStored()==null) {
-				Bicycle bicycleToStore = bicyclesCopy.get(bicycleCopyKeys[j]);
-				this.getStations().get(stations[randomStationIndex]).getParkingSlots().get(parkingSlots[randomSlotIndex]).setBicycleStored(bicycleToStore);
-				bicyclesCopy.remove(bicycleCopyKeys[j]);
-				j++;
-			}
-		}
+		HashMap.Entry<Integer,Station> stationEntry = this.getStations().entrySet().iterator().next();
+		int nbOfParkingSlots = stationEntry.getValue().getParkingSlots().size();
+		int totalParkingSlots = nbOfParkingSlots*this.getStations().size();
+		double percentage = (double) nbOfBikes/totalParkingSlots;
+		addBicyclePercentage(percentage);
 	}
-	
-	
-	public void BasicPlanning(double x1, double y1, double x2, double y2, String bicycleType) {
-		double finalDistanceFromStart = Double.POSITIVE_INFINITY;
-		double finalDistanceFromFinish = Double.POSITIVE_INFINITY;
-		boolean bikeIsAvailable;
-		boolean parkingSlotIsAvailable;
-		double distanceFromStart;
-		double distanceFromFinish;
-		ArrayList<Station> startStation = new ArrayList<Station>();
-		ArrayList<Station> finishStation = new ArrayList<Station>();
-		
-		HashMap<Integer, Station> stations = this.getStations();
-		
-		//Loop for the start station
-		for(Station station : stations.values()) {
-			//Compute distance and compare to smallest distance yet
-			distanceFromStart = Math.sqrt(Math.pow(station.getX()-x1, 2)+Math.pow(station.getY()-y1, 2));
-			
-			if(distanceFromStart < finalDistanceFromStart) {
-				bikeIsAvailable = false;
-				//Make sure that a bike of the desired type is available
-				for(ParkingSlot parkingSlot : station.getParkingSlots().values()) {
-					if (bicycleType.toLowerCase()=="electrical" && parkingSlot.getBicycleStored() instanceof ElectricalBike) {
-						bikeIsAvailable = true;
-						break;
-					}
-					if (bicycleType.toLowerCase()=="mechanical" && parkingSlot.getBicycleStored() instanceof MechanicalBike) {
-						bikeIsAvailable = true;
-						break;
-					}
-				}
-				//If a bike of the desired type is not available, skip this station
-				if(!bikeIsAvailable) {
-					continue;
-				}
-				
-				finalDistanceFromStart = distanceFromStart;
-				startStation.clear();
-				startStation.add(station);
-				startStation.add(station);
-			}
-		}
-		
-		//Loop for the finish station
-		for(Station station : stations.values()) {
-			//Compute distance and compare to smallest distance yet
-			distanceFromFinish = Math.sqrt(Math.pow(station.getX()-x2, 2)+Math.pow(station.getY()-y2, 2));
-			
-			if(distanceFromFinish < finalDistanceFromFinish) {
-				parkingSlotIsAvailable = false;
-				//Make sure that a parking Slot is available
-				for(ParkingSlot parkingSlot : station.getParkingSlots().values()) {
-					if (parkingSlot.getBicycleStored() == null) {
-						parkingSlotIsAvailable = true;
-						break;
-					}
-				}
-				//If no parking slot is available, skip this station
-				if(!parkingSlotIsAvailable) {
-					continue;
-				}
-				finalDistanceFromFinish = distanceFromFinish;
-				finishStation.clear();
-				finishStation.add(station);
-				finishStation.add(station);
-			}
-		}
-		System.out.println("La station la plus proche de votre lieu de départ est :" + startStation.toString());
-		System.out.println("La station d'arrivée la plus proche de votre destination est :" + finishStation);
-	}	
 	
 	@Override
 	public String toString() {
 		return "MyVelibNetwork [side=" + side + ", bicycles=" + bicycles + ", stations=" + this.getStations() + ", users=" + users
 				+ "]";
 	}
+	
+	public void planning(double x1, double y1, double x2, double y2, String bicycleType, RidePlanning planType) {
+		planType.planRide(x1, y1, x2, y2, bicycleType, this);
+	}
 
 	public static void main(String[] args) {
 		MyVelibNetwork network = new MyVelibNetwork(10);
-		network.addStations(3, 10);
+		network.addStations(10, 10);
 		network.addUsers(10);
-		network.addBicyclePercentage(0.9);
-		System.out.println(network);
+		network.addBicycleNumber(20);
+		//System.out.println(network);
 		
-		network.BasicPlanning(5, 5, 8, 8, "electrical");
+		network.planning(5, 5, 8, 8, "electrical", new BasicPlanning());
+		network.planning(5, 5, 8, 8, "electrical", new AvoidPlus());
+		network.planning(5, 5, 8, 8, "electrical", new PreferPlus());
 	}
 	
 
