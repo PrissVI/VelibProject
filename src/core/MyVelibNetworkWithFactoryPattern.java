@@ -9,9 +9,14 @@ import java.util.Random;
 
 public class MyVelibNetworkWithFactoryPattern {
 	private double side;
-	private HashMap<Integer,Bicycle> bicycles = new HashMap<Integer, Bicycle>();
-	private HashMap<Integer,Station> stations = new HashMap<Integer, Station>();
-	private HashMap<Integer,User> users = new HashMap<Integer, User>();
+	private static AbstractFactory slotFactory = FactoryProducer.createFactory("SLOT");
+	private static AbstractFactory personFactory = FactoryProducer.createFactory("PERSON");
+	private static AbstractFactory stationFactory = FactoryProducer.createFactory("STATION");
+	private static AbstractFactory cardFactory = FactoryProducer.createFactory("CARD");
+	private static AbstractFactory bicycleFactory = FactoryProducer.createFactory("BICYCLE");
+	private HashMap<Integer,Bicycle> bicycles;
+	private HashMap<Integer,Station> stations;
+	private HashMap<Integer,User> users;
 	
 	public MyVelibNetworkWithFactoryPattern(double side) {
 		this.side = side;
@@ -61,19 +66,35 @@ public class MyVelibNetworkWithFactoryPattern {
 		for (int i = 0; i < nbStations; i++) {
 			HashMap<Integer, ParkingSlot> parkingSlots = new HashMap<Integer, ParkingSlot>() ;
 			for(int j = 0; j < nbParkingSlots; j++) {
-				ParkingSlot parkingSlot = new ParkingSlot();
+				ArrayList<Object> params = new ArrayList<Object>();
+				params.add("PARKING");
+				ParkingSlot parkingSlot = (ParkingSlot) slotFactory.createSlot(params);
+				//ParkingSlot parkingSlot = new ParkingSlot();
 				parkingSlots.put(parkingSlot.getID(), parkingSlot);
 			}
 			Random random = new Random();
 			double x = random.nextDouble()*this.getSide();
 			double y = random.nextDouble()*this.getSide();
 			double typeOfStation = random.nextDouble();
+			
 			if(typeOfStation >= 0.5) {
-				Station station = new StdStation(x, y, parkingSlots);
+				ArrayList<Object> params = new ArrayList<Object>();
+				params.add("STANDARD");
+				params.add(x);
+				params.add(y);
+				params.add(parkingSlots);
+				Station station = stationFactory.createStation(params);
+				//Station station = new StdStation(x, y, parkingSlots);
 				this.getStations().put(station.getID(), station);
 			}
 			else {
-				Station station = new PlusStation(x, y, parkingSlots);
+				ArrayList<Object> params = new ArrayList<Object>();
+				params.add("PLUS");
+				params.add(x);
+				params.add(y);
+				params.add(parkingSlots);
+				Station station = stationFactory.createStation(params);
+				//Station station = new PlusStation(x, y, parkingSlots);
 				this.getStations().put(station.getID(), station);
 			}
 		}
@@ -86,16 +107,33 @@ public class MyVelibNetworkWithFactoryPattern {
 			double y = random.nextDouble()*this.getSide();
 			double creditCardBalance = random.nextDouble()*500;
 			double cardType = random.nextDouble();
+			
+			ArrayList<Object> params = new ArrayList<Object>();
+			params.add(x);
+			params.add(y);
+			params.add(creditCardBalance);
+			
 			if(cardType <= 0.33) {
-				User user = new User("Random", x, y, creditCardBalance);
+				User user = (User) personFactory.createPerson(params);
+				//User user = new User("Random", x, y, creditCardBalance);
 				this.getUsers().put(user.getID(), user);
 			}
 			else if(cardType>=0.66) {
-				User user = new User("Random", x, y, creditCardBalance, (Card) new Vlibre());
+				ArrayList<Object> cardParams = new ArrayList<Object>();
+				cardParams.add("VLIBRE");
+				Card card = cardFactory.createCard(cardParams);
+				params.add(card);
+				User user = (User) personFactory.createPerson(params);
+				//User user = new User("Random", x, y, creditCardBalance, (Card) new Vlibre());
 				this.getUsers().put(user.getID(), user);
 			}
 			else {
-				User user = new User("Random", x, y, creditCardBalance, (Card) new Vmax());
+				ArrayList<Object> cardParams = new ArrayList<Object>();
+				cardParams.add("VMAX");
+				Card card = cardFactory.createCard(cardParams);
+				params.add(card);
+				User user = (User) personFactory.createPerson(params);
+				//User user = new User("Random", x, y, creditCardBalance, (Card) new Vmax());
 				this.getUsers().put(user.getID(), user);
 			}
 		}
@@ -106,16 +144,33 @@ public class MyVelibNetworkWithFactoryPattern {
 			double x = random.nextDouble()*this.getSide();
 			double y = random.nextDouble()*this.getSide();
 			double creditCardBalance = random.nextDouble()*500;
+			
+			ArrayList<Object> params = new ArrayList<Object>();
+			params.add(x);
+			params.add(y);
+			params.add(creditCardBalance);
+			
 			if(cardType.toLowerCase() == "vmax") {
-				User user = new User("Random", x, y, creditCardBalance, (Card) new Vmax());
+				ArrayList<Object> cardParams = new ArrayList<Object>();
+				cardParams.add("VMAX");
+				Card card = cardFactory.createCard(cardParams);
+				params.add(card);
+				User user = (User) personFactory.createPerson(params);
+				//User user = new User("Random", x, y, creditCardBalance, (Card) new Vmax());
 				this.getUsers().put(user.getID(), user);
 			}
 			else if(cardType.toLowerCase() == "vlibre") {
-				User user = new User("Random", x, y, creditCardBalance, (Card) new Vlibre());
+				ArrayList<Object> cardParams = new ArrayList<Object>();
+				cardParams.add("VLIBRE");
+				Card card = cardFactory.createCard(cardParams);
+				params.add(card);
+				User user = (User) personFactory.createPerson(params);
+				//User user = new User("Random", x, y, creditCardBalance, (Card) new Vlibre());
 				this.getUsers().put(user.getID(), user);
 			}
 			else {
-				User user = new User("Random", x, y, creditCardBalance);
+				User user = (User) personFactory.createPerson(params);
+				//User user = new User("Random", x, y, creditCardBalance);
 				this.getUsers().put(user.getID(), user);
 			}
 	}
@@ -133,11 +188,17 @@ public class MyVelibNetworkWithFactoryPattern {
 				Random random = new Random();
 				double typeOfBicycle = random.nextDouble();
 				if (typeOfBicycle >= 0.3) {
-					Bicycle bike = new MechanicalBike();
+					ArrayList<Object> params = new ArrayList<Object>();
+					params.add("MECHANICAL");
+					Bicycle bike = bicycleFactory.createBicycle(params);
+					//Bicycle bike = new MechanicalBike();
 					this.getBicycles().put(bike.getID(), bike);
 				}
 				else {
-					Bicycle bike = new ElectricalBike();
+					ArrayList<Object> params = new ArrayList<Object>();
+					params.add("ELECTRICAL");
+					Bicycle bike = bicycleFactory.createBicycle(params);
+					//Bicycle bike = new ElectricalBike();
 					this.getBicycles().put(bike.getID(), bike);
 				}
 			}
@@ -175,11 +236,17 @@ public class MyVelibNetworkWithFactoryPattern {
 			Random random = new Random();
 			double typeOfBicycle = random.nextDouble();
 			if (typeOfBicycle >= 0.3) {
-				Bicycle bike = new MechanicalBike();
+				ArrayList<Object> params = new ArrayList<Object>();
+				params.add("MECHANICAL");
+				Bicycle bike = bicycleFactory.createBicycle(params);
+				//Bicycle bike = new MechanicalBike();
 				this.getBicycles().put(bike.getID(), bike);
 			}
 			else {
-				Bicycle bike = new ElectricalBike();
+				ArrayList<Object> params = new ArrayList<Object>();
+				params.add("ELECTRICAL");
+				Bicycle bike = bicycleFactory.createBicycle(params);
+				//Bicycle bike = new ElectricalBike();
 				this.getBicycles().put(bike.getID(), bike);
 			}
 		}
