@@ -109,6 +109,8 @@ public class MyVelibNetworkWithFactoryPattern {
 			double cardType = random.nextDouble();
 			
 			ArrayList<Object> params = new ArrayList<Object>();
+			params.add("User");
+			params.add("Random");
 			params.add(x);
 			params.add(y);
 			params.add(creditCardBalance);
@@ -271,6 +273,7 @@ public class MyVelibNetworkWithFactoryPattern {
 				bicyclesCopy.remove(bicycleCopyKeys[j]);
 				j++;
 			}
+			
 		}
 	}
 	
