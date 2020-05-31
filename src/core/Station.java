@@ -184,7 +184,7 @@ public abstract class Station implements StationObserver, Serializable  {
 				+ "- the station is " + (isOnline? "online": "offline") + "\n"
 				+ "- its payment terminal is " + (isTerminalOutOfOrder? "out of order": "working fine") + "\n"
 				+ "- the station is located at (" + x + ", " + y + ")" + "\n"
-				+ "- it has " + parkingSlots.size() + " parking slots, " + nbOfOutOfOrderParkingSlots + " of which are out of order.";
+				+ "- it has " + parkingSlots.size() + " parking slots, " + nbOfOutOfOrderParkingSlots + " of which are out of order." + "\n";
 	}
 	
 	//custom methods
@@ -294,7 +294,7 @@ public abstract class Station implements StationObserver, Serializable  {
 				} 
 			}
 		}
-		return res / ActivityLog.getDateDiff(infDate, supDate) * parkingSlots.size();
+		return (double) res / (ActivityLog.getDateDiff(infDate, supDate) * parkingSlots.size());
 	}
 
 }

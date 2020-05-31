@@ -28,6 +28,8 @@ public class ParkingSlot extends Slot implements ParkingSlotObservable, Serializ
 		isOutOfOrder = false;
 		ID = this.generateID();
 		activityLogs = new ArrayList<ActivityLog>();
+		Date initDate = ActivityLog.getDate(0, 0, 0, 0, 0, 0);
+		activityLogs.add(new ActivityLog(true, initDate));
 	}
 
 	public ParkingSlot() {

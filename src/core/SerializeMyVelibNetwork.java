@@ -17,7 +17,7 @@ public class SerializeMyVelibNetwork {
 		
 		try {
 			
-			FileOutputStream fileOut =new FileOutputStream("network.ser");
+			FileOutputStream fileOut = new FileOutputStream("network.ser");
 			ObjectOutputStream out = new ObjectOutputStream(fileOut);
 			out.writeObject(network);
 			out.close();

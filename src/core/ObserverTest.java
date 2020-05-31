@@ -1,5 +1,6 @@
 package core;
 
+import java.util.Date;
 import java.util.HashMap;
 
 public class ObserverTest {
@@ -17,10 +18,12 @@ public class ObserverTest {
 		myParkingSlots.put(ps2.getID(),ps2);
 		
 		mySt.setParkingSlots(myParkingSlots);
-		System.out.println(mySt.getNbOfOutOfOrderParkingSlots());
+		System.out.println(mySt.getNbOfOutOfOrderParkingSlots());	//vaut 0
 		
-		ps1.setOutOfOrder(true);
-		System.out.println(mySt.getNbOfOutOfOrderParkingSlots());
+		Date d1 = ActivityLog.getDate(2020, 4, 24, 2, 5, 0);
+
+		ps1.setOutOfOrder(true, d1);
+		System.out.println(mySt.getNbOfOutOfOrderParkingSlots());	//vaut 1
 		
 		
 		//test2
@@ -30,13 +33,14 @@ public class ObserverTest {
 		myParkingSlots2.put(ps2.getID(),ps2);
 		
 		mySt.setParkingSlots(myParkingSlots);
-		System.out.println(mySt.getNbOfOutOfOrderParkingSlots());
+		System.out.println(mySt.getNbOfOutOfOrderParkingSlots());	//vaut 1
 		
-		ps2.setOutOfOrder(true);
-		System.out.println(mySt.getNbOfOutOfOrderParkingSlots());
+		Date d2 = ActivityLog.getDate(2020, 4, 24, 2, 10, 0);
+		ps2.setOutOfOrder(true, d2);
+		System.out.println(mySt.getNbOfOutOfOrderParkingSlots());	//vaut 2
 		
 		mySt.setTerminalOutOfOrder(true);
-		System.out.println(mySt.isOnline());
+		System.out.println(mySt.isOnline());		//vaut false => est bien offline
 	}
 
 }
