@@ -222,7 +222,7 @@ public class MyVelibNetwork implements Serializable {
 				//If random parking slot is empty, put a bicycle in it
 				if(this.getStations().get(stations[randomStationIndex]).getParkingSlots().get(parkingSlots[randomSlotIndex]).getBicycleStored()==null) {
 					Bicycle bicycleToStore = bicyclesCopy.get(bicycleCopyKeys[j]);
-					this.getStations().get(stations[randomStationIndex]).getParkingSlots().get(parkingSlots[randomSlotIndex]).setBicycleStored(bicycleToStore);
+					this.getStations().get(stations[randomStationIndex]).getParkingSlots().get(parkingSlots[randomSlotIndex]).setBicycleStored(bicycleToStore, ActivityLog.getDate(0, 0, 0, 0, 0, 0));
 					bicyclesCopy.remove(bicycleCopyKeys[j]);
 					j++;
 				}
