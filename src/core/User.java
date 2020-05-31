@@ -1,5 +1,7 @@
 package core;
 
+import java.util.Date;
+
 /**
  * Represents a user of the myVelib network
  * @author Mathieu Sibué
@@ -29,9 +31,10 @@ public class User extends Person {
 		this.name = name;
 		this.x = x;
 		this.y = y;
-		myVelibTotalCharges = 0;
-		totalNbOfRides = 0;
-		totalTimeSpentOnBike = 0;
+		//already initialized to 0 by default
+//		myVelibTotalCharges = 0;
+//		totalNbOfRides = 0;
+//		totalTimeSpentOnBike = 0;
 	}
 
 	//Constructor with name, coordinates and credit card balance
@@ -43,9 +46,10 @@ public class User extends Person {
 		this.x = x;
 		this.y = y;
 		this.creditCardBalance = creditCardBalance;
-		myVelibTotalCharges = 0;
-		totalNbOfRides = 0;
-		totalTimeSpentOnBike = 0;
+		//already initialized to 0 by default
+//		myVelibTotalCharges = 0;
+//		totalNbOfRides = 0;
+//		totalTimeSpentOnBike = 0;
 	}
 	
 	//Constructor with name, coordinates, credit card balance and registration card
@@ -58,9 +62,10 @@ public class User extends Person {
 		this.y = y;
 		this.creditCardBalance = creditCardBalance;
 		this.registrationCard = registrationCard;
-		myVelibTotalCharges = 0;
-		totalNbOfRides = 0;
-		totalTimeSpentOnBike = 0;
+		//already initialized to 0 by default
+//		myVelibTotalCharges = 0;
+//		totalNbOfRides = 0;
+//		totalTimeSpentOnBike = 0;
 	}
 	
 
@@ -179,7 +184,7 @@ public class User extends Person {
 	 * Rents a bicycle available in the considered station.
 	 * @param	Station where the user wants to rent a bicycle
 	 */
-	public void rentBicycle(Station station) throws RuntimeException {
+	public void rentBicycle(Station station, Date rentDate) throws RuntimeException {
 		if (x != station.getX() || y != station.getY()) {
 			throw new RuntimeException("Cannot rent bicycle if station " + station.getID() + " not reached.");
 		}
@@ -194,7 +199,11 @@ public class User extends Person {
 			for (ParkingSlot ps: station.getParkingSlots().values()) {
 				if (!ps.isOutOfOrder() && ps.getBicycleStored() != null) {
 					this.setRentedBicycle(ps.getBicycleStored());
-					ps.setBicycleStored(null);
+					//
+					rentedBicycle.setRentDate(rentDate);
+					//
+					ps.setBicycleStored(null,rentDate);
+					station.setTotalNbOfRentOps(station.getTotalNbOfRentOps()+1);
 					return;
 				}
 			}
@@ -209,7 +218,7 @@ public class User extends Person {
 	 * Returns the user's rented bicycle in the considered station.
 	 * @param Station: station where the user wants to return the bike
 	 */
-	public void returnBicycle(Station station, int tripDuration) throws RuntimeException {
+	public void returnBicycle(Station station, Date returnDate) throws RuntimeException {
 		if (x != station.getX() || y != station.getY()) {
 			throw new RuntimeException("Cannot return bicycle if station " + station.getID() + " not reached.");
 		}
@@ -222,11 +231,18 @@ public class User extends Person {
 		try {	//what's the point of having a try-catch there if identifyUser does not send errors? Let it throw errors as in other cases!
 			for (ParkingSlot ps: station.getParkingSlots().values()) {
 				if (!ps.isOutOfOrder() && ps.getBicycleStored() == null) {
-					station.chargeUser(this, tripDuration); 	//doit pouvoir throw des exceptions ici (si terminal ne fonctionne pas par ex)
-					ps.setBicycleStored(rentedBicycle);
+					//
+					int tripDuration = ActivityLog.getDateDiff(rentedBicycle.getRentDate(),returnDate);
+					//
+					station.chargeUser(this, tripDuration); 
+					//
+					rentedBicycle.setRentDate(null);
+					//
+					ps.setBicycleStored(rentedBicycle,returnDate);
 					this.setRentedBicycle(null);
 					this.setTotalNbOfRides(totalNbOfRides + 1);
 					this.setTotalTimeSpentOnBike(totalTimeSpentOnBike + tripDuration);
+					station.setTotalNbOfReturnOps(station.getTotalNbOfReturnOps()+1);
 					return;
 				}
 			}

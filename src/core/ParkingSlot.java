@@ -1,5 +1,8 @@
 package core;
 
+import java.util.ArrayList;
+import java.util.Date;
+
 /** 
  * Represents a parking slot in a station.
  * @author Mathieu Sibué
@@ -13,7 +16,7 @@ public class ParkingSlot extends Slot implements ParkingSlotObservable {
 	private boolean isOutOfOrder;
 	private StationObserver uniqueStationObserver;
 	//for statistics:
-	//faire une liste de log d'activité
+	private ArrayList<ActivityLog> activityLogs;
 	
 	
 	/*CONSTRUCTORS*/
@@ -22,14 +25,15 @@ public class ParkingSlot extends Slot implements ParkingSlotObservable {
 		this.bicycleStored = bicycleStored;
 		isOutOfOrder = false;
 		ID = this.generateID();
+		activityLogs = new ArrayList<ActivityLog>();
 	}
 
 	public ParkingSlot() {
 		super();
-		//or just leave it null?
 		bicycleStored = null;
 		isOutOfOrder = false;
 		ID = this.generateID();
+		activityLogs = new ArrayList<ActivityLog>();
 	}
 	
 	
@@ -39,11 +43,20 @@ public class ParkingSlot extends Slot implements ParkingSlotObservable {
 		return bicycleStored;
 	}
 
-	public void setBicycleStored(Bicycle bicycleStored) throws RuntimeException {
+	//custom setter that only allows to set a bicycle in a free, on service slot
+	public void setBicycleStored(Bicycle bicycleStored, Date date) throws RuntimeException {
 		if (isOutOfOrder) {
 			throw new RuntimeException("Cannot set stored bike of parking slot " + ID + ": parking bay is out of order");
-			//ou sysout?
-		} else {
+		} else if (this.bicycleStored != null && bicycleStored != null) {
+			throw new RuntimeException("Cannot store bike in parking slot " + ID + ": parking bay is already occupied");
+		} else if (this.bicycleStored != bicycleStored) {
+			if (bicycleStored == null) {
+				ActivityLog al = new ActivityLog(false, date);
+				activityLogs.add(al);
+			} else {
+				ActivityLog al = new ActivityLog(true, date);
+				activityLogs.add(al);				
+			}
 			this.bicycleStored = bicycleStored;
 		}
 	}
@@ -52,16 +65,29 @@ public class ParkingSlot extends Slot implements ParkingSlotObservable {
 		return isOutOfOrder;
 	}
 
-	public void setOutOfOrder(boolean isOutOfOrder) throws RuntimeException {
+	//custom setter that only allows to set a slot out of order if it is free (so that the bicycle it stores is not "lost")
+	public void setOutOfOrder(boolean isOutOfOrder, Date date) throws RuntimeException {
 		if (bicycleStored != null) {
 			throw new RuntimeException("Cannot set parking slot "+ID+" to out of order: it is storing bicycle "+bicycleStored.getID());
-			//ou sysout?
 		} else {
 			if (isOutOfOrder != this.isOutOfOrder) {
 				this.isOutOfOrder = isOutOfOrder;
-				this.notifyObserver(isOutOfOrder);
+				this.notifyObserver(this.isOutOfOrder);
+				if (isOutOfOrder) {
+					activityLogs.add(new ActivityLog(true, date));
+				} else {
+					activityLogs.add(new ActivityLog(false, date));
+				}
 			}	// si pas de chgt on ne fait RIEN
 		}
+	}
+
+	public ArrayList<ActivityLog> getActivityLogs() {
+		return activityLogs;
+	}
+
+	public void setActivityLogs(ArrayList<ActivityLog> activityLogs) {
+		this.activityLogs = activityLogs;
 	}
 
 	public int getID() {
@@ -72,7 +98,7 @@ public class ParkingSlot extends Slot implements ParkingSlotObservable {
 	@Override
 	public String toString() {
 		return "ParkingSlot " + ID + ":\n"
-				+ "- bicycleStored: " + (bicycleStored == null? "no bicycle stored": bicycleStored.toString())
+				+ "- bicycleStored: " + (bicycleStored == null? "no bicycle stored": bicycleStored.toString()) + "\n"
 				+ "- " + (isOutOfOrder? "": "not ") + "out of order";
 	}	
 	
@@ -111,6 +137,9 @@ public class ParkingSlot extends Slot implements ParkingSlotObservable {
 
 	@Override
 	public void notifyObserver(boolean newIsOutOfOrder) {
+		if (uniqueStationObserver == null) {
+			return;
+		}
 		uniqueStationObserver.update(newIsOutOfOrder);
 	}
 }

@@ -33,9 +33,9 @@ public class ConcretePersonFactory extends AbstractFactory {
 			String arg0 = (String) params.get(0);
 			if (arg0.equalsIgnoreCase("USER")) {
 				if (params.size()>3 
-						&& params.get(1) instanceof String 
-						&& params.get(2) instanceof Number 
-						&& params.get(3) instanceof Number
+					&& params.get(1) instanceof String 
+					&& params.get(2) instanceof Number 
+					&& params.get(3) instanceof Number
 				) 
 				{
 					String arg1 = (String) params.get(1);

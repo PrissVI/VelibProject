@@ -1,5 +1,7 @@
 package core;
 
+import java.util.Date;
+
 /**
  * <b>Bicycle is a class that represents the bicycles that will be available in the Velib Network.</b>
  * <p>
@@ -15,6 +17,7 @@ public abstract class Bicycle {
 
 	private int ID;
 	private static int counter = 0; //for the ID
+	private Date rentDate;
 	
 	/**
 	 * Constructor of the object.
@@ -31,9 +34,17 @@ public abstract class Bicycle {
 	public int getID() {
 		return ID;
 	}
+	
+	public Date getRentDate() {
+		return rentDate;
+	}
+
+	public void setRentDate(Date rentDate) {
+		this.rentDate = rentDate;
+	}
 
 	@Override
 	public String toString() {
-		return "Bicycle " + ID;
+		return "Bicycle " + ID + (rentDate == null? " not rented currently": " currently rented since " + rentDate.toString());
 	}
 }

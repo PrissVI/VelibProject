@@ -1,5 +1,7 @@
 package core;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 
 /** 
@@ -79,8 +81,10 @@ public abstract class Station implements StationObserver {
 	public boolean isOnline() {
 		return isOnline;
 	}
-
-	//no setOnline: indeed, to setOnline to true, it is needed to set isTerminalOutOfOrder to false and repair at least one of the parking slots
+	
+	public void setOnline(boolean isOnline) {
+		this.isOnline = isOnline;
+	}
 
 	public boolean isTerminalOutOfOrder() {
 		return isTerminalOutOfOrder;
@@ -111,7 +115,7 @@ public abstract class Station implements StationObserver {
 		return parkingSlots;
 	}
 
-	//when parkingSlots HashMap is updated, we need to go through all the parking slots store in 
+	//when parkingSlots HashMap is updated, we need to go through all the parking slots stored in 
 	public void setParkingSlots(HashMap<Integer, ParkingSlot> parkingSlots) {
 		if (this.parkingSlots.equals(parkingSlots)) {
 			return;
@@ -135,8 +139,16 @@ public abstract class Station implements StationObserver {
 		return totalNbOfRentOps;
 	}
 
+	public void setTotalNbOfRentOps(int totalNbOfRentOps) {
+		this.totalNbOfRentOps = totalNbOfRentOps;
+	}
+
 	public int getTotalNbOfReturnOps() {
 		return totalNbOfReturnOps;
+	}
+	
+	public void setTotalNbOfReturnOps(int totalNbOfReturnOps) {
+		this.totalNbOfReturnOps = totalNbOfReturnOps;
 	}
 	
 	public static HashMap<String, Double> getFeesForUserWithNoCard() {
@@ -184,7 +196,7 @@ public abstract class Station implements StationObserver {
 	}
 
 	/**
-	 * Identifies a user via the station's terminal.
+	 * Identifies a user via the station's terminal. Prints the mean of identification
 	 * @param User: the user willing to rent a bike
 	 */
 	public void identifyUser(User user) {
@@ -196,25 +208,23 @@ public abstract class Station implements StationObserver {
 	}
 	
 	/**
-	 * Charges a user for its bicycle trip depending on the station's fees.
-	 * @param User: the user willing to return a bike after using it
+	 * Charges a user for its bicycle trip depending on the station's fees. Should only be called in 
+	 * @param User: the user willing to return its rented bike after using it
 	 * @param double: the time (in minutes) spent on the bike
 	 */
 	/*
 	abstract void chargeUser(User user, int duration);
-	//comment gérer le cas où le user n'a pas de carte ? genre pour la tarification... FAIRE EN FONCTION DU TYPE DE STATION
 	*/
 	public void chargeUser(User user, int duration) throws RuntimeException {
 		if (isTerminalOutOfOrder) {
 			throw new RuntimeException("Terminal of station "+ID+" not working: go to closest station");
-			//or just print something?
 		} else {
 			double cost = 0;
 			if (user.getRegistrationCard() == null) {
 				if (user.getRentedBicycle() instanceof MechanicalBike) {
-					cost = duration/60 * feesForUserWithNoCard.get("mechanical");	
+					cost = (double) duration/60 * feesForUserWithNoCard.get("mechanical");	
 				} else if (user.getRentedBicycle() instanceof ElectricalBike) {
-					cost = duration/60 * feesForUserWithNoCard.get("electrical");
+					cost = (double) duration/60 * feesForUserWithNoCard.get("electrical");
 				}
 			} else {
 				CardVisitor cardVisitor = new ConcreteCardVisitor();
@@ -235,6 +245,54 @@ public abstract class Station implements StationObserver {
 			nbOfOutOfOrderParkingSlots -= 1;
 		}
 		isOnline = (nbOfOutOfOrderParkingSlots == parkingSlots.size() && isTerminalOutOfOrder)? false: true;
+	}
+	
+	/**
+	 * Computes the occupation rate of a given station during a certain time window.
+	 * @param Date: the inf date of the time window
+	 * @param Date: the sup date of the time window
+	 */
+	public double getOccupationRate(Date infDate, Date supDate) {
+		double res = 0;
+		for (ParkingSlot ps: parkingSlots.values()) {
+			ArrayList<ActivityLog> selectedActivityLogs = new ArrayList<ActivityLog>();
+			for (int i = 0; i < ps.getActivityLogs().size(); i++) {
+				ActivityLog currentAl = ps.getActivityLogs().get(i);
+				if (ActivityLog.getDateDiff(currentAl.getDate(), supDate)<0) {
+					break;
+				} else if (ActivityLog.getDateDiff(currentAl.getDate(), infDate)<=0) {
+					selectedActivityLogs.add(currentAl);
+				} else if (ActivityLog.getDateDiff(currentAl.getDate(), infDate)>0 
+						&& i < ps.getActivityLogs().size()-1
+						&& ActivityLog.getDateDiff(ps.getActivityLogs().get(i+1).getDate(), infDate)<0
+					)
+				{
+					selectedActivityLogs.add(currentAl);
+				}
+			}
+			
+			for (int i = 0; i < selectedActivityLogs.size(); i++) {
+				ActivityLog currentAl = selectedActivityLogs.get(i);
+				
+				//cas i=0
+				if (currentAl.isSetToOccupied() 
+						&& ActivityLog.getDateDiff(currentAl.getDate(), infDate)>0
+						&& i<selectedActivityLogs.size()-1
+					) 
+				{
+					ActivityLog nextAl = selectedActivityLogs.get(i+1);
+					res += ActivityLog.getDateDiff(infDate, nextAl.getDate());
+					
+				} else if (currentAl.isSetToOccupied() && i==selectedActivityLogs.size()-1) {
+					res += ActivityLog.getDateDiff(currentAl.getDate(), supDate);
+					
+				} else if (currentAl.isSetToOccupied() && i<selectedActivityLogs.size()-1) {
+					ActivityLog nextAl = selectedActivityLogs.get(i+1);
+					res += ActivityLog.getDateDiff(currentAl.getDate(), nextAl.getDate());
+				} 
+			}
+		}
+		return res / ActivityLog.getDateDiff(infDate, supDate) * parkingSlots.size();
 	}
 
 }
