@@ -27,7 +27,7 @@ public class ConcretePersonFactory extends AbstractFactory {
 	 * @return Person: an object of a subclass of Person
 	*/
 	@Override
-	Person createPerson(ArrayList<Object> params) {
+	public Person createPerson(ArrayList<Object> params) {
 		//multiple ifs to make the method open to modifications as well (if another type of Person is added
 		if (params.size()>0 && params.get(0) instanceof String) {
 			String arg0 = (String) params.get(0);
@@ -61,22 +61,22 @@ public class ConcretePersonFactory extends AbstractFactory {
 	}
 
 	@Override
-	Slot createSlot(ArrayList<Object> params) {
+	public Slot createSlot(ArrayList<Object> params) {
 		return null;
 	}
 
 	@Override
-	Card createCard(ArrayList<Object> params) {
+	public Card createCard(ArrayList<Object> params) {
 		return null;
 	}
 
 	@Override
-	Bicycle createBicycle(ArrayList<Object> params) {
+	public Bicycle createBicycle(ArrayList<Object> params) {
 		return null;
 	}
 
 	@Override
-	Station createStation(ArrayList<Object> params) {
+	public Station createStation(ArrayList<Object> params) {
 		return null;
 	}
 	

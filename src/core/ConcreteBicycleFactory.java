@@ -9,22 +9,22 @@ import java.util.ArrayList;
 public class ConcreteBicycleFactory extends AbstractFactory {
 
 	@Override
-	Person createPerson(ArrayList<Object> params) {
+	public Person createPerson(ArrayList<Object> params) {
 		return null;
 	}
 
 	@Override
-	Slot createSlot(ArrayList<Object> params) {
+	public Slot createSlot(ArrayList<Object> params) {
 		return null;
 	}
 
 	@Override
-	Card createCard(ArrayList<Object> params) {
+	public Card createCard(ArrayList<Object> params) {
 		return null;
 	}
 
 	@Override
-	Bicycle createBicycle(ArrayList<Object> params) {
+	public Bicycle createBicycle(ArrayList<Object> params) {
 		if (params.size()>0 && params.get(0) instanceof String) {
 			String arg0 = (String) params.get(0);
 			if (arg0.equalsIgnoreCase("MECHANICAL")) {
@@ -38,7 +38,7 @@ public class ConcreteBicycleFactory extends AbstractFactory {
 	}
 
 	@Override
-	Station createStation(ArrayList<Object> params) {
+	public Station createStation(ArrayList<Object> params) {
 		return null;
 	}
 	
