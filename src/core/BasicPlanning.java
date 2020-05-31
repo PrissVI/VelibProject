@@ -1,11 +1,12 @@
 package core;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class BasicPlanning implements RidePlanning {
 
 	@Override
-	public void planRide(double x1, double y1, double x2, double y2, String bicycleType, MyVelibNetwork network) {
+	public ArrayList<Station> planRide(double x1, double y1, double x2, double y2, String bicycleType, MyVelibNetwork network) {
 		double finalDistanceFromStart = Double.POSITIVE_INFINITY;
 		double finalDistanceFromEnd = Double.POSITIVE_INFINITY;
 		boolean bikeIsAvailable;
@@ -14,6 +15,7 @@ public class BasicPlanning implements RidePlanning {
 		double distanceFromEnd;
 		Station startStation = null;
 		Station endStation = null;
+		ArrayList<Station> stationList = new ArrayList<Station>();
 		
 		HashMap<Integer, Station> stations = network.getStations();
 		
@@ -71,5 +73,9 @@ public class BasicPlanning implements RidePlanning {
 		
 		System.out.println("The nearest station to your starting point is:" + startStation);
 		System.out.println("The nearest station to your destination is :" + endStation);
+		
+		stationList.add(startStation);
+		stationList.add(endStation);
+		return stationList;
 	}
 }

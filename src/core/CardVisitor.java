@@ -1,6 +1,9 @@
 package core;
 
-import java.util.ArrayList;
+/**
+ * CardVisitor interface for the Visitor Pattern
+ * @author Ali Raïki
+ */
 
 public interface CardVisitor {
 	
@@ -11,18 +14,22 @@ public interface CardVisitor {
 	 *				Registration card of type Vlibre
 	 * @param rideDuration
 	 *				Time spent on the bike
-	 * @return an ArrayList corresponding to the cost of the ride if the bike is mechanical (index 0) or electrical (index 1).
+	 * @param bike
+	 *				The bicycle that was rented (to get the type of bicycle)
+	 * @return an double corresponding to the cost of the ride.
 	 */
 	double visit(Vlibre vlibreCard, int rideDuration, Bicycle bike);
 	
 	/**
 	 * Computes the corresponding cost of the ride based on the ride duration (in minutes), 
 	 * and can change the timeCredit the user has if it is used.
-	 * @param vlibreCard
+	 * @param vmaxCard
 	 *				Registration card of type Vmax
 	 * @param rideDuration
 	 *				Time spent on the bike
-	 * @return an ArrayList corresponding to the cost of the ride if the bike is mechanical (index 0) or electrical (index 1).
+	 * @param bike
+	 *				The bicycle that was rented (to get the type of bicycle)
+	 * @return a double corresponding to the cost of the ride.
 	 */
 	double visit(Vmax vmaxCard, int rideDuration, Bicycle bike);
 }
