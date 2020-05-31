@@ -1,5 +1,6 @@
 package core;
 
+import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -8,8 +9,9 @@ import java.util.concurrent.TimeUnit;
  * Represents an activity log from the logs of parking slots
  * @author Mathieu Sibué
 */
-public class ActivityLog {
+public class ActivityLog implements Serializable {
 	
+	private static final long serialVersionUID = 3441618693126607150L;
 	/*ATTRIBUTES*/
 	private static int counter = 0;
 	private int ID;
