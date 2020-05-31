@@ -6,6 +6,7 @@ package core;
  */
 public class User extends Person {
 
+	private static final long serialVersionUID = -8651543750430116639L;
 	private int ID;
 	private static int counter = 0; //for the ID
 	private String name;

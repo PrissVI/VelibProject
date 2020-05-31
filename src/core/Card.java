@@ -1,5 +1,7 @@
 package core;
 
+import java.io.Serializable;
+
 /**
  * <b>Card is a class that represents the registration card of a user.</b>
  * <p>
@@ -13,9 +15,10 @@ returning bicycles to “plus” stations.</li>
  * 
  */
 
-public abstract class Card {
+public abstract class Card implements Serializable {
 	
-    /**
+	private static final long serialVersionUID = 12432121L;
+	/**
      * timeCreditBalance represents the credit gained (in minutes) by
 	returning bicycles to “plus” stations
 	<p>The time credit is used to compute the actual

@@ -1,11 +1,14 @@
 package core;
 
+import java.io.Serializable;
+
 /** 
  * Represents a parking slot in a station.
  * @author Mathieu Sibué
 */
-public class ParkingSlot extends Slot implements ParkingSlotObservable {
+public class ParkingSlot extends Slot implements ParkingSlotObservable, Serializable {
 
+	private static final long serialVersionUID = 36892121L;
 	/*ATTRIBUTES*/
 	private static int counterToGenerateIDs = 0;
 	private int ID;

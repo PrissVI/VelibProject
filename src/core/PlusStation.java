@@ -7,7 +7,8 @@ import java.util.HashMap;
  * @author Mathieu Sibué
 */
 public class PlusStation extends Station {
-	
+
+	private static final long serialVersionUID = 4875724235326482414L;
 	/*ATTRIBUTES*/
 	final static private int additionalTimeCredit = 5;	//in minutes
 

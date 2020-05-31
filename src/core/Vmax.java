@@ -10,6 +10,8 @@ package core;
  */
 public class Vmax extends Card {
 
+	private static final long serialVersionUID = 7304298479157131816L;
+
 	/**
 	 * Constructors of the Vmax object.
 	 * @param timeCreditBalance

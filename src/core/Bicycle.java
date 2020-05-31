@@ -1,5 +1,7 @@
 package core;
 
+import java.io.Serializable;
+
 /**
  * <b>Bicycle is a class that represents the bicycles that will be available in the Velib Network.</b>
  * <p>
@@ -11,8 +13,9 @@ package core;
  * @author Ali Raïki
  *
  */
-public abstract class Bicycle {
+public abstract class Bicycle implements Serializable {
 
+	private static final long serialVersionUID = 545691321L;
 	private int ID;
 	private static int counter = 0; //for the ID
 	

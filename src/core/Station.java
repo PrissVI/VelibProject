@@ -1,13 +1,15 @@
 package core;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
 /** 
  * Represents an abstract station.
  * @author Mathieu Sibué
 */
-public abstract class Station implements StationObserver {
+public abstract class Station implements StationObserver, Serializable  {
 	
+	private static final long serialVersionUID = 560966235L;
 	/*ATTRIBUTES*/
 	private static int counterToGenerateIDs = 0;
 	private int ID;

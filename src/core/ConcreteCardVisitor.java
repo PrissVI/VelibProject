@@ -32,7 +32,7 @@ public class ConcreteCardVisitor implements CardVisitor {
 		} else {
 			if (vlibreCard.getTimeCredit() == 0) {
 				if(bike instanceof MechanicalBike) {
-					mechanicalCost = (rideDuration - 60) / 60;
+					mechanicalCost = (rideDuration - 60) / 60 ;
 					return mechanicalCost;}
 				else {
 					electricalCost = (rideDuration - 60) / 30;

@@ -10,6 +10,8 @@ package core;
  */
 public class Vlibre extends Card {
 	
+	private static final long serialVersionUID = 6106881719246599397L;
+
 	/**
 	 * Constructors of the Vlibre object.
 	 * @param timeCreditBalance

@@ -8,6 +8,7 @@ import java.util.HashMap;
 */
 public class StdStation extends Station {
 	
+	private static final long serialVersionUID = -8627505195997575028L;
 	/*CONSTRUCTORS*/
 	public StdStation(double x, double y) {
 		super(x, y);
