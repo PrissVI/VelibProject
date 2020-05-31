@@ -78,7 +78,62 @@ public class MyVelibNetworkTest {
 		network.addUser("Suzie", "vlibre"); //Add a user Suzie with a Vlibre Card;
 		network.addUser("John", "none"); //Add a user John with no registration Card;
 		
-		System.out.println(network.getUsers().size());
 		assertEquals(network.getUsers().size(), 3);		
+	}
+	
+	/**
+	 * Set up a network of side 10, and 3 stations with 10 parking slots each.
+	 * 
+	 * Test adding a certain amount of bicycles.
+	 *  
+	 */
+	
+	@Test
+	//1st scenario : There are more parking slots available than bicycles (normal scenario).
+	public void testAddBicyclesNumber() {
+		MyVelibNetwork network = new MyVelibNetwork(10);
+		network.addStations(3, 10);
+		
+		network.addBicycleNumber(25);
+		assertEquals(network.getBicycles().size(), 25);		
+		
+	}
+	
+	//2nd scenario : There are not enough parking slots available.
+	@Test(expected = RuntimeException.class)
+	public void testAddBicyclesNumberTooBig() {
+		MyVelibNetwork network = new MyVelibNetwork(10);
+		network.addStations(3, 10);
+		
+		network.addBicycleNumber(15); //Adding 15 bicycles
+		network.addBicycleNumber(20); //Then trying to add 20 more bicycles
+		
+	}
+	
+	/**
+	 * Set up a network of side 10, and 3 stations with 10 parking slots each.
+	 * 
+	 * Test populating a percentage of parking slots.
+	 *  
+	 */
+	@Test
+	//1st scenario : There are more parking slots available than bicycles (normal scenario).
+	public void testAddBicyclesPercentage() {
+		MyVelibNetwork network = new MyVelibNetwork(10);
+		network.addStations(3, 10);
+		
+		network.addBicyclePercentage(0.5);
+		assertEquals(network.getBicycles().size(), 15);		
+		
+	}
+	
+	//2nd scenario : There are not enough parking slots available.
+	@Test(expected = RuntimeException.class)
+	public void testAddBicyclesPercentageTooBig() {
+		MyVelibNetwork network = new MyVelibNetwork(10);
+		network.addStations(3, 10);
+		
+		network.addBicyclePercentage(1.2);
+
 	}
 }
