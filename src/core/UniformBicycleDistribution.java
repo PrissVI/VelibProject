@@ -5,7 +5,7 @@ import java.util.HashMap;
 public class UniformBicycleDistribution implements RidePlanning {
 
 	@Override
-	public void planRide(double x1, double y1, double x2, double y2, String bicycleType, MyVelibNetwork network) {
+	public ArrayList<Station> planRide(double x1, double y1, double x2, double y2, String bicycleType, MyVelibNetwork network) {
 //		double finalDistanceFromStart = Double.POSITIVE_INFINITY;
 //		double finalDistanceFromEnd = Double.POSITIVE_INFINITY;
 //		int nbParkingSlots;

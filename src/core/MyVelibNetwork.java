@@ -145,6 +145,8 @@ public class MyVelibNetwork {
 			double creditCardBalance = random.nextDouble()*500;
 			
 			ArrayList<Object> params = new ArrayList<Object>();
+			params.add("User");
+			params.add(name);
 			params.add(x);
 			params.add(y);
 			params.add(creditCardBalance);
@@ -274,8 +276,8 @@ public class MyVelibNetwork {
 		}
 	}
 	
-	public void planning(double x1, double y1, double x2, double y2, String bicycleType, RidePlanning planType) {
-		planType.planRide(x1, y1, x2, y2, bicycleType, this);
+	public ArrayList<Station> planning(double x1, double y1, double x2, double y2, String bicycleType, RidePlanning planType) {
+		return planType.planRide(x1, y1, x2, y2, bicycleType, this);
 	}
 	
 	@Override
