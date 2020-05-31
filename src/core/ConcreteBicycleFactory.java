@@ -25,6 +25,9 @@ public class ConcreteBicycleFactory extends AbstractFactory {
 
 	@Override
 	public Bicycle createBicycle(ArrayList<Object> params) {
+		if (params == null) {
+			return null;
+		}
 		if (params.size()>0 && params.get(0) instanceof String) {
 			String arg0 = (String) params.get(0);
 			if (arg0.equalsIgnoreCase("MECHANICAL")) {
