@@ -51,7 +51,8 @@ public class PlusStation extends Station {
 	}
 	*/
 	@Override
-	public void chargeUser(User user, int duration) {
+	public void chargeUser(User user, int duration) throws RuntimeException {
+		/*
 		try {
 			super.chargeUser(user, duration);
 			Card userCard = user.getRegistrationCard();
@@ -59,6 +60,10 @@ public class PlusStation extends Station {
 		} catch(Exception e) {
 			System.out.println(e.getMessage());
 		}
+		*/
+		super.chargeUser(user, duration);
+		Card userCard = user.getRegistrationCard();
+		userCard.setTimeCredit(userCard.getTimeCredit() + additionalTimeCredit);
 	}
 	
 	//getters and setters
