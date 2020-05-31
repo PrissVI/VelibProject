@@ -56,6 +56,8 @@ public class StationTest {
 		
 		
 		//4 (avec une plus station)
+		User user4 = new User("Greg",0,2,20);
+		user4.setRentedBicycle(new ElectricalBike());
 		
 		
 		//tous les cas limites seront testés avec les méthodes de User
