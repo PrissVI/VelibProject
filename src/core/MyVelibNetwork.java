@@ -1,6 +1,7 @@
 package core;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Random;
 import java.io.Serializable;
@@ -282,6 +283,57 @@ public class MyVelibNetwork implements Serializable {
 				+ "]";
 	}
 	
+	/**
+	 * Computes some statistics for user given his userID
+	 * @param userID (int)
+	 * @return
+	 * @throws RuntimeException
+	 */
+	public String getUserBalance(int userID) throws RuntimeException {
+		if (!users.containsKey(userID)) {
+			throw new RuntimeException("Station not in network.");
+		}
+		User myUser = users.get(userID); 
+		return myUser.getStatistics();
+	}
+	
+	/**
+	 * Computes some statistics for a station given its stationID
+	 * @param stationID (int)
+	 * @param infDate (Date, that has to be created by the CLUI from a user input parsed)
+	 * @param supDate (Date, that has to be created by the CLUI from a user input parsed)
+	 * @return
+	 * @throws RuntimeException
+	 */
+	public String getStationBalance(int stationID, Date infDate, Date supDate) throws RuntimeException {
+		if (infDate == null || supDate == null) {
+			throw new RuntimeException("Dates have to be in valid format.");
+		} else if (!stations.containsKey(stationID)) {
+			throw new RuntimeException("Station not in network.");
+		}
+		Station myStation = stations.get(stationID);
+		return myStation.getStatistics(infDate, supDate);
+	}
+	
+	/**
+	 * Sorts stations according to policies defined by the client
+	 * @param choice (String, can only take two values for now: "MOST USED" and "LEAST OCCUPIED"
+	 * @return
+	 * @throws RuntimeException
+	 */
+	public ArrayList<Station> sortStations(String choice) throws RuntimeException {
+		if (choice == null) {
+			throw new RuntimeException("Incorrect sorting policy.");
+		}
+		if (choice.equalsIgnoreCase("MOST USED")) {
+			SortingStrategy ss = new SortMostUsed();
+			return ss.sort(stations);
+		} else if (choice.equalsIgnoreCase("LEAST OCCUPIED")) {
+			SortingStrategy ss = new SortLeastOccupied();
+			return ss.sort(stations);			
+		}
+		throw new RuntimeException("Incorrect sorting policy.");
+	}
 	
 
 	public static void main(String[] args) {

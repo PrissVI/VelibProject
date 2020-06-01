@@ -250,4 +250,16 @@ public class User extends Person {
 			throw new RuntimeException("Cannot return bicycle if station " + station.getID() + " has no free parking slots. Go to another one.");
 		} 
 	}
+	
+	/**
+	 * Computes some statistics of the considered user (sort of a toString with no print).
+	 */
+	public String getStatistics() {
+		String res = "\nUser " + this.getID() + " balance:" + "\n"
+				+ "- total number of rides: " + this.getTotalNbOfRides() + "\n"
+				+ "- total time spent on a bike: " + this.getTotalTimeSpentOnBike() + "\n" 
+				+ "- total amount of myVelib charges: " + this.getMyVelibTotalCharges() + "\n" 
+				+ "- " + (this.getRegistrationCard() == null? "no registration card thus no time-credit": "current time-credit: " + this.getRegistrationCard().getTimeCredit() + "\n");
+		return res;
+	}
 }

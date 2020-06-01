@@ -258,6 +258,13 @@ public abstract class Station implements StationObserver, Serializable  {
 		if (parkingSlots == null || parkingSlots.size() == 0) {
 			throw new RuntimeException("No parking slots in this station yet.");
 		}
+		if (ActivityLog.getDateDiff(infDate, supDate)<0) {
+			System.out.println("Dates in wrong order: reordering them...");
+			Date inter;
+			inter = infDate;
+			infDate = supDate;
+			supDate = inter;
+		}
 		for (ParkingSlot ps: parkingSlots.values()) {
 			//we first sort the logs in order of ascending date
 			ArrayList<ActivityLog> als = ps.getActivityLogs();
@@ -316,4 +323,16 @@ public abstract class Station implements StationObserver, Serializable  {
 		return (double) res / (ActivityLog.getDateDiff(infDate, supDate) * parkingSlots.size());
 	}
 
+	/**
+	 * Computes some statistics of the considered station (sort of a toString with no print).
+	 * @param Date: the inf date of the time window
+	 * @param Date: the sup date of the time window
+	 */
+	public String getStatistics(Date infDate, Date supDate) {
+		String res = "\nStation " + this.getID() + " balance:" + "\n"
+				+ "- total number of rent operations: " + this.getTotalNbOfRentOps() + "\n"
+				+ "- total number of return operations: " + this.getTotalNbOfReturnOps() + "\n"
+				+ "- occupation rate between " + infDate + " and " + supDate + ": " + this.getOccupationRate(infDate, supDate) + "/1" + "\n";
+		return res;
+	}
 }
