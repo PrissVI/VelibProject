@@ -47,11 +47,7 @@ public class ConcreteStationFactory extends AbstractFactory {
 	 * @return Station: an object of a subclass of Station
 	*/
 	@Override
-<<<<<<< HEAD
-	Station createStation(ArrayList<Object> params) {
-=======
 	public Station createStation(ArrayList<Object> params) {
->>>>>>> branch 'master' of https://github.com:443/PrissVI/VelibProject.git
 		if (params == null) {
 			return null;
 		}

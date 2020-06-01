@@ -30,11 +30,7 @@ public class ConcreteCardFactory extends AbstractFactory {
 	 * @return Card: an object of a subclass of Card
 	*/
 	@Override
-<<<<<<< HEAD
-	Card createCard(ArrayList<Object> params) {
-=======
 	public Card createCard(ArrayList<Object> params) {
->>>>>>> branch 'master' of https://github.com:443/PrissVI/VelibProject.git
 		if (params == null) {
 			return null;
 		}
