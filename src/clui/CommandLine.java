@@ -1,15 +1,20 @@
 package clui;
 
+import java.io.ObjectInputStream.GetField;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
+import core.ActivityLog;
 import core.MyVelibNetwork;
+import core.Station;
+import core.User;
 
 public class CommandLine {
 	public static void main(String[] args) {
+	    
 		System.out.println("Welcome to the myVelib App! Type 'help' for a list of commands.");
 
 
@@ -45,6 +50,7 @@ public class CommandLine {
 	    		splitEntryList.remove(0);
 	    		if(splitEntryList.size()==1) {
 		    		String name = splitEntryList.get(0);
+		    		System.out.println(name);
 	    			MyVelibNetwork network = new MyVelibNetwork(name,4);
 	    			network.addStations(10, 10);
 	    			network.addBicyclePercentage(0.75);
@@ -63,10 +69,11 @@ public class CommandLine {
 		    			networks.put(network.getID(), network);
 		    			System.out.println(network);
 	    			} catch (Exception e) {
-	    				System.out.println("Incorrect parameters");
+	    				System.err.println("Incorrect parameters");
+	    				System.err.println(e.getMessage());
 	    			}
 	    		} else {
-	    			System.out.println("Too many or not enough parameters");
+	    			System.err.println("Too many or not enough parameters");
 	    		}
 	    		System.out.println("---------------End of command------------------");
 	    	} 
@@ -77,8 +84,138 @@ public class CommandLine {
 	    		if(splitEntryList.size()==3) {
 		    		String name = splitEntryList.get(0);
 		    		String cardType = splitEntryList.get(1);
+		    		String networkName = splitEntryList.get(2);
+		    		MyVelibNetwork velibNetwork = null;
+		    		for (MyVelibNetwork network : networks.values()) {
+		    			if (networkName.equalsIgnoreCase(network.getName())) {
+		    				velibNetwork = network;
+		    				break;
+		    			}
+		    		}
+		    		if (velibNetwork == null) {
+		    			System.err.println("The myVelib network entered does not exist");
+		    		} else {
+		    			velibNetwork.addUser(name, cardType);
+		    			System.out.println("The user has been added to " + networkName);
+		    		}
+		    			
 	    		} else {
-	    			System.out.println("Too many or not enough parameters");
+	    			System.err.println("Too many or not enough parameters");
+	    		}
+	    		System.err.println("---------------End of command------------------");
+	    	}
+	    	
+	    	else if(command.equalsIgnoreCase("offline")) {
+	    		System.out.println("---------------Result of command------------------");
+	    		splitEntryList.remove(0);
+	    		if(splitEntryList.size()==2) {
+	    			try {
+	    				String networkName = splitEntryList.get(0);
+	    				int stationID = Integer.parseInt(splitEntryList.get(1));
+	    				MyVelibNetwork velibNetwork = null;
+	    				Station stationInput = null;
+	    				for (MyVelibNetwork network : networks.values()) {
+	    					if (networkName.equalsIgnoreCase(network.getName())) {
+	    						velibNetwork = network;
+	    						break;
+	    					}
+	    				}
+	    				if (velibNetwork == null) {
+	    					System.err.println("The myVelib network entered does not exist");
+	    				} else {
+	    					if (velibNetwork.getStations().keySet().contains(stationID)) {
+	    						stationInput = velibNetwork.getStations().get(stationID);
+	    						velibNetwork.getStations().get(stationID).setOnline(false);
+		    					System.out.println("The station n°" + stationID + " of the network '" + networkName + "' has been set to offline");
+	    					}
+	    					else {
+	    						System.err.println("This station does not exist in this velib network");
+	    					}
+	    				}
+	    			} catch (Exception e) {
+	    				System.err.println("Incorrect parameters");
+	    				System.err.println(e.getMessage());
+	    			}
+
+	    		} else {
+	    			System.err.println("Too many or not enough parameters");
+	    		}
+	    		System.out.println("---------------End of command------------------");
+	    	}
+
+	    	else if(command.equalsIgnoreCase("online")) {
+	    		System.out.println("---------------Result of command------------------");
+	    		splitEntryList.remove(0);
+	    		if(splitEntryList.size()==2) {
+	    			try {
+	    				String networkName = splitEntryList.get(0);
+	    				int stationID = Integer.parseInt(splitEntryList.get(1));
+	    				MyVelibNetwork velibNetwork = null;
+	    				Station stationInput = null;
+	    				for (MyVelibNetwork network : networks.values()) {
+	    					if (networkName.equalsIgnoreCase(network.getName())) {
+	    						velibNetwork = network;
+	    						break;
+	    					}
+	    				}
+	    				if (velibNetwork == null) {
+	    					System.err.println("The myVelib network entered does not exist");
+	    				} else {
+	    					if (velibNetwork.getStations().keySet().contains(stationID)) {
+	    						stationInput = velibNetwork.getStations().get(stationID);
+	    						velibNetwork.getStations().get(stationID).setOnline(true);
+		    					System.out.println("The station n°" + stationID + " of the network '" + networkName + "' has been set to online");
+	    					}
+	    					else {
+	    						System.err.println("This station does not exist in this velib network");
+	    					}
+	    				}
+	    			} catch (Exception e) {
+	    				System.err.println("Incorrect parameters");
+	    				System.err.println(e.getMessage());
+	    			}
+
+	    		} else {
+	    			System.err.println("Too many or not enough parameters");
+	    		}
+	    		System.out.println("---------------End of command------------------");
+	    	}
+	    	
+	    	
+	    	else if(command.equalsIgnoreCase("rentBike")) {
+	    		System.out.println("---------------Result of command------------------");
+	    		splitEntryList.remove(0);
+	    		if(splitEntryList.size()==2) {
+	    			try {
+	    				int userID = Integer.parseInt(splitEntryList.get(0));
+	    				int stationID = Integer.parseInt(splitEntryList.get(1));
+	    				MyVelibNetwork velibNetwork = null;
+	    				User userInput = null;
+	    				Station stationInput = null;
+	    				for(MyVelibNetwork network : networks.values()) {
+	    					if (network.getStations().keySet().contains(stationID)) {
+	    						velibNetwork = network;
+	    						stationInput = velibNetwork.getStations().get(stationID);
+	    						break;
+	    					}
+	    				}
+	    				if (velibNetwork == null) {
+	    					System.err.println("This station does not exist in this velib network");
+	    				} else {
+	    					if(velibNetwork.getUsers().keySet().contains(userID)) {
+	    						userInput = velibNetwork.getUsers().get(userID);
+	    						userInput.rentBicycle(stationInput, ActivityLog.getDate(0, 0, 0, 0, 0, 0));
+	    					} else {
+	    						System.err.println("This user does not exist in this velib network");
+	    					}
+	    				}
+	    			} catch (Exception e) {
+	    				System.err.println(e);
+	    				System.err.println(e.getMessage());
+	    			}
+
+	    		} else {
+	    			System.err.println("Too many or not enough parameters");
 	    		}
 	    		System.out.println("---------------End of command------------------");
 	    	}
@@ -99,11 +236,9 @@ public class CommandLine {
 	    	
 	    	
 	    	
-	    	
-	    	
-	    	
 	    	else if(command.equalsIgnoreCase("exit")) {
     			exit = true;
+    			System.out.println("Command line closed");
 	    	}
 	    } while(!exit);
 	}
