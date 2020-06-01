@@ -77,7 +77,7 @@ public abstract class Card implements Serializable {
 	
 	@Override
 	public String toString() {
-		return "Card with a time credit balance of " + timeCreditBalance;
+		return "No registration card";
 	}
 
 	public abstract double accept(CardVisitor visitor, int rideDuration, Bicycle bike);	

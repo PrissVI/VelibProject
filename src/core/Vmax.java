@@ -25,6 +25,11 @@ public class Vmax extends Card {
 	}
 	
 	@Override
+	public String toString() {
+		return "Vmax Card with a time credit balance of " + this.getTimeCredit();
+	}
+	
+	@Override
 	public double accept(CardVisitor visitor, int rideDuration, Bicycle bike) {
 		return visitor.visit(this, rideDuration, bike);
 	}

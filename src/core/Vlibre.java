@@ -23,7 +23,11 @@ public class Vlibre extends Card {
 	public Vlibre(int timeCreditBalance) {
 		super(timeCreditBalance);
 	}
-
+	
+	@Override
+	public String toString() {
+		return "Vlibre Card with a time credit balance of " + this.getTimeCredit();
+	}
 	
 	@Override
 	public double accept(CardVisitor visitor, int rideDuration, Bicycle bike) {
