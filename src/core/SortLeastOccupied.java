@@ -13,7 +13,26 @@ import java.util.Scanner;
  * @author Mathieu Sibué
  */
 public class SortLeastOccupied implements SortingStrategy {
+	
+	/*ATTRIBUTES*/
+	//just to store the earliest and latest activities in order to enable to compute the occupation rate with no client input
+	private Date myInfDate;
+	private Date mySupDate;
+	
+	
+	/*CONSTRUCTORS*/
+	public SortLeastOccupied(Date myInfDate, Date mySupDate) {
+		super();
+		this.myInfDate = myInfDate;
+		this.mySupDate = mySupDate;
+	}
 
+	public SortLeastOccupied() {
+		super();
+	}
+	
+	/*METHODS*/
+	//custom methods
 	@Override
 	public ArrayList<Station> sort(HashMap<Integer,Station> stations) {
 		ArrayList<Station> myStations = new ArrayList<Station>();
@@ -21,18 +40,25 @@ public class SortLeastOccupied implements SortingStrategy {
 			myStations.add(st);
 		}
 		
-		//can throw exceptions
-		Scanner sc = new Scanner(System.in);
-		
-		System.out.println("Enter an initial date (YYYY/MM/DD-HH:MM:SS) for occupation window: ");
-		String infDateIn = sc.nextLine();
-		Date infDate = this.convertToDate(infDateIn);
-		
-		System.out.println("Enter an final date (YYYY/MM/DD-HH:MM:SS) for occupation window: ");
-		String supDateIn = sc.nextLine();
-		Date supDate = this.convertToDate(supDateIn);
-		
-		sc.close();
+		Date infDate;
+		Date supDate;
+		if (myInfDate == null || mySupDate == null) {
+			//can throw exceptions
+			Scanner sc = new Scanner(System.in);
+			
+			System.out.println("Enter an initial date (YYYY/MM/DD-HH:MM:SS) for occupation window: ");
+			String infDateIn = sc.nextLine();
+			infDate = this.convertToDate(infDateIn);
+			
+			System.out.println("Enter an final date (YYYY/MM/DD-HH:MM:SS) for occupation window: ");
+			String supDateIn = sc.nextLine();
+			supDate = this.convertToDate(supDateIn);
+			
+			sc.close();			
+		} else {
+			infDate = myInfDate;
+			supDate = mySupDate;
+		}
 		
 		ArrayList<SimpleEntry<Station,Double>> inter = new ArrayList<SimpleEntry<Station,Double>>();
 		for (Station st: myStations) {
@@ -52,14 +78,7 @@ public class SortLeastOccupied implements SortingStrategy {
 	
 	public Date convertToDate(String s) throws RuntimeException {
 		String[] dateInfo = s.split("/|\\:|\\-");
-		/*
-		System.out.println(Integer.parseInt(dateInfo[0]));
-		System.out.println(Integer.parseInt(dateInfo[1]));
-		System.out.println(Integer.parseInt(dateInfo[2]));
-		System.out.println(Integer.parseInt(dateInfo[3]));
-		System.out.println(Integer.parseInt(dateInfo[4]));
-		System.out.println(Integer.parseInt(dateInfo[5]));
-		*/
+		
 		if (dateInfo.length != 6) {
 			throw new RuntimeException("Date in wrong format: check delimiters of time granularity");
 		}

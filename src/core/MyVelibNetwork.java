@@ -1,6 +1,7 @@
 package core;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Random;
@@ -284,6 +285,43 @@ public class MyVelibNetwork implements Serializable {
 	}
 	
 	/**
+	 * Method to return the earliest and latest recorded activities in the network so far.
+	 * @return ArrayList<Date> with earliest and latest recorded activities
+	 */
+	public ArrayList<Date> getEarliestAndLatestActivity() {
+		ArrayList<ActivityLog> possibleInfDates = new ArrayList<ActivityLog>();
+		ArrayList<ActivityLog> possibleSupDates = new ArrayList<ActivityLog>();
+		for (Station st: stations.values()) {
+			if (st.getParkingSlots()!=null && st.getParkingSlots().size()>0) {
+				HashMap<Integer,ParkingSlot> stps = st.getParkingSlots();
+				for (ParkingSlot ps: stps.values()) {
+					ArrayList<ActivityLog> als = ps.getActivityLogs();
+					Date origin = ActivityLog.getDate(0, 0, 0, 0, 0, 0);
+					for (ActivityLog al: als) {
+						if (al.getDate() != origin) {
+							possibleInfDates.add(al);
+							break;
+						}
+					}
+					if (als.get(als.size()-1).getDate() != origin) {
+						possibleSupDates.add(als.get(als.size()-1));
+					}
+				}
+			}
+		}
+		Comparator<ActivityLog> dateComp = new DateComparatorForActivityLogs();
+		possibleInfDates.sort(dateComp);
+		possibleSupDates.sort(dateComp);
+		if (possibleInfDates.size() == 0 || possibleSupDates.size() == 0) {
+			throw new RuntimeException("Not enough user activity logs to define earliest non-null and latest activity.");
+		}
+		ArrayList<Date> res = new ArrayList<Date>();
+		res.add(possibleInfDates.get(0).getDate());
+		res.add(possibleSupDates.get(possibleSupDates.size()-1).getDate());
+		return res;
+	}
+	
+	/**
 	 * Computes some statistics for user given his userID
 	 * @param userID (int)
 	 * @return
@@ -316,6 +354,23 @@ public class MyVelibNetwork implements Serializable {
 	}
 	
 	/**
+	 * Computes some statistics for a station given its stationID; overloaded second version that searches for oldest activity and latest activity for infDate and supDate
+	 * @param stationID (int)
+	 * @return
+	 * @throws RuntimeException
+	 */
+	public String getStationBalance(int stationID) throws RuntimeException {
+		if (!stations.containsKey(stationID)) {
+			throw new RuntimeException("Station not in network.");
+		}
+		ArrayList<Date> infAndSupDates = this.getEarliestAndLatestActivity();
+		Date infDate = infAndSupDates.get(0);
+		Date supDate = infAndSupDates.get(1);
+		Station myStation = stations.get(stationID);
+		return myStation.getStatistics(infDate, supDate);
+	}
+	
+	/**
 	 * Sorts stations according to policies defined by the client
 	 * @param choice (String, can only take two values for now: "MOST USED" and "LEAST OCCUPIED"
 	 * @return
@@ -328,9 +383,15 @@ public class MyVelibNetwork implements Serializable {
 		if (choice.equalsIgnoreCase("MOST USED")) {
 			SortingStrategy ss = new SortMostUsed();
 			return ss.sort(stations);
-		} else if (choice.equalsIgnoreCase("LEAST OCCUPIED")) {
+		} else if (choice.equalsIgnoreCase("LEAST OCCUPIED WITH DATES")) {
 			SortingStrategy ss = new SortLeastOccupied();
 			return ss.sort(stations);			
+		} else if (choice.equalsIgnoreCase("LEAST OCCUPIED")) {
+			ArrayList<Date> infAndSupDates = this.getEarliestAndLatestActivity();
+			Date infDate = infAndSupDates.get(0);
+			Date supDate = infAndSupDates.get(1);
+			SortingStrategy ss = new SortLeastOccupied(infDate,supDate);
+			return ss.sort(stations);		
 		}
 		throw new RuntimeException("Incorrect sorting policy.");
 	}
