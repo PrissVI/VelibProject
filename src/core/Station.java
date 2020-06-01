@@ -203,14 +203,14 @@ public abstract class Station implements StationObserver, Serializable  {
 	 */
 	public void identifyUser(User user) {
 		if (user.getRegistrationCard() != null) {
-			System.out.println("User "+user.getID()+" registrated with "+user.getRegistrationCard().getClass()+" card.");
+			System.out.println("User "+user.getID()+" registered with "+user.getRegistrationCard().getClass()+" card.");
 		} else {
-			System.out.println("User "+user.getID()+" registrated with his credit card.");
+			System.out.println("User "+user.getID()+" registered with his credit card.");
 		}
 	}
 	
 	/**
-	 * Charges a user for its bicycle trip depending on the station's fees. Should only be called in 
+	 * Charges a user for its bicycle trip depending on the station's fees. Should only be called in returnBicycle(...) method from User
 	 * @param User: the user willing to return its rented bike after using it
 	 * @param double: the time (in minutes) spent on the bike
 	 */
