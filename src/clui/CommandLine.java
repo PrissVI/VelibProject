@@ -16,6 +16,7 @@ import core.Station;
 import core.User;
 
 public class CommandLine {
+	
 	public static void main(String[] args) {
 	    
 		System.out.println("Welcome to the myVelib App! Type 'help' for a list of commands.");
@@ -322,8 +323,8 @@ public class CommandLine {
 	    				int stationID = Integer.parseInt(splitEntryList.get(1));
 	    				MyVelibNetwork velibNetwork = null;
 	    				Station stationInput = null;
-	    				Date infDate = ActivityLog.getDate(2010, 1, 1, 00, 00, 00);
-	    				Date supDate = ActivityLog.getDate(20000, 12, 31, 12, 00, 00);
+	    				Date infDate = ActivityLog.getDate(2019, 12, 12, 22, 22, 22);
+	    				Date supDate = ActivityLog.getDate(2019, 12, 12, 23, 22, 22);
 	    				
 	    				for (MyVelibNetwork network : networks.values()) {
 	    					if (networkName.equalsIgnoreCase(network.getName())) {
@@ -427,7 +428,6 @@ public class CommandLine {
 	    				String networkName = splitEntryList.get(0);	
 	    				String sortPolicy = splitEntryList.get(1);
 	    				MyVelibNetwork velibNetwork = null;
-	    				User userInput = null;
 	    				SortingStrategy policy = null;
 	    				
 	    				for (MyVelibNetwork network : networks.values()) {
@@ -487,10 +487,27 @@ public class CommandLine {
 	    		System.out.println("---------------End of command------------------");
 	    	}	    	
 	    	
+	    	else if(command.equalsIgnoreCase("runtest")) {
+	    		splitEntryList.remove(0);
+	    		if(splitEntryList.size()==1) {
+	    			try {
+	    				String filename = splitEntryList.get(0);
+	    				getCommands.readTextFileLineByLine(filename);
+	    			} catch (Exception e) {
+	    				System.err.println("Incorrect parameters");
+	    				System.err.println(e.getMessage());
+	    			}
+
+	    		} else {
+	    			System.err.println("Too many or not enough parameters");
+	    		}
+	    	}
+	    	
 	    	else if(command.equalsIgnoreCase("exit")) {
     			exit = true;
     			System.out.println("Command line closed");
 	    	}
+	    	
 	    	else {
 	    		System.err.println("This command does not exist. Type 'help' for a list of commands.");
 	    	}
