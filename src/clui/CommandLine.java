@@ -2,13 +2,18 @@ package clui;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
+
+import core.MyVelibNetwork;
 
 public class CommandLine {
 	public static void main(String[] args) {
 		System.out.println("Welcome to the myVelib App! Type 'help' for a list of commands.");
 
+
+		HashMap<Integer,MyVelibNetwork> networks = new HashMap<Integer, MyVelibNetwork>();
 		Scanner input = new Scanner(System.in); // used to read the keyboard
 		
 		String entry; // stores the next line input
@@ -17,7 +22,6 @@ public class CommandLine {
 	    do {
 	    	entry = input.nextLine();
 	    	List<String> splitEntryList = new ArrayList<String>(Arrays.asList(entry.split(" ")));
-	    	System.out.println(splitEntryList);
 	    	String command = splitEntryList.get(0);
 
 	    	if (command.equalsIgnoreCase("help")) {
@@ -35,7 +39,72 @@ public class CommandLine {
 	    				+ "\n" + "• runtest <testFile>: to reproduce a given test scenario."
 	    				+ "\n" + "• exit: to close the command line.");
 	    	} 
-	    	//else if(command.equalsIgnoreCase(anotherString))
+	    	
+	    	else if(command.equalsIgnoreCase("setup")) {
+    			System.out.println("---------------Result of command------------------");
+	    		splitEntryList.remove(0);
+	    		if(splitEntryList.size()==1) {
+		    		String name = splitEntryList.get(0);
+	    			MyVelibNetwork network = new MyVelibNetwork(name,4);
+	    			network.addStations(10, 10);
+	    			network.addBicyclePercentage(0.75);
+	    			networks.put(network.getID(), network);
+	    			System.out.println(network);
+	    		} else if(splitEntryList.size()==5) {
+	    			try {
+		    			String name = splitEntryList.get(0);
+	    				int nstations = Integer.parseInt(splitEntryList.get(1));
+		    			int nslots = Integer.parseInt(splitEntryList.get(2));
+		    			double s = Double.parseDouble(splitEntryList.get(3));
+		    			int nbikes = Integer.parseInt(splitEntryList.get(4));
+		    			MyVelibNetwork network = new MyVelibNetwork(name,s);
+		    			network.addStations(nstations, nslots);
+		    			network.addBicycleNumber(nbikes);
+		    			networks.put(network.getID(), network);
+		    			System.out.println(network);
+	    			} catch (Exception e) {
+	    				System.out.println("Incorrect parameters");
+	    			}
+	    		} else {
+	    			System.out.println("Too many or not enough parameters");
+	    		}
+	    		System.out.println("---------------End of command------------------");
+	    	} 
+	    	
+	    	else if(command.equalsIgnoreCase("addUser")) {
+    			System.out.println("---------------Result of command------------------");
+	    		splitEntryList.remove(0);
+	    		if(splitEntryList.size()==3) {
+		    		String name = splitEntryList.get(0);
+		    		String cardType = splitEntryList.get(1);
+	    		} else {
+	    			System.out.println("Too many or not enough parameters");
+	    		}
+	    		System.out.println("---------------End of command------------------");
+	    	}
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	else if(command.equalsIgnoreCase("exit")) {
+    			exit = true;
+	    	}
 	    } while(!exit);
 	}
 }
