@@ -169,15 +169,15 @@ public class User extends Person {
 	//toString
 	@Override
 	public String toString() {
-		return "User " + ID + ":\n"
+		return "\nUser " + ID + ":\n"
 				+ "- user name: " + name + "\n"
 				+ "- situated at (" + x + ", " + y + ")" + "\n"
 				+ "- " + (rentedBicycle == null? "not currently renting a bicycle": "renting bicycle " + rentedBicycle.getID()) + "\n"
 				+ "- credit card balance: " + creditCardBalance + "\n"
-				+ "- " + (registrationCard == null? "no registration card": "rgistration card of type " + registrationCard.getClass()) + "\n"
+				+ "- " + (registrationCard == null? "no registration card": "registration card of type " + registrationCard.getClass()) + "\n"
 				+ "- total myVelib charges: " + myVelibTotalCharges + "\n"
 				+ "- total myVelib rides: " + totalNbOfRides + "\n"
-				+ "- total time spent on bike: " + totalTimeSpentOnBike;
+				+ "- total time spent on bike: " + totalTimeSpentOnBike + "\n";
 	}
 	
 	//custom methods 
@@ -195,8 +195,8 @@ public class User extends Person {
 		if (rentedBicycle != null) {
 			throw new RuntimeException("Cannot rent bicycle if user is already renting one.");
 		}
-		else {	//what's the point of having a try-catch there if identifyUser does not send errors? Let it throw errors as in other cases!
-			station.identifyUser(this);		//can throw error in certain cases? NO
+		else {	
+			station.identifyUser(this);
 			for (ParkingSlot ps: station.getParkingSlots().values()) {
 				if (!ps.isOutOfOrder() && ps.getBicycleStored() != null) {
 					this.setRentedBicycle(ps.getBicycleStored());
@@ -226,11 +226,14 @@ public class User extends Person {
 		if (rentedBicycle == null) {
 			throw new RuntimeException("Cannot return bicycle if user is not currently renting one.");
 		}
-		else {	//what's the point of having a try-catch there if identifyUser does not send errors? Let it throw errors as in other cases!
+		else {
 			for (ParkingSlot ps: station.getParkingSlots().values()) {
 				if (!ps.isOutOfOrder() && ps.getBicycleStored() == null) {
 					//
 					int tripDuration = ActivityLog.getDateDiff(rentedBicycle.getRentDate(),returnDate);
+					if (tripDuration<0) {
+						throw new RuntimeException("Return date is anterior to rent date... check date anteriority");
+					}
 					//
 					station.chargeUser(this, tripDuration); 
 					//

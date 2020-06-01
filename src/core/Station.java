@@ -180,13 +180,12 @@ public abstract class Station implements StationObserver, Serializable  {
 	//toString
 	@Override
 	public String toString() {
-		return "Station " + ID + ":\n"
+		return "\nStation " + ID + ":\n"
 				+ "- the station is " + (isOnline? "online": "offline") + "\n"
 				+ "- its payment terminal is " + (isTerminalOutOfOrder? "out of order": "working fine") + "\n"
 				+ "- the station is located at (" + x + ", " + y + ")" + "\n"
-				+ "- it has " + parkingSlots.size() + " parking slots, " + nbOfOutOfOrderParkingSlots + " of which are out of order." + "\n";
+				+ "- it has " + parkingSlots.size() + " parking slots, " + nbOfOutOfOrderParkingSlots + " of which are out of order.";
 	}
-	
 	//custom methods
 	/**
 	 * Increments the static counter to generate a unique ID for each Station.
@@ -254,9 +253,16 @@ public abstract class Station implements StationObserver, Serializable  {
 	 * @param Date: the inf date of the time window
 	 * @param Date: the sup date of the time window
 	 */
-	public double getOccupationRate(Date infDate, Date supDate) {
+	public double getOccupationRate(Date infDate, Date supDate) throws RuntimeException {
 		double res = 0;
+		if (parkingSlots == null || parkingSlots.size() == 0) {
+			throw new RuntimeException("No parking slots in this station yet.");
+		}
 		for (ParkingSlot ps: parkingSlots.values()) {
+			//we first sort the logs in order of ascending date
+			ArrayList<ActivityLog> als = ps.getActivityLogs();
+			als.sort(new DateComparatorForActivityLogs());
+			ps.setActivityLogs(als);
 			ArrayList<ActivityLog> selectedActivityLogs = new ArrayList<ActivityLog>();
 			for (int i = 0; i < ps.getActivityLogs().size(); i++) {
 				ActivityLog currentAl = ps.getActivityLogs().get(i);
@@ -270,13 +276,26 @@ public abstract class Station implements StationObserver, Serializable  {
 					)
 				{
 					selectedActivityLogs.add(currentAl);
+					//
+				} else if ((ActivityLog.getDateDiff(currentAl.getDate(), infDate)>0 
+							&& currentAl.isSetToOccupied()
+							&& i == ps.getActivityLogs().size()-1
+							) 
+						|| (ActivityLog.getDateDiff(currentAl.getDate(), infDate)>0
+							&& currentAl.isSetToOccupied()
+							&& i < ps.getActivityLogs().size()-1
+							&& ActivityLog.getDateDiff(ps.getActivityLogs().get(i+1).getDate(), supDate)<0)
+					) 
+				{
+					//the computation is so simple here that we don't put it in the next for loop
+					res += ActivityLog.getDateDiff(infDate, supDate);
 				}
+				//
 			}
 			
 			for (int i = 0; i < selectedActivityLogs.size(); i++) {
 				ActivityLog currentAl = selectedActivityLogs.get(i);
 				
-				//cas i=0
 				if (currentAl.isSetToOccupied() 
 						&& ActivityLog.getDateDiff(currentAl.getDate(), infDate)>0
 						&& i<selectedActivityLogs.size()-1

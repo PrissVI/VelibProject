@@ -25,7 +25,7 @@ public class MyVelibNetworkTest {
 	 */
 	@Test
 	public void testAddStations() {
-		MyVelibNetwork network = new MyVelibNetwork(10);
+		MyVelibNetwork network = new MyVelibNetwork("Test",10);
 		network.addStations(6, 11); //Adding 6 stations, with 11 parking slots in each one.
 		
 		assertEquals(network.getStations().size(), 6);
@@ -51,7 +51,7 @@ public class MyVelibNetworkTest {
 	 */
 	@Test
 	public void testAddUsers() {
-		MyVelibNetwork network = new MyVelibNetwork(10);
+		MyVelibNetwork network = new MyVelibNetwork("Test",10);
 		network.addUsers(10); //Adding 10 users.
 		
 		assertEquals(network.getUsers().size(), 10);
@@ -73,7 +73,7 @@ public class MyVelibNetworkTest {
 	 */
 	@Test
 	public void testAddUser() {
-		MyVelibNetwork network = new MyVelibNetwork(10);
+		MyVelibNetwork network = new MyVelibNetwork("Test",10);
 		network.addUser("Georges", "vmax"); //Add a user Georges with a Vmax Card;
 		network.addUser("Suzie", "vlibre"); //Add a user Suzie with a Vlibre Card;
 		network.addUser("John", "none"); //Add a user John with no registration Card;
@@ -91,7 +91,7 @@ public class MyVelibNetworkTest {
 	@Test
 	//1st scenario : There are more parking slots available than bicycles (normal scenario).
 	public void testAddBicyclesNumber() {
-		MyVelibNetwork network = new MyVelibNetwork(10);
+		MyVelibNetwork network = new MyVelibNetwork("Test",10);
 		network.addStations(3, 10);
 		
 		network.addBicycleNumber(25);
@@ -102,7 +102,7 @@ public class MyVelibNetworkTest {
 	//2nd scenario : There are not enough parking slots available.
 	@Test(expected = RuntimeException.class)
 	public void testAddBicyclesNumberTooBig() {
-		MyVelibNetwork network = new MyVelibNetwork(10);
+		MyVelibNetwork network = new MyVelibNetwork("Test",10);
 		network.addStations(3, 10);
 		
 		network.addBicycleNumber(15); //Adding 15 bicycles
@@ -119,7 +119,7 @@ public class MyVelibNetworkTest {
 	@Test
 	//1st scenario : There are more parking slots available than bicycles (normal scenario).
 	public void testAddBicyclesPercentage() {
-		MyVelibNetwork network = new MyVelibNetwork(10);
+		MyVelibNetwork network = new MyVelibNetwork("Test",10);
 		network.addStations(3, 10);
 		
 		network.addBicyclePercentage(0.5);
@@ -130,7 +130,7 @@ public class MyVelibNetworkTest {
 	//2nd scenario : There are not enough parking slots available.
 	@Test(expected = RuntimeException.class)
 	public void testAddBicyclesPercentageTooBig() {
-		MyVelibNetwork network = new MyVelibNetwork(10);
+		MyVelibNetwork network = new MyVelibNetwork("Test",10);
 		network.addStations(3, 10);
 		
 		network.addBicyclePercentage(1.2);

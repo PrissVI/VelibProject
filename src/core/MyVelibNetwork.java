@@ -7,6 +7,7 @@ import java.io.Serializable;
 
 public class MyVelibNetwork implements Serializable {
 	private static final long serialVersionUID = 312658585L;
+	private String name;
 	private double side;
 	private static AbstractFactory slotFactory = FactoryProducer.createFactory("SLOT");
 	private static AbstractFactory personFactory = FactoryProducer.createFactory("PERSON");
@@ -17,7 +18,8 @@ public class MyVelibNetwork implements Serializable {
 	private HashMap<Integer,Station> stations;
 	private HashMap<Integer,User> users;
 	
-	public MyVelibNetwork(double side) {
+	public MyVelibNetwork(String name, double side) {
+		this.name = name;
 		this.side = side;
 		this.bicycles = new HashMap<Integer, Bicycle>();
 		this.stations = new HashMap<Integer, Station>();
@@ -28,6 +30,14 @@ public class MyVelibNetwork implements Serializable {
 		return side;
 	}
 
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
 	/*
 	public void setSide(double side) {
 		this.side = side;
@@ -265,9 +275,11 @@ public class MyVelibNetwork implements Serializable {
 		return "MyVelibNetwork [side=" + side + ", bicycles=" + bicycles + ", stations=" + this.getStations() + ", users=" + users
 				+ "]";
 	}
+	
+	
 
 	public static void main(String[] args) {
-		MyVelibNetwork network = new MyVelibNetwork(10);
+		MyVelibNetwork network = new MyVelibNetwork("test",10);
 		network.addStations(3, 10);
 		network.addUsers(10);
 		network.addBicyclePercentage(0.9);
