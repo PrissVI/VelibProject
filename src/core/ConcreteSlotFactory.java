@@ -28,7 +28,11 @@ public class ConcreteSlotFactory extends AbstractFactory {
 	 * @return Slot: an object of a subclass of Slot
 	*/
 	@Override
+<<<<<<< HEAD
+	Slot createSlot(ArrayList<Object> params) {
+=======
 	public Slot createSlot(ArrayList<Object> params) {
+>>>>>>> branch 'master' of https://github.com:443/PrissVI/VelibProject.git
 		if (params == null) {
 			return null;
 		}

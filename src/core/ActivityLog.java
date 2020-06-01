@@ -82,11 +82,22 @@ public class ActivityLog implements Serializable {
 	public int getID() {
 		return ID;
 	}
+	
 
 	//toString
 	@Override
 	public String toString() {
 		return "ActivityLog at date " + date.toString() + " => slot set to " + (isSetToOccupied? "occupied": "free");
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ID;
+		result = prime * result + ((date == null) ? 0 : date.hashCode());
+		result = prime * result + (isSetToOccupied ? 1231 : 1237);
+		return result;
 	}
 	
 }

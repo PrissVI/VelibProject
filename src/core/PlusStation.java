@@ -9,6 +9,7 @@ import java.util.HashMap;
 public class PlusStation extends Station {
 
 	private static final long serialVersionUID = 4875724235326482414L;
+	
 	/*ATTRIBUTES*/
 	final static private int additionalTimeCredit = 5;	//in minutes
 
@@ -63,7 +64,9 @@ public class PlusStation extends Station {
 		*/
 		super.chargeUser(user, duration);
 		Card userCard = user.getRegistrationCard();
-		userCard.setTimeCredit(userCard.getTimeCredit() + additionalTimeCredit);
+		if (userCard != null) {
+			userCard.setTimeCredit(userCard.getTimeCredit() + additionalTimeCredit);		
+		}
 	}
 	
 	//getters and setters

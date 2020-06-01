@@ -24,7 +24,11 @@ public class ConcreteBicycleFactory extends AbstractFactory {
 	}
 
 	@Override
+<<<<<<< HEAD
+	Bicycle createBicycle(ArrayList<Object> params) {
+=======
 	public Bicycle createBicycle(ArrayList<Object> params) {
+>>>>>>> branch 'master' of https://github.com:443/PrissVI/VelibProject.git
 		if (params == null) {
 			return null;
 		}
