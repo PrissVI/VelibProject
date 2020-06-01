@@ -31,6 +31,9 @@ public class ConcreteCardFactory extends AbstractFactory {
 	*/
 	@Override
 	Card createCard(ArrayList<Object> params) {
+		if (params == null) {
+			return null;
+		}
 		if (params.size()>0 && params.get(0) instanceof String) {
 			String arg0 = (String) params.get(0);
 			if (params.size()==1) {

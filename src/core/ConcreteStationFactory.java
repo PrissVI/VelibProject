@@ -48,6 +48,9 @@ public class ConcreteStationFactory extends AbstractFactory {
 	*/
 	@Override
 	Station createStation(ArrayList<Object> params) {
+		if (params == null) {
+			return null;
+		}
 		if (params.size()>0 && params.get(0) instanceof String) {
 			String arg0 = (String) params.get(0);
 			if (arg0.equalsIgnoreCase("PLUS")
