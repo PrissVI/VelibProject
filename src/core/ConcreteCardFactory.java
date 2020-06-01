@@ -9,12 +9,12 @@ import java.util.ArrayList;
 public class ConcreteCardFactory extends AbstractFactory {
 
 	@Override
-	Person createPerson(ArrayList<Object> params) {
+	public Person createPerson(ArrayList<Object> params) {
 		return null;
 	}
 
 	@Override
-	Slot createSlot(ArrayList<Object> params) {
+	public Slot createSlot(ArrayList<Object> params) {
 		return null;
 	}
 
@@ -24,13 +24,17 @@ public class ConcreteCardFactory extends AbstractFactory {
 	 * <p>To instantiate a certain type of Card, at least 2 parameters are expected in the ArrayList:
 	 * <ul>
 	 * 		<li>String: the subclass of Card we want to instantiate</li>
-	 * 		<li>Double: the initial value of the time credit of the registration card</li>
+	 * 		<li>Integer: the initial value of the time credit of the registration card</li>
 	 * </ul>
 	 * </p>
 	 * @return Card: an object of a subclass of Card
 	*/
 	@Override
+<<<<<<< HEAD
 	Card createCard(ArrayList<Object> params) {
+=======
+	public Card createCard(ArrayList<Object> params) {
+>>>>>>> branch 'master' of https://github.com:443/PrissVI/VelibProject.git
 		if (params == null) {
 			return null;
 		}
@@ -69,12 +73,12 @@ public class ConcreteCardFactory extends AbstractFactory {
 	}
 
 	@Override
-	Bicycle createBicycle(ArrayList<Object> params) {
+	public Bicycle createBicycle(ArrayList<Object> params) {
 		return null;
 	}
 
 	@Override
-	Station createStation(ArrayList<Object> params) {
+	public Station createStation(ArrayList<Object> params) {
 		return null;
 	}
 

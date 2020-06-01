@@ -7,9 +7,9 @@ import java.util.ArrayList;
  * @author Mathieu Sibué
  */
 public abstract class AbstractFactory {
-	abstract Person createPerson(ArrayList<Object> params);
-	abstract Slot createSlot(ArrayList<Object> params);
-	abstract Card createCard(ArrayList<Object> params);
-	abstract Bicycle createBicycle(ArrayList<Object> params);
-	abstract Station createStation(ArrayList<Object> params);
+	public abstract Person createPerson(ArrayList<Object> params);
+	public abstract Slot createSlot(ArrayList<Object> params);
+	public abstract Card createCard(ArrayList<Object> params);
+	public abstract Bicycle createBicycle(ArrayList<Object> params);
+	public abstract Station createStation(ArrayList<Object> params);
 }

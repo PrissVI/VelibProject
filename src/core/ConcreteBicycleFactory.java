@@ -9,22 +9,26 @@ import java.util.ArrayList;
 public class ConcreteBicycleFactory extends AbstractFactory {
 
 	@Override
-	Person createPerson(ArrayList<Object> params) {
+	public Person createPerson(ArrayList<Object> params) {
 		return null;
 	}
 
 	@Override
-	Slot createSlot(ArrayList<Object> params) {
+	public Slot createSlot(ArrayList<Object> params) {
 		return null;
 	}
 
 	@Override
-	Card createCard(ArrayList<Object> params) {
+	public Card createCard(ArrayList<Object> params) {
 		return null;
 	}
 
 	@Override
+<<<<<<< HEAD
 	Bicycle createBicycle(ArrayList<Object> params) {
+=======
+	public Bicycle createBicycle(ArrayList<Object> params) {
+>>>>>>> branch 'master' of https://github.com:443/PrissVI/VelibProject.git
 		if (params == null) {
 			return null;
 		}
@@ -41,7 +45,7 @@ public class ConcreteBicycleFactory extends AbstractFactory {
 	}
 
 	@Override
-	Station createStation(ArrayList<Object> params) {
+	public Station createStation(ArrayList<Object> params) {
 		return null;
 	}
 	

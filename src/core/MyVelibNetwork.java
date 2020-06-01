@@ -108,8 +108,8 @@ public class MyVelibNetwork implements Serializable {
 			double cardType = random.nextDouble();
 			
 			ArrayList<Object> params = new ArrayList<Object>();
-			params.add("User");
-			params.add("Random");
+			params.add("USER");
+			params.add("User"+i);
 			params.add(x);
 			params.add(y);
 			params.add(creditCardBalance);
@@ -178,15 +178,23 @@ public class MyVelibNetwork implements Serializable {
 			}
 	}
 	
-	public void addBicyclePercentage(double percentage) {
-		if (percentage>1) {
-			throw new RuntimeException("Cannot populate parking slots more than 100% (there are more bicycles than parkingslots available).");
+	public void addBicycleNumber(int nbOfBikes) {
+		int totalBicycles = nbOfBikes;
+		int nbParkingSlotsAvailable = 0;
+		
+		for (Station station : this.getStations().values()) {
+			for (ParkingSlot slot : station.getParkingSlots().values()) {
+				if (slot.getBicycleStored()==null && !slot.isOutOfOrder()) {
+					nbParkingSlotsAvailable++;
+				}
+			}
 		}
-		try {
-			HashMap.Entry<Integer,Station> stationEntry = this.getStations().entrySet().iterator().next();
-			int nbOfParkingSlots = stationEntry.getValue().getParkingSlots().size();
-			int totalParkingSlots = nbOfParkingSlots*this.getStations().size();
-			int totalBicycles = (int) (percentage*totalParkingSlots);
+		
+		if (nbParkingSlotsAvailable < nbOfBikes) {
+			throw new RuntimeException("There are not enough parking slots availables");
+		}
+		else {
+			HashMap<Integer, Bicycle> newBikes = new HashMap<Integer, Bicycle>();
 			for (int i = 0; i < totalBicycles; i++) {
 				Random random = new Random();
 				double typeOfBicycle = random.nextDouble();
@@ -196,6 +204,7 @@ public class MyVelibNetwork implements Serializable {
 					Bicycle bike = bicycleFactory.createBicycle(params);
 					//Bicycle bike = new MechanicalBike();
 					this.getBicycles().put(bike.getID(), bike);
+					newBikes.put(bike.getID(), bike);
 				}
 				else {
 					ArrayList<Object> params = new ArrayList<Object>();
@@ -203,42 +212,48 @@ public class MyVelibNetwork implements Serializable {
 					Bicycle bike = bicycleFactory.createBicycle(params);
 					//Bicycle bike = new ElectricalBike();
 					this.getBicycles().put(bike.getID(), bike);
+					newBikes.put(bike.getID(), bike);
 				}
 			}
 			
 			//Assign bicycle to a parking slot:
-			HashMap<Integer,Bicycle> bicyclesCopy = (HashMap<Integer, Bicycle>) this.getBicycles().clone();
-			Object[] bicycleCopyKeys = bicyclesCopy.keySet().toArray();
+			Object[] bicycleKeys = newBikes.keySet().toArray();
 			int j = 0;
 			
 			Object[] stations = this.getStations().keySet().toArray();
 			Random generator = new Random();
-			while(bicyclesCopy.size() != 0) {
+			while(newBikes.size() != 0) {
 				//Choose a random station and a random parking slot
 				int randomStationIndex = generator.nextInt(stations.length);
 				Station randomStation = this.getStations().get(stations[randomStationIndex]);
 				Object[] parkingSlots = randomStation.getParkingSlots().keySet().toArray();
 				int randomSlotIndex = generator.nextInt(parkingSlots.length);
 				//If random parking slot is empty, put a bicycle in it
-				if(this.getStations().get(stations[randomStationIndex]).getParkingSlots().get(parkingSlots[randomSlotIndex]).getBicycleStored()==null) {
-					Bicycle bicycleToStore = bicyclesCopy.get(bicycleCopyKeys[j]);
+				if(this.getStations().get(stations[randomStationIndex]).getParkingSlots().get(parkingSlots[randomSlotIndex]).getBicycleStored()==null && !this.getStations().get(stations[randomStationIndex]).getParkingSlots().get(parkingSlots[randomSlotIndex]).isOutOfOrder()) {
+					Bicycle bicycleToStore = newBikes.get(bicycleKeys[j]);
 					this.getStations().get(stations[randomStationIndex]).getParkingSlots().get(parkingSlots[randomSlotIndex]).setBicycleStored(bicycleToStore, ActivityLog.getDate(0, 0, 0, 0, 0, 0));
-					bicyclesCopy.remove(bicycleCopyKeys[j]);
+					newBikes.remove(bicycleKeys[j]);
 					j++;
 				}
 			}
-		} catch (RuntimeException e) {
-			System.out.println(e);
-			return;
 		}
 	}
 	
-	public void addBicycleNumber(int nbOfBikes) {
-		HashMap.Entry<Integer,Station> stationEntry = this.getStations().entrySet().iterator().next();
-		int nbOfParkingSlots = stationEntry.getValue().getParkingSlots().size();
-		int totalParkingSlots = nbOfParkingSlots*this.getStations().size();
-		double percentage = (double) nbOfBikes/totalParkingSlots;
-		addBicyclePercentage(percentage);
+	public void addBicyclePercentage(double percentage) {
+		int nbParkingSlotsAvailable = 0;
+		
+		for (Station station : this.getStations().values()) {
+			for (ParkingSlot slot : station.getParkingSlots().values()) {
+				if (slot.getBicycleStored()==null && !slot.isOutOfOrder()) {
+					nbParkingSlotsAvailable++;
+				}
+			}
+		}
+		
+		System.out.println(nbParkingSlotsAvailable);
+		int nbOfBikes = (int) (percentage*nbParkingSlotsAvailable);
+		System.out.println(nbOfBikes);
+		addBicycleNumber(nbOfBikes);
 	}
 	
 	public ArrayList<Station> planning(double x1, double y1, double x2, double y2, String bicycleType, RidePlanning planType) {

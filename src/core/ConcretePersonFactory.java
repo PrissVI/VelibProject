@@ -27,11 +27,19 @@ public class ConcretePersonFactory extends AbstractFactory {
 	 * @return Person: an object of a subclass of Person
 	*/
 	@Override
+<<<<<<< HEAD
 	Person createPerson(ArrayList<Object> params) {
 		if (params == null) {
 			return null;
 		}
 		//multiple ifs to make the method open to modifications as well (if another type of Person is added)
+=======
+	public Person createPerson(ArrayList<Object> params) {
+		//multiple ifs to make the method open to modifications as well (if another type of Person is added
+		if (params == null) {
+			return null;
+		}
+>>>>>>> branch 'master' of https://github.com:443/PrissVI/VelibProject.git
 		if (params.size()>0 && params.get(0) instanceof String) {
 			String arg0 = (String) params.get(0);
 			if (arg0.equalsIgnoreCase("USER")) {
@@ -64,22 +72,22 @@ public class ConcretePersonFactory extends AbstractFactory {
 	}
 
 	@Override
-	Slot createSlot(ArrayList<Object> params) {
+	public Slot createSlot(ArrayList<Object> params) {
 		return null;
 	}
 
 	@Override
-	Card createCard(ArrayList<Object> params) {
+	public Card createCard(ArrayList<Object> params) {
 		return null;
 	}
 
 	@Override
-	Bicycle createBicycle(ArrayList<Object> params) {
+	public Bicycle createBicycle(ArrayList<Object> params) {
 		return null;
 	}
 
 	@Override
-	Station createStation(ArrayList<Object> params) {
+	public Station createStation(ArrayList<Object> params) {
 		return null;
 	}
 	

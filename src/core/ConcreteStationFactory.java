@@ -11,22 +11,22 @@ import java.util.HashMap;
 public class ConcreteStationFactory extends AbstractFactory {
 
 	@Override
-	Person createPerson(ArrayList<Object> params) {
+	public Person createPerson(ArrayList<Object> params) {
 		return null;
 	}
 
 	@Override
-	Slot createSlot(ArrayList<Object> params) {
+	public Slot createSlot(ArrayList<Object> params) {
 		return null;
 	}
 
 	@Override
-	Card createCard(ArrayList<Object> params) {
+	public Card createCard(ArrayList<Object> params) {
 		return null;
 	}
 
 	@Override
-	Bicycle createBicycle(ArrayList<Object> params) {
+	public Bicycle createBicycle(ArrayList<Object> params) {
 		return null;
 	}
 	
@@ -47,7 +47,11 @@ public class ConcreteStationFactory extends AbstractFactory {
 	 * @return Station: an object of a subclass of Station
 	*/
 	@Override
+<<<<<<< HEAD
 	Station createStation(ArrayList<Object> params) {
+=======
+	public Station createStation(ArrayList<Object> params) {
+>>>>>>> branch 'master' of https://github.com:443/PrissVI/VelibProject.git
 		if (params == null) {
 			return null;
 		}

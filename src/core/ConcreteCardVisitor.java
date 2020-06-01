@@ -35,7 +35,7 @@ public class ConcreteCardVisitor implements CardVisitor {
 					mechanicalCost = (double) (rideDuration - 60) / 60;
 					return mechanicalCost;}
 				else {
-					electricalCost = (double) (rideDuration - 60) / 30;
+					electricalCost = (double) (rideDuration - 60) / 30 + 1;
 					return electricalCost;}
 			} else {
 				excessTimeBalance = 60 - (rideDuration - vlibreCard.getTimeCredit());
@@ -45,7 +45,7 @@ public class ConcreteCardVisitor implements CardVisitor {
 						mechanicalCost = (double) -excessTimeBalance / 60;
 						return mechanicalCost;}
 					else {
-						electricalCost = (double) -excessTimeBalance / 30;
+						electricalCost = (double) -excessTimeBalance / 30 + 1;
 						return electricalCost;}
 				} else {
 					vlibreCard.setTimeCredit((int) excessTimeBalance);
