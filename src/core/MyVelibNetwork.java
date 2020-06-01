@@ -172,7 +172,7 @@ public class MyVelibNetwork implements Serializable {
 			params.add(y);
 			params.add(creditCardBalance);
 			
-			if(cardType.toLowerCase() == "vmax") {
+			if(cardType.equalsIgnoreCase("VMAX")) {
 				ArrayList<Object> cardParams = new ArrayList<Object>();
 				cardParams.add("VMAX");
 				Card card = cardFactory.createCard(cardParams);
@@ -181,7 +181,7 @@ public class MyVelibNetwork implements Serializable {
 				//User user = new User("Random", x, y, creditCardBalance, (Card) new Vmax());
 				this.getUsers().put(user.getID(), user);
 			}
-			else if(cardType.toLowerCase() == "vlibre") {
+			else if(cardType.equalsIgnoreCase("VLIBRE")) {
 				ArrayList<Object> cardParams = new ArrayList<Object>();
 				cardParams.add("VLIBRE");
 				Card card = cardFactory.createCard(cardParams);
@@ -190,10 +190,13 @@ public class MyVelibNetwork implements Serializable {
 				//User user = new User("Random", x, y, creditCardBalance, (Card) new Vlibre());
 				this.getUsers().put(user.getID(), user);
 			}
-			else {
+			else if(cardType.equalsIgnoreCase("NONE")) {
 				User user = (User) personFactory.createPerson(params);
 				//User user = new User("Random", x, y, creditCardBalance);
 				this.getUsers().put(user.getID(), user);
+			}
+			else {
+				throw new RuntimeException("This type of card does not exist");
 			}
 	}
 	
