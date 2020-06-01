@@ -101,9 +101,9 @@ public class ParkingSlot extends Slot implements ParkingSlotObservable, Serializ
 	//toString
 	@Override
 	public String toString() {
-		return "ParkingSlot " + ID + ":\n"
-				+ "- bicycleStored: " + (bicycleStored == null? "no bicycle stored": bicycleStored.toString()) + "\n"
-				+ "- " + (isOutOfOrder? "": "not ") + "out of order";
+		return "\nParkingSlot " + ID + " with "
+				+ (bicycleStored == null? "no bicycle stored": bicycleStored.toString())
+				+ " and that is " + (isOutOfOrder? "": "not ") + "out of order";
 	}	
 	
 	//equals and hashCode

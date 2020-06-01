@@ -9,7 +9,7 @@ public class SerializeMyVelibNetwork {
 	
 	public static void main(String[] args) {
 		
-		MyVelibNetwork network = new MyVelibNetwork(10);
+		MyVelibNetwork network = new MyVelibNetwork("Test",10);
 		network.addStations(3, 10);
 		network.addUsers(10);
 		network.addBicyclePercentage(0.9);

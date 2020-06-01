@@ -113,7 +113,7 @@ class StationTest {
 		st3.chargeUser(user4, 120);
 		
 		//first hour is 1 euro for electrical bikes with Vlibre
-		assertEquals(user4.getCreditCardBalance(), 17);		//PROBLEME ON A 18 !!!
+		assertEquals(user4.getCreditCardBalance(), 17);	
 		assertEquals(user4.getMyVelibTotalCharges(), 3);
 		assertEquals(user4.getRegistrationCard().getTimeCredit(), 5);
 	}
@@ -239,5 +239,63 @@ class StationTest {
 		double expectedOccupationRate = (double) (10 + 15 + 10 + 5) / (20 * 4);
 		
 		assertEquals(st7.getOccupationRate(d2, d5), expectedOccupationRate);	
+	}
+	
+	/**
+	 * Test for getOccupationRate(...)
+	 * Checks if an error is thrown when trying to get the occupation rate of a station with no parking slots (ie first with a null parkingSlots attribute, then with an empty HashMap)
+	*/
+	@Test
+	void test10() {
+		Station st8 = new StdStation(0,3);
+		
+		Date d1 = ActivityLog.getDate(2020, 4, 24, 3, 0, 0);
+		Date d2 = ActivityLog.getDate(2020, 4, 24, 3, 30, 0);
+		
+		Exception exception = assertThrows(RuntimeException.class, () -> {
+			st8.getOccupationRate(d1, d2);
+		});
+		
+		String expectedMessage = "No parking slots in this station yet.";
+		String actualMessage = exception.getMessage();
+		
+		assertEquals(expectedMessage,actualMessage);
+		
+		HashMap<Integer,ParkingSlot> parkingSlots = new HashMap<Integer,ParkingSlot>();
+		st8.setParkingSlots(parkingSlots);
+		
+		Exception exception2 = assertThrows(RuntimeException.class, () -> {
+			st8.getOccupationRate(d1, d2);
+		});
+		
+		String expectedMessage2 = "No parking slots in this station yet.";
+		String actualMessage2 = exception2.getMessage();
+		
+		assertEquals(expectedMessage2,actualMessage2);
+	}
+	
+	/**
+	 * Test for getOccupationRate(...)
+	 * Checks if the occupation rate is 0 when all parking slots are empty during the time window.
+	*/
+	@Test
+	void test11() {
+		Station st9 = new StdStation(0,9);
+		
+		Date d1 = ActivityLog.getDate(2020, 4, 24, 3, 0, 0);
+		Date d2 = ActivityLog.getDate(2020, 4, 24, 3, 30, 0);
+		
+		HashMap<Integer,ParkingSlot> parkingSlots = new HashMap<Integer,ParkingSlot>();
+		ParkingSlot ps1 = new ParkingSlot();
+		ParkingSlot ps2 = new ParkingSlot();
+		ParkingSlot ps3 = new ParkingSlot();
+		ParkingSlot ps4 = new ParkingSlot();
+		parkingSlots.put(ps1.getID(),ps1);
+		parkingSlots.put(ps2.getID(),ps2);
+		parkingSlots.put(ps3.getID(),ps3);
+		parkingSlots.put(ps4.getID(),ps4);
+		st9.setParkingSlots(parkingSlots);
+		
+		assertEquals(st9.getOccupationRate(d1, d2),0);
 	}
 }

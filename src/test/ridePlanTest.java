@@ -22,7 +22,7 @@ public class ridePlanTest {
 	 */
 	@Test
 	public void testBasicPlanning() {
-		MyVelibNetwork network = new MyVelibNetwork(10);
+		MyVelibNetwork network = new MyVelibNetwork("Test",10);
 		network.addStations(3, 10);
 		network.addUsers(10);
 		network.addBicyclePercentage(0.7);

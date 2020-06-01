@@ -24,33 +24,6 @@ public class PlusStation extends Station {
 
 	/*METHODS*/
 	//explicit method from superclass
-	//POURQUOI NE PAS LA METTRE DANS LA CLASSE ABSTRAITE PARENTE PUIS JUSTE METTRE UN TRY CATCH QD ON OVERRIDE LA METHODE?
-	/*
-	@Override
-	void chargeUser(User user, int duration) throws RuntimeException {
-		if (super.isTerminalOutOfOrder()) {
-			throw new RuntimeException("Terminal of station "+super.getID()+" not working: go to closest station");
-			//or just print something?
-		} else {
-			double cost = 0;	//is there a pb with it?
-			if (user.getRegistrationCard() == null) {
-				if (user.getRentedBicycle() instanceof MechanicalBike) {
-					cost = duration/60 * Station.getFeesForUserWithNoCard().get("mechanical");	
-				} else if (user.getRentedBicycle() instanceof ElectricalBike) {
-					cost = duration/60 * Station.getFeesForUserWithNoCard().get("electrical");
-				}
-			} else {
-				CardVisitor cardVisitor = new ConcreteCardVisitor();
-				//utiliser la fonction d'Ali
-				Card userCard = user.getRegistrationCard();
-				cost = userCard.accept(cardVisitor, duration, user.getRentedBicycle());		//est censée être modifiée
-				userCard.setTimeCredit(userCard.getTimeCredit() + additionalTimeCredit);
-			}
-			user.setCreditCardBalance(user.getCreditCardBalance() - cost);
-			user.setMyVelibTotalCharges(user.getMyVelibTotalCharges() + cost);
-		}
-	}
-	*/
 	@Override
 	public void chargeUser(User user, int duration) throws RuntimeException {
 		/*
@@ -78,6 +51,6 @@ public class PlusStation extends Station {
 	@Override
 	public String toString() {
 		return super.toString() + "\n"
-				+ "- station type: plus, additional time credit of " + additionalTimeCredit;
+				+ "- station type: plus, additional time credit of " + additionalTimeCredit + "\n";
 	}
 }
