@@ -232,6 +232,7 @@ public abstract class Station implements StationObserver, Serializable  {
 				Card userCard = user.getRegistrationCard();
 				cost = userCard.accept(cardVisitor, duration, user.getRentedBicycle());
 			}
+			System.out.println("The cost of this ride is: " + cost);
 			user.setCreditCardBalance(user.getCreditCardBalance() - cost);
 			user.setMyVelibTotalCharges(user.getMyVelibTotalCharges() + cost);
 		}
