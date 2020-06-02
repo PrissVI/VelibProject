@@ -35,6 +35,6 @@ public class getCommands {
 				}
 			}
 		}
-		ProcessCommandLine.executeCommand(lines);;
+		ProcessCommandLine.executeCommands(lines);;
 	}
 }
