@@ -20,10 +20,12 @@
     </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_4z4dAKTGEeqJMNR_mlRyVg" name="GetCommands">
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_76lvQKTGEeqJMNR_mlRyVg" name="readTextFileLineByLine" visibility="protected" concurrency="concurrent">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_76lvQKTGEeqJMNR_mlRyVg" name="readTextFileLineByLine" visibility="public">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_hk1uEKTHEeqJMNR_mlRyVg" name="fileName"/>
     </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_3z3VAKTHEeqJMNR_mlRyVg" client="_4z4dAKTGEeqJMNR_mlRyVg" supplier="_xjQvEKTGEeqJMNR_mlRyVg"/>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_4z3ZcKTHEeqJMNR_mlRyVg" client="_xjQvEKTGEeqJMNR_mlRyVg" supplier="_L7kVAKTGEeqJMNR_mlRyVg"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_DH6bIKTTEeqJMNR_mlRyVg" name="MyVelibNetwork"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_IyNrgKTTEeqJMNR_mlRyVg" client="_L7kVAKTGEeqJMNR_mlRyVg" supplier="_DH6bIKTTEeqJMNR_mlRyVg"/>
 </uml:Model>
