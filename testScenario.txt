@@ -1,1 +1,12 @@
 setup network
+adduser ali vmax network
+adduser houda vlibre network
+move 1 1
+move 2 2
+rentbike 1 1 2019/12/12-22:22:22
+rentbike 2 2 2019/12/12-22:22:22
+move 1 2
+move 2 1
+returnbike 1 2 2019/12/12-23:22:22
+returnbike 2 1 2019/12/12-23:22:22
+displaystation network 1

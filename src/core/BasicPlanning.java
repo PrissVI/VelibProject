@@ -56,7 +56,7 @@ public class BasicPlanning implements RidePlanning {
 				parkingSlotIsAvailable = false;
 				//Make sure that a parking Slot is available
 				for(ParkingSlot parkingSlot : station.getParkingSlots().values()) {
-					if (parkingSlot.getBicycleStored() == null) {
+					if (parkingSlot.getBicycleStored() == null && !parkingSlot.isOutOfOrder()) {
 						parkingSlotIsAvailable = true;
 						break;
 					}
