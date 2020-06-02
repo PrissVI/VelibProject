@@ -42,13 +42,13 @@ public class ConcretePersonFactory extends AbstractFactory {
 				) 
 				{
 					String arg1 = (String) params.get(1);
-					Double arg2 = (double) params.get(2);
-					Double arg3 = (double) params.get(3);
+					double arg2 = ((Number) params.get(2)).doubleValue();
+					double arg3 = ((Number) params.get(3)).doubleValue();
 					
 					if (params.size()==4) {
 						return new User(arg1,arg2,arg3);
 					} else if (params.size()>=5 && params.get(4) instanceof Number) {
-						Double arg4 = (double) params.get(4);
+						double arg4 = ((Number) params.get(4)).doubleValue();
 						if (params.size()==5) {
 							return new User(arg1,arg2,arg3,arg4);
 						} else if (params.size()==6 && params.get(5) instanceof Card) {

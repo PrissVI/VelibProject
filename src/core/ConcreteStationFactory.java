@@ -59,8 +59,8 @@ public class ConcreteStationFactory extends AbstractFactory {
 				&& params.get(2) instanceof Number
 			)
 			{
-				Double arg1 = (double) params.get(1);
-				Double arg2 = (double) params.get(2);
+				double arg1 = ((Number) params.get(1)).doubleValue();
+				double arg2 = ((Number) params.get(2)).doubleValue();
 				
 				if (params.size()==3) {
 					return new PlusStation(arg1,arg2);
@@ -76,27 +76,27 @@ public class ConcreteStationFactory extends AbstractFactory {
 				}
 			}
 			if (arg0.equalsIgnoreCase("STANDARD")
-					&& params.size()>2
-					&& params.get(1) instanceof Number
-					&& params.get(2) instanceof Number
-				)
-				{
-					Double arg1 = (double) params.get(1);
-					Double arg2 = (double) params.get(2);
-					
-					if (params.size()==3) {
-						return new StdStation(arg1,arg2);
-					} else if (params.size()==4 && params.get(3) instanceof HashMap) {
-						for (Object key: ((HashMap<?,?>) params.get(3)).keySet()) {
-							if (!(key instanceof Integer) || !(((HashMap<?,?>) params.get(3)).get(key) instanceof ParkingSlot)) {
-								System.out.println("The fourth argument is of unexpected type.");
-								return null;
-							}
+				&& params.size()>2
+				&& params.get(1) instanceof Number
+				&& params.get(2) instanceof Number
+			)
+			{
+				double arg1 = ((Number) params.get(1)).doubleValue();
+				double arg2 = ((Number) params.get(2)).doubleValue();
+				
+				if (params.size()==3) {
+					return new StdStation(arg1,arg2);
+				} else if (params.size()==4 && params.get(3) instanceof HashMap) {
+					for (Object key: ((HashMap<?,?>) params.get(3)).keySet()) {
+						if (!(key instanceof Integer) || !(((HashMap<?,?>) params.get(3)).get(key) instanceof ParkingSlot)) {
+							System.out.println("The fourth argument is of unexpected type.");
+							return null;
 						}
-						HashMap<Integer,ParkingSlot> arg3 = (HashMap<Integer,ParkingSlot>) params.get(3);
-						return new StdStation(arg1,arg2,arg3);
 					}
+					HashMap<Integer,ParkingSlot> arg3 = (HashMap<Integer,ParkingSlot>) params.get(3);
+					return new StdStation(arg1,arg2,arg3);
 				}
+			}
 		}
 		System.out.println("Incorrect params in ArrayList argument.");
 		return null;

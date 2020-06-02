@@ -12,7 +12,7 @@ import org.junit.Test;
  *
  */
 
-public class ridePlanTest {
+public class RidePlanningStrategyPatternTest {
 
 	/**
 	 * Setting up the network before doing the tests, with 3 stations with 10 parking slots each, as well as 10 users, and a bike population of 70%.

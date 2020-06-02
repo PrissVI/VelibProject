@@ -12,7 +12,7 @@ import core.ParkingSlot;
 import core.Station;
 import core.StdStation;
 
-class ObserverPatternTest {
+class StationObserverPatternTest {
 
 	/**
 	 * Test to check if the additional functionality (observer pattern) to inform a station that one of its parking slots has been set out of order works.

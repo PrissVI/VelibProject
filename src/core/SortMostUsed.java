@@ -10,6 +10,7 @@ import java.util.HashMap;
  */
 public class SortMostUsed implements SortingStrategy {
 
+	//implementation of the sort method from the interface.
 	@Override
 	public ArrayList<Station> sort(HashMap<Integer,Station> stations) {
 		ArrayList<Station> myStations = new ArrayList<Station>();
@@ -20,5 +21,4 @@ public class SortMostUsed implements SortingStrategy {
 		myStations.sort(usageComp);
 		return myStations;
 	}
-
 }

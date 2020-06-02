@@ -202,9 +202,9 @@ public abstract class Station implements StationObserver, Serializable  {
 	 */
 	public void identifyUser(User user) {
 		if (user.getRegistrationCard() != null) {
-			System.out.println("User "+user.getID()+" registered with "+user.getRegistrationCard().getClass()+" card.");
+			System.out.println("User "+user.getID()+" registered with "+user.getRegistrationCard().getClass()+" card in station " + ID + ".");
 		} else {
-			System.out.println("User "+user.getID()+" registered with his credit card.");
+			System.out.println("User "+user.getID()+" registered with his credit card in station " + ID + ".");
 		}
 	}
 	

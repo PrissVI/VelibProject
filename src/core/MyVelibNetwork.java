@@ -74,10 +74,28 @@ public class MyVelibNetwork implements Serializable {
 		return users;
 	}
 
-
-
 	public void setUsers(HashMap<Integer, User> users) {
 		this.users = users;
+	}
+	
+	public static AbstractFactory getSlotFactory() {
+		return slotFactory;
+	}
+
+	public static AbstractFactory getPersonFactory() {
+		return personFactory;
+	}
+
+	public static AbstractFactory getStationFactory() {
+		return stationFactory;
+	}
+
+	public static AbstractFactory getCardFactory() {
+		return cardFactory;
+	}
+
+	public static AbstractFactory getBicycleFactory() {
+		return bicycleFactory;
 	}
 
 
@@ -181,6 +199,7 @@ public class MyVelibNetwork implements Serializable {
 				User user = (User) personFactory.createPerson(params);
 				//User user = new User("Random", x, y, creditCardBalance, (Card) new Vmax());
 				this.getUsers().put(user.getID(), user);
+				System.out.println("Successfully created user with ID " + user.getID() +".");
 			}
 			else if(cardType.equalsIgnoreCase("VLIBRE")) {
 				ArrayList<Object> cardParams = new ArrayList<Object>();
@@ -190,11 +209,13 @@ public class MyVelibNetwork implements Serializable {
 				User user = (User) personFactory.createPerson(params);
 				//User user = new User("Random", x, y, creditCardBalance, (Card) new Vlibre());
 				this.getUsers().put(user.getID(), user);
+				System.out.println("Successfully created user with ID " + user.getID() +".");
 			}
 			else if(cardType.equalsIgnoreCase("NONE")) {
 				User user = (User) personFactory.createPerson(params);
 				//User user = new User("Random", x, y, creditCardBalance);
 				this.getUsers().put(user.getID(), user);
+				System.out.println("Successfully created user with ID " + user.getID() +".");
 			}
 			else {
 				throw new RuntimeException("This type of card does not exist");
@@ -292,6 +313,9 @@ public class MyVelibNetwork implements Serializable {
 	 * @return ArrayList<Date> with earliest and latest recorded activities
 	 */
 	public ArrayList<Date> getEarliestAndLatestActivity() {
+		if (stations == null || stations.size() == 0) {
+			throw new RuntimeException("No available station yet.");
+		}
 		ArrayList<ActivityLog> possibleInfDates = new ArrayList<ActivityLog>();
 		ArrayList<ActivityLog> possibleSupDates = new ArrayList<ActivityLog>();
 		for (Station st: stations.values()) {
@@ -299,28 +323,33 @@ public class MyVelibNetwork implements Serializable {
 				HashMap<Integer,ParkingSlot> stps = st.getParkingSlots();
 				for (ParkingSlot ps: stps.values()) {
 					ArrayList<ActivityLog> als = ps.getActivityLogs();
-					Date origin = ActivityLog.getDate(0, 0, 0, 0, 0, 0);
-					for (ActivityLog al: als) {
-						if (al.getDate() != origin) {
-							possibleInfDates.add(al);
-							break;
+					if (als != null && als.size() != 0) {
+						Date origin = ActivityLog.getDate(0, 0, 0, 0, 0, 0);
+						for (ActivityLog al: als) {
+							if (!al.getDate().equals(origin)) {
+								possibleInfDates.add(al);
+								break;
+							}
 						}
-					}
-					if (als.get(als.size()-1).getDate() != origin) {
-						possibleSupDates.add(als.get(als.size()-1));
+						if (!als.get(als.size()-1).getDate().equals(origin)) {
+							possibleSupDates.add(als.get(als.size()-1));
+						}
 					}
 				}
 			}
 		}
-		Comparator<ActivityLog> dateComp = new DateComparatorForActivityLogs();
-		possibleInfDates.sort(dateComp);
-		possibleSupDates.sort(dateComp);
 		if (possibleInfDates.size() == 0 || possibleSupDates.size() == 0) {
 			throw new RuntimeException("Not enough user activity logs to define earliest non-null and latest activity.");
 		}
+		Comparator<ActivityLog> dateComp = new DateComparatorForActivityLogs();
+		possibleInfDates.sort(dateComp);
+		possibleSupDates.sort(dateComp);
 		ArrayList<Date> res = new ArrayList<Date>();
 		res.add(possibleInfDates.get(0).getDate());
 		res.add(possibleSupDates.get(possibleSupDates.size()-1).getDate());
+		if (ActivityLog.getDateDiff(res.get(0), res.get(1))<=0) {
+			throw new RuntimeException("Not enough user activity logs to define earliest non-null and latest activity.");
+		}
 		return res;
 	}
 	
@@ -332,7 +361,7 @@ public class MyVelibNetwork implements Serializable {
 	 */
 	public String getUserBalance(int userID) throws RuntimeException {
 		if (!users.containsKey(userID)) {
-			throw new RuntimeException("Station not in network.");
+			throw new RuntimeException("User " + userID + " not in network " + ID + ".");
 		}
 		User myUser = users.get(userID); 
 		return myUser.getStatistics();
@@ -343,14 +372,14 @@ public class MyVelibNetwork implements Serializable {
 	 * @param stationID (int)
 	 * @param infDate (Date, that has to be created by the CLUI from a user input parsed)
 	 * @param supDate (Date, that has to be created by the CLUI from a user input parsed)
-	 * @return
+	 * @return the station's statistics
 	 * @throws RuntimeException
 	 */
 	public String getStationBalance(int stationID, Date infDate, Date supDate) throws RuntimeException {
 		if (infDate == null || supDate == null) {
 			throw new RuntimeException("Dates have to be in valid format.");
 		} else if (!stations.containsKey(stationID)) {
-			throw new RuntimeException("Station not in network.");
+			throw new RuntimeException("Station " + stationID + " not in network " + ID + ".");
 		}
 		Station myStation = stations.get(stationID);
 		return myStation.getStatistics(infDate, supDate);
@@ -359,12 +388,12 @@ public class MyVelibNetwork implements Serializable {
 	/**
 	 * Computes some statistics for a station given its stationID; overloaded second version that searches for oldest activity and latest activity for infDate and supDate
 	 * @param stationID (int)
-	 * @return
+	 * @return the station's statistics
 	 * @throws RuntimeException
 	 */
 	public String getStationBalance(int stationID) throws RuntimeException {
 		if (!stations.containsKey(stationID)) {
-			throw new RuntimeException("Station not in network.");
+			throw new RuntimeException("Station " + stationID + " not in network " + ID + ".");
 		}
 		ArrayList<Date> infAndSupDates = this.getEarliestAndLatestActivity();
 		Date infDate = infAndSupDates.get(0);

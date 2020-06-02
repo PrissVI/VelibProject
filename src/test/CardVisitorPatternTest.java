@@ -12,7 +12,7 @@ import org.junit.Test;
  *
  */
 
-public class CardTest {
+public class CardVisitorPatternTest {
 
 	/**
 	 * Test the visitor pattern put in place to get ride costs from a card, and update the time credit balance.

@@ -44,10 +44,10 @@ public class ConcreteCardFactory extends AbstractFactory {
 				}				
 			} else if (params.size()==2) {
 				if (arg0.equalsIgnoreCase("VLIBRE") && params.get(1) instanceof Number) {
-					Integer arg1 = (int) params.get(1);	
+					int arg1 = ((Number) params.get(1)).intValue();	
 					return new Vlibre(arg1);
 				} else if (arg0.equalsIgnoreCase("VMAX") && params.get(1) instanceof Number) {
-					Integer arg1 = (int) params.get(1);	
+					int arg1 = ((Number) params.get(1)).intValue();	
 					return new Vmax(arg1);
 				}				
 			}
