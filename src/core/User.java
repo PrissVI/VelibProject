@@ -193,7 +193,7 @@ public class User extends Person {
 			throw new RuntimeException("Cannot rent bicycle if station " + station.getID() + " if offline.");
 		}
 		if (rentedBicycle != null) {
-			throw new RuntimeException("Cannot rent bicycle if user is already renting one.");
+			throw new RuntimeException("Cannot rent bicycle if user " + ID + " is already renting one.");
 		}
 		else {	
 			station.identifyUser(this);
@@ -226,14 +226,13 @@ public class User extends Person {
 		if (rentedBicycle == null) {
 			throw new RuntimeException("Cannot return bicycle if user is not currently renting one.");
 		}
+		int tripDuration = ActivityLog.getDateDiff(rentedBicycle.getRentDate(),returnDate);
+		if (tripDuration<0) {
+			throw new RuntimeException("Return date is anterior to rent date... check date anteriority");
+		}
 		else {
 			for (ParkingSlot ps: station.getParkingSlots().values()) {
 				if (!ps.isOutOfOrder() && ps.getBicycleStored() == null) {
-					//
-					int tripDuration = ActivityLog.getDateDiff(rentedBicycle.getRentDate(),returnDate);
-					if (tripDuration<0) {
-						throw new RuntimeException("Return date is anterior to rent date... check date anteriority");
-					}
 					//
 					station.chargeUser(this, tripDuration); 
 					//
