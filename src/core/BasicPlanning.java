@@ -18,6 +18,7 @@ public class BasicPlanning implements RidePlanning {
 		ArrayList<Station> stationList = new ArrayList<Station>();
 		
 		HashMap<Integer, Station> stations = network.getStations();
+		System.out.println(stations);
 		
 		//Loop for the start station
 		for(Station station : stations.values()) {
@@ -28,12 +29,16 @@ public class BasicPlanning implements RidePlanning {
 				bikeIsAvailable = false;
 				//Make sure that a bike of the desired type is available
 				for(ParkingSlot parkingSlot : station.getParkingSlots().values()) {
-					if (bicycleType.toLowerCase()=="electrical" && parkingSlot.getBicycleStored() instanceof ElectricalBike) {
+					if (bicycleType.equalsIgnoreCase("electrical") && parkingSlot.getBicycleStored() instanceof ElectricalBike) {
 						bikeIsAvailable = true;
+						finalDistanceFromStart = distanceFromStart;
+						startStation = station;
 						break;
 					}
-					if (bicycleType.toLowerCase()=="mechanical" && parkingSlot.getBicycleStored() instanceof MechanicalBike) {
+					if (bicycleType.equalsIgnoreCase("mechanical") && parkingSlot.getBicycleStored() instanceof MechanicalBike) {
 						bikeIsAvailable = true;
+						finalDistanceFromStart = distanceFromStart;
+						startStation = station;
 						break;
 					}
 				}
@@ -42,8 +47,6 @@ public class BasicPlanning implements RidePlanning {
 					continue;
 				}
 				
-				finalDistanceFromStart = distanceFromStart;
-				startStation = station;
 			}
 		}
 		
@@ -58,6 +61,8 @@ public class BasicPlanning implements RidePlanning {
 				for(ParkingSlot parkingSlot : station.getParkingSlots().values()) {
 					if (parkingSlot.getBicycleStored() == null && !parkingSlot.isOutOfOrder()) {
 						parkingSlotIsAvailable = true;
+						finalDistanceFromEnd = distanceFromEnd;
+						endStation = station;
 						break;
 					}
 				}
@@ -66,8 +71,7 @@ public class BasicPlanning implements RidePlanning {
 					continue;
 				}
 				
-				finalDistanceFromEnd = distanceFromEnd;
-				endStation = station;
+
 			}
 		}
 		

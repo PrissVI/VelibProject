@@ -429,17 +429,4 @@ public class MyVelibNetwork implements Serializable {
 	}
 	
 
-	public static void main(String[] args) {
-		MyVelibNetwork network = new MyVelibNetwork("test",10);
-		network.addStations(3, 10);
-		network.addUsers(10);
-		network.addBicyclePercentage(0.9);
-		System.out.println(network);
-		
-		network.planning(5, 5, 8, 8, "electrical", new BasicPlanning());
-		network.planning(5, 5, 8, 8, "electrical", new AvoidPlus());
-		network.planning(5, 5, 8, 8, "electrical", new PreferPlus());
-	}
-	
-
 }

@@ -30,10 +30,14 @@ public class AvoidPlus implements RidePlanning {
 				for(ParkingSlot parkingSlot : station.getParkingSlots().values()) {
 					if (bicycleType.toLowerCase()=="electrical" && parkingSlot.getBicycleStored() instanceof ElectricalBike) {
 						bikeIsAvailable = true;
+						finalDistanceFromStart = distanceFromStart;
+						startStation = station;
 						break;
 					}
 					if (bicycleType.toLowerCase()=="mechanical" && parkingSlot.getBicycleStored() instanceof MechanicalBike) {
 						bikeIsAvailable = true;
+						finalDistanceFromStart = distanceFromStart;
+						startStation = station;
 						break;
 					}
 				}
@@ -42,8 +46,6 @@ public class AvoidPlus implements RidePlanning {
 					continue;
 				}
 				
-				finalDistanceFromStart = distanceFromStart;
-				startStation = station;
 			}
 		}
 		
@@ -59,6 +61,8 @@ public class AvoidPlus implements RidePlanning {
 					//Make sure that a parking Slot is available
 					for(ParkingSlot parkingSlot : station.getParkingSlots().values()) {
 						if (parkingSlot.getBicycleStored() == null && !parkingSlot.isOutOfOrder()) {
+							finalDistanceFromEnd = distanceFromEnd;
+							endStation = station;
 							parkingSlotIsAvailable = true;
 							break;
 						}
@@ -67,8 +71,7 @@ public class AvoidPlus implements RidePlanning {
 					if(!parkingSlotIsAvailable) {
 						continue;
 					}
-					finalDistanceFromEnd = distanceFromEnd;
-					endStation = station;
+					
 				}
 			}
 		}

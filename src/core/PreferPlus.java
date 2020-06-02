@@ -34,10 +34,14 @@ public class PreferPlus implements RidePlanning {
 				for(ParkingSlot parkingSlot : station.getParkingSlots().values()) {
 					if (bicycleType.toLowerCase()=="electrical" && parkingSlot.getBicycleStored() instanceof ElectricalBike) {
 						bikeIsAvailable = true;
+						finalDistanceFromStart = distanceFromStart;
+						startStation = station;
 						break;
 					}
 					if (bicycleType.toLowerCase()=="mechanical" && parkingSlot.getBicycleStored() instanceof MechanicalBike) {
 						bikeIsAvailable = true;
+						finalDistanceFromStart = distanceFromStart;
+						startStation = station;
 						break;
 					}
 				}
@@ -45,9 +49,7 @@ public class PreferPlus implements RidePlanning {
 				if(!bikeIsAvailable) {
 					continue;
 				}
-				
-				finalDistanceFromStart = distanceFromStart;
-				startStation = station;
+
 			}
 		}
 		
@@ -63,6 +65,8 @@ public class PreferPlus implements RidePlanning {
 					for(ParkingSlot parkingSlot : station.getParkingSlots().values()) {
 						if (parkingSlot.getBicycleStored() == null) {
 							parkingSlotIsAvailable = true;
+							finalDistanceFromStdEnd = distanceFromStdEnd;
+							endStdStation = station;
 							break;
 						}
 					}
@@ -70,8 +74,6 @@ public class PreferPlus implements RidePlanning {
 					if(!parkingSlotIsAvailable) {
 						continue;
 					}
-					finalDistanceFromStdEnd = distanceFromStdEnd;
-					endStdStation = station;
 				}
 			}
 			else {
@@ -84,6 +86,8 @@ public class PreferPlus implements RidePlanning {
 					for(ParkingSlot parkingSlot : station.getParkingSlots().values()) {
 						if (parkingSlot.getBicycleStored() == null  && !parkingSlot.isOutOfOrder()) {
 							parkingSlotIsAvailable = true;
+							finalDistanceFromPlusEnd = distanceFromPlusEnd;
+							endPlusStation = station;
 							break;
 						}
 					}
@@ -91,8 +95,6 @@ public class PreferPlus implements RidePlanning {
 					if(!parkingSlotIsAvailable) {
 						continue;
 					}
-					finalDistanceFromPlusEnd = distanceFromPlusEnd;
-					endPlusStation = station;
 				}				
 			}
 		}
