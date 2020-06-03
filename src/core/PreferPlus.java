@@ -18,7 +18,7 @@ public class PreferPlus implements RidePlanning {
 		Station startStation = null;
 		Station endStdStation = null;
 		Station endPlusStation = null;
-		Station endStation;
+		Station endStation = null;
 		ArrayList<Station> stationList = new ArrayList<Station>();
 		
 		HashMap<Integer, Station> stations = network.getStations();
@@ -32,13 +32,13 @@ public class PreferPlus implements RidePlanning {
 				bikeIsAvailable = false;
 				//Make sure that a bike of the desired type is available
 				for(ParkingSlot parkingSlot : station.getParkingSlots().values()) {
-					if (bicycleType.toLowerCase()=="electrical" && parkingSlot.getBicycleStored() instanceof ElectricalBike) {
+					if (bicycleType.equalsIgnoreCase("electrical") && parkingSlot.getBicycleStored() instanceof ElectricalBike) {
 						bikeIsAvailable = true;
 						finalDistanceFromStart = distanceFromStart;
 						startStation = station;
 						break;
 					}
-					if (bicycleType.toLowerCase()=="mechanical" && parkingSlot.getBicycleStored() instanceof MechanicalBike) {
+					if (bicycleType.equalsIgnoreCase("mechanical") && parkingSlot.getBicycleStored() instanceof MechanicalBike) {
 						bikeIsAvailable = true;
 						finalDistanceFromStart = distanceFromStart;
 						startStation = station;

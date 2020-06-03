@@ -18,7 +18,6 @@ public class BasicPlanning implements RidePlanning {
 		ArrayList<Station> stationList = new ArrayList<Station>();
 		
 		HashMap<Integer, Station> stations = network.getStations();
-		System.out.println(stations);
 		
 		//Loop for the start station
 		for(Station station : stations.values()) {
