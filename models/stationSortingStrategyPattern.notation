@@ -251,7 +251,7 @@
   <children xmi:type="notation:Shape" xmi:id="_9N9w8KTtEeqSCpAxMp_7Qg" type="Comment_Shape">
     <children xmi:type="notation:DecorationNode" xmi:id="_9N-YAKTtEeqSCpAxMp_7Qg" type="Comment_BodyLabel"/>
     <element xmi:type="uml:Comment" href="stationSortingStrategyPattern.uml#_9NWs8KTtEeqSCpAxMp_7Qg"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9N9w8aTtEeqSCpAxMp_7Qg" x="480" y="60"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9N9w8aTtEeqSCpAxMp_7Qg" x="480" y="80"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_ZWxOsKTuEeqSCpAxMp_7Qg" type="Comment_Shape">
     <children xmi:type="notation:DecorationNode" xmi:id="_ZWxOsqTuEeqSCpAxMp_7Qg" type="Comment_BodyLabel"/>
