@@ -4,11 +4,6 @@
     <body>for more details on the Station class,&#xD;
 check out the the stationAndCardVisitorPattern UML</body>
   </ownedComment>
-  <ownedComment xmi:type="uml:Comment" xmi:id="_iFW9QKG-EeqCkJE6t619Zw">
-    <body>//all attributes related to statistics when&#xD;
-it comes to time and use are not&#xD;
-mentionned yet</body>
-  </ownedComment>
   <packageImport xmi:type="uml:PackageImport" xmi:id="_TVRUcKG7EeqCkJE6t619Zw">
     <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
   </packageImport>
@@ -56,6 +51,13 @@ mentionned yet</body>
     </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_aDZR8KG-EeqCkJE6t619Zw" name="uniqueStationObserver" visibility="private" type="_CwTQ0KG8EeqCkJE6t619Zw"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_ZbT8AKTkEeqSCpAxMp_7Qg" name="activityLogs" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EMap"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_1BGp4KXBEeql5NQSdAOfRw" name="activitylog" type="_WdBR8KXAEeql5NQSdAOfRw" aggregation="composite" association="_1A2LMKXBEeql5NQSdAOfRw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1BHQ8KXBEeql5NQSdAOfRw"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1BH4AKXBEeql5NQSdAOfRw" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_IyIkYKXCEeql5NQSdAOfRw" name="activityLogs" visibility="private">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EMap"/>
     </ownedAttribute>
     <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_cbXg0KG8EeqCkJE6t619Zw" client="_Pxz_UKG8EeqCkJE6t619Zw" supplier="_CV_TYKG8EeqCkJE6t619Zw" contract="_CV_TYKG8EeqCkJE6t619Zw"/>
@@ -120,6 +122,60 @@ mentionned yet</body>
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_FkosgKTkEeqSCpAxMp_7Qg"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_FLJOcKTkEeqSCpAxMp_7Qg" value="*"/>
     </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_WdBR8KXAEeql5NQSdAOfRw" name="ActivityLog">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_gFkrIKXBEeql5NQSdAOfRw" name="counter" visibility="private" isStatic="true" isReadOnly="true">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_kjg2EKXBEeql5NQSdAOfRw" name="ID" visibility="private" isReadOnly="true">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_p5YHgKXBEeql5NQSdAOfRw" name="isSetToOccupied" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_tChCsKXBEeql5NQSdAOfRw" name="date" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+    </ownedAttribute>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_MmC64KXCEeql5NQSdAOfRw" name="getDate" isStatic="true">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_c4PXAKXCEeql5NQSdAOfRw" name="year">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_ennp8KXCEeql5NQSdAOfRw" name="month">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_kO9s8KXCEeql5NQSdAOfRw" name="day">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_mN-XUKXCEeql5NQSdAOfRw" name="hour">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_qWedwKXCEeql5NQSdAOfRw" name="minute">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_rtpFAKXCEeql5NQSdAOfRw" name="second">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_vPtdkKXCEeql5NQSdAOfRw" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_v9jbAKXCEeql5NQSdAOfRw" name="getDateDiff" isStatic="true">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_yg3FQKXCEeql5NQSdAOfRw" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_1hu1QKXCEeql5NQSdAOfRw" name="infDate">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_26mssKXCEeql5NQSdAOfRw" name="supDate">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_1A2LMKXBEeql5NQSdAOfRw" memberEnd="_1BGp4KXBEeql5NQSdAOfRw _1BH4AaXBEeql5NQSdAOfRw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_1BE0sKXBEeql5NQSdAOfRw" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_1BE0saXBEeql5NQSdAOfRw" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_1BH4AaXBEeql5NQSdAOfRw" name="parkingslot" type="_Pxz_UKG8EeqCkJE6t619Zw" association="_1A2LMKXBEeql5NQSdAOfRw"/>
   </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_5RydEKG9EeqCkJE6t619Zw">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5RzEIKG9EeqCkJE6t619Zw" source="http://www.eclipse.org/uml2/2.0.0/UML">
