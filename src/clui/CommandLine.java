@@ -67,6 +67,7 @@ public class CommandLine {
 					+ "\n" + "• exit: to close the command line.");
 		} 
 
+		//Multiple ifs to check what command to execute, and to check if all the parameters entered are valid.
 		else if(command.equalsIgnoreCase("setup")) {
 			System.out.println("---------------Result of command------------------");
 			splitEntryList.remove(0);
@@ -719,7 +720,7 @@ public class CommandLine {
 			if(splitEntryList.size()==1) {
 				try {
 					String filename = splitEntryList.get(0);
-					getCommands.readTextFileLineByLine(filename);
+					GetCommands.readTextFileLineByLine(filename);
 				} catch (Exception e) {
 					System.err.println("Incorrect parameters");
 					System.err.println(e.getMessage());

@@ -5,18 +5,29 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class getCommands {
+/**
+ * getCommands is a class that is used to read a file of command lines, and execute these commands.
+ * 
+ * @author Ali Raïki
+ */
+
+public class GetCommands {
 	
+	/**
+	 * Method that reads a file line by line, then calls another method to execute these commands.
+	 * @param fileName
+	 * 				Name of the file to be read.
+	 */
 	public static void readTextFileLineByLine(String fileName) {
 		FileReader file = null;
 		BufferedReader reader = null;
 		ArrayList<String> lines = new ArrayList<String>();
 		
 		try {
-			file = new FileReader(fileName); 
-			reader = new BufferedReader(file); 
+			file = new FileReader(fileName); //A file reader for reading byte-by-byte
+			reader = new BufferedReader(file); //Wrapping a file reader into a BufferedReader for reading line-by-line
 			String line = "";
-			while ((line = reader.readLine()) != null) {
+			while ((line = reader.readLine()) != null) { //Reading the file line by line
 				lines.add(line);
 			}
 		} catch (Exception e) {
@@ -35,6 +46,6 @@ public class getCommands {
 				}
 			}
 		}
-		ProcessCommandLine.executeCommands(lines);;
+		ProcessCommandLine.executeCommands(lines); //Execute the commands
 	}
 }

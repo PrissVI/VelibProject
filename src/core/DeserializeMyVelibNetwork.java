@@ -4,8 +4,18 @@ import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.io.IOException;
 
+/**
+ * DeserializeMyVelibNetwork is a class that is used to read a previously serialized instance of MyVelibNetwork from a file and recreated it in the main memory.
+ * 
+ * @author Ali Raïki
+ */
 public class DeserializeMyVelibNetwork {
 	
+	/**
+	 * This method takes a file that represents a serialization of an instance of MyVelibNetwork, and recreates it in the main memory.
+	 * @param fileName
+	 * 				The name of the serialization file
+	 */
 	public static void deserializeNetwork(String fileName) {
 		MyVelibNetwork network = null;
 

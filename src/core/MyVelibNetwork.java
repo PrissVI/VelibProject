@@ -7,21 +7,30 @@ import java.util.HashMap;
 import java.util.Random;
 import java.io.Serializable;
 
+/**
+ * MyVelibNetwork is a class that is used to create the network where all the simulations will take place, that will be populated with stations, users, and bicycles. 
+ * 
+ * @author Ali Raïki & Mathieu Sibué
+ */
 public class MyVelibNetwork implements Serializable {
 	private static final long serialVersionUID = 312658585L;
+	//ATTRIBUTES
 	private int ID;
 	private static int counter = 0; //for the ID
 	private String name;
 	private double side;
+	private HashMap<Integer,Bicycle> bicycles;
+	private HashMap<Integer,Station> stations;
+	private HashMap<Integer,User> users;
+	
+	//CREATE FACTORIES
 	private static AbstractFactory slotFactory = FactoryProducer.createFactory("SLOT");
 	private static AbstractFactory personFactory = FactoryProducer.createFactory("PERSON");
 	private static AbstractFactory stationFactory = FactoryProducer.createFactory("STATION");
 	private static AbstractFactory cardFactory = FactoryProducer.createFactory("CARD");
 	private static AbstractFactory bicycleFactory = FactoryProducer.createFactory("BICYCLE");
-	private HashMap<Integer,Bicycle> bicycles;
-	private HashMap<Integer,Station> stations;
-	private HashMap<Integer,User> users;
 	
+	//CONSTRUCTOR
 	public MyVelibNetwork(String name, double side) {
 		counter++;
 		this.ID = counter;
@@ -32,6 +41,7 @@ public class MyVelibNetwork implements Serializable {
 		this.users = new HashMap<Integer, User>();
 	}
 	
+	//Getters and Setters
 	public int getID() {
 		return ID;
 	}
@@ -47,12 +57,6 @@ public class MyVelibNetwork implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	/*
-	public void setSide(double side) {
-		this.side = side;
-	}
-	*/
 
 	public HashMap<Integer, Bicycle> getBicycles() {
 		return bicycles;
@@ -78,27 +82,17 @@ public class MyVelibNetwork implements Serializable {
 		this.users = users;
 	}
 	
-	public static AbstractFactory getSlotFactory() {
-		return slotFactory;
-	}
-
 	public static AbstractFactory getPersonFactory() {
 		return personFactory;
 	}
 
-	public static AbstractFactory getStationFactory() {
-		return stationFactory;
-	}
-
-	public static AbstractFactory getCardFactory() {
-		return cardFactory;
-	}
-
-	public static AbstractFactory getBicycleFactory() {
-		return bicycleFactory;
-	}
-
-
+	/**
+	 * Adds a number of stations and parking slots to the object.
+	 * @param nbStations
+	 * 				Number of stations to add to the object.
+	 * @param nbParkingSlots
+	 * 				Number of parking slots to add in each station.
+	 */
 	public void addStations(int nbStations, int nbParkingSlots) {
 		for (int i = 0; i < nbStations; i++) {
 			HashMap<Integer, ParkingSlot> parkingSlots = new HashMap<Integer, ParkingSlot>() ;
@@ -110,10 +104,10 @@ public class MyVelibNetwork implements Serializable {
 				parkingSlots.put(parkingSlot.getID(), parkingSlot);
 			}
 			Random random = new Random();
-			double x = random.nextDouble()*this.getSide();
-			double y = random.nextDouble()*this.getSide();
+			double x = random.nextDouble()*this.getSide(); //Uniformly distributing the stations in the network.
+			double y = random.nextDouble()*this.getSide(); //Uniformly distributing the stations in the network.
 			double typeOfStation = random.nextDouble();
-			
+			//50% chance to be a standard station
 			if(typeOfStation >= 0.5) {
 				ArrayList<Object> params = new ArrayList<Object>();
 				params.add("STANDARD");
@@ -124,7 +118,7 @@ public class MyVelibNetwork implements Serializable {
 				//Station station = new StdStation(x, y, parkingSlots);
 				this.getStations().put(station.getID(), station);
 			}
-			else {
+			else {//50% chance to be a plus station
 				ArrayList<Object> params = new ArrayList<Object>();
 				params.add("PLUS");
 				params.add(x);
@@ -137,11 +131,16 @@ public class MyVelibNetwork implements Serializable {
 		}
 	}
 
+	/**
+	 * Adds a number of users to the object.
+	 * @param nbUsers
+	 * 				Number of users to add to the object.
+	 */
 	public void addUsers(int nbUsers) {
 		for (int i = 0; i < nbUsers; i++) {
 			Random random = new Random();
-			double x = random.nextDouble()*this.getSide();
-			double y = random.nextDouble()*this.getSide();
+			double x = random.nextDouble()*this.getSide(); //Uniformly distributing the users in the network.
+			double y = random.nextDouble()*this.getSide(); //Uniformly distributing the users in the network.
 			double creditCardBalance = random.nextDouble()*500;
 			double cardType = random.nextDouble();
 			
@@ -152,6 +151,7 @@ public class MyVelibNetwork implements Serializable {
 			params.add(y);
 			params.add(creditCardBalance);
 			
+			//Uniformly distributing the different types of cards
 			if(cardType <= 0.33) {
 				User user = (User) personFactory.createPerson(params);
 				//User user = new User("Random", x, y, creditCardBalance);
@@ -178,6 +178,13 @@ public class MyVelibNetwork implements Serializable {
 		}
 	}
 	
+	/**
+	 * Adds a user to the object.
+	 * @param name
+	 * 				Name of the user.
+	 * @param cardType
+	 * 				Card type of the user.
+	 */
 	public void addUser(String name, String cardType) {
 			Random random = new Random();
 			double x = random.nextDouble()*this.getSide();
@@ -222,6 +229,11 @@ public class MyVelibNetwork implements Serializable {
 			}
 	}
 	
+	/**
+	 * Adds a number of bicycles to the object, and assigning them to parking slots.
+	 * @param nbOfBikes
+	 * 				Number of bicycles to be added
+	 */
 	public void addBicycleNumber(int nbOfBikes) {
 		int totalBicycles = nbOfBikes;
 		int nbParkingSlotsAvailable = 0;
@@ -234,6 +246,7 @@ public class MyVelibNetwork implements Serializable {
 			}
 		}
 		
+		//If more bicycles than parking slots available, throw exception
 		if (nbParkingSlotsAvailable < nbOfBikes) {
 			throw new RuntimeException("There are not enough parking slots availables");
 		}
@@ -242,6 +255,7 @@ public class MyVelibNetwork implements Serializable {
 			for (int i = 0; i < totalBicycles; i++) {
 				Random random = new Random();
 				double typeOfBicycle = random.nextDouble();
+				//70% of mechanical bicycles
 				if (typeOfBicycle >= 0.3) {
 					ArrayList<Object> params = new ArrayList<Object>();
 					params.add("MECHANICAL");
@@ -250,7 +264,7 @@ public class MyVelibNetwork implements Serializable {
 					this.getBicycles().put(bike.getID(), bike);
 					newBikes.put(bike.getID(), bike);
 				}
-				else {
+				else {//30% of electrical bicycles
 					ArrayList<Object> params = new ArrayList<Object>();
 					params.add("ELECTRICAL");
 					Bicycle bike = bicycleFactory.createBicycle(params);
@@ -266,12 +280,13 @@ public class MyVelibNetwork implements Serializable {
 			
 			Object[] stations = this.getStations().keySet().toArray();
 			Random generator = new Random();
+			//Randomly populate the stations
 			while(newBikes.size() != 0) {
 				//Choose a random station and a random parking slot
-				int randomStationIndex = generator.nextInt(stations.length);
+				int randomStationIndex = generator.nextInt(stations.length); //The key of a random station
 				Station randomStation = this.getStations().get(stations[randomStationIndex]);
 				Object[] parkingSlots = randomStation.getParkingSlots().keySet().toArray();
-				int randomSlotIndex = generator.nextInt(parkingSlots.length);
+				int randomSlotIndex = generator.nextInt(parkingSlots.length); //The key of a random parking slot in the station
 				//If random parking slot is empty, put a bicycle in it
 				if(this.getStations().get(stations[randomStationIndex]).getParkingSlots().get(parkingSlots[randomSlotIndex]).getBicycleStored()==null && !this.getStations().get(stations[randomStationIndex]).getParkingSlots().get(parkingSlots[randomSlotIndex]).isOutOfOrder()) {
 					Bicycle bicycleToStore = newBikes.get(bicycleKeys[j]);
@@ -283,6 +298,10 @@ public class MyVelibNetwork implements Serializable {
 		}
 	}
 	
+	/**
+	 * Populates a percentage of the available parking slots.
+	 * @param percentage
+	 */
 	public void addBicyclePercentage(double percentage) {
 		int nbParkingSlotsAvailable = 0;
 		
@@ -293,9 +312,9 @@ public class MyVelibNetwork implements Serializable {
 				}
 			}
 		}
-		
+		//Compute the number of bikes to add
 		int nbOfBikes = (int) (percentage*nbParkingSlotsAvailable);
-		addBicycleNumber(nbOfBikes);
+		this.addBicycleNumber(nbOfBikes); //Use the method addBicyclesNumber to add the bicycles
 	}
 	
 	public ArrayList<Station> planning(double x1, double y1, double x2, double y2, String bicycleType, RidePlanning planType) {

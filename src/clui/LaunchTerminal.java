@@ -2,6 +2,13 @@ package clui;
 
 import java.util.Scanner;
 
+/**
+ * LaunchTerminal is a class that is used to launch the terminal so the user can input the different command that he want.
+ * Run this class if you want to interact with this project.
+ * 
+ * @author Ali Raïki
+ */
+
 public class LaunchTerminal {
 	
 	public static void main(String[] args) {
@@ -13,7 +20,7 @@ public class LaunchTerminal {
 	    boolean exit = false;
 	    
 	    do {
-	    	entry = input.nextLine();
+	    	entry = input.nextLine(); //the input of the user
 	    	if(entry.split(" ")[0].equalsIgnoreCase("exit")) {
 	    		exit = true;
 	    		input.close();

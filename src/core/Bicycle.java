@@ -13,7 +13,6 @@ import java.util.Date;
  * </ul>
  * </p>
  * @author Ali Raïki
- *
  */
 public abstract class Bicycle implements Serializable {
 
