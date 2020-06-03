@@ -15,11 +15,23 @@ import core.SortingStrategy;
 import core.Station;
 import core.User;
 
+/**
+ * CommandLine is a class that is used to read and run the command that a user types thanks to the Scanner, and stores the useful information in the HashMap networks.
+ * 
+ * @author Ali Raïki
+ *
+ */
+
 public class CommandLine {
 	
 	static HashMap<Integer,MyVelibNetwork> networks = new HashMap<Integer, MyVelibNetwork>();
 	boolean exit = false;
 	
+	/**
+	 * This method reads the command and searches for the right methods to run.
+	 * @param commandLine
+	 * 				a String that represents the command.
+	 */
 	public static void executeCommand(String commandLine) {
 		
 		String entry = commandLine;
