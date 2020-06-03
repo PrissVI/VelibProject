@@ -23,7 +23,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_6c9h8JnJEeqoguC7sxkWiA"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6c9h8ZnJEeqoguC7sxkWiA"/>
     </children>
-    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactory.uml#_6c7ssJnJEeqoguC7sxkWiA"/>
+    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactoryPattern.uml#_6c7ssJnJEeqoguC7sxkWiA"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6c860ZnJEeqoguC7sxkWiA" x="800" y="-320" width="161" height="121"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_E0mrIJnKEeqoguC7sxkWiA" type="Class_Shape">
@@ -39,23 +39,23 @@
     </children>
     <children xmi:type="notation:BasicCompartment" xmi:id="_E0mrKpnKEeqoguC7sxkWiA" type="Class_OperationCompartment">
       <children xmi:type="notation:Shape" xmi:id="_YaMxsJnKEeqoguC7sxkWiA" type="Operation_ClassOperationLabel">
-        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactory.uml#_YaBykJnKEeqoguC7sxkWiA"/>
+        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactoryPattern.uml#_YaBykJnKEeqoguC7sxkWiA"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_YaMxsZnKEeqoguC7sxkWiA"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_ZGsEQJnKEeqoguC7sxkWiA" type="Operation_ClassOperationLabel">
-        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactory.uml#_ZGjhYJnKEeqoguC7sxkWiA"/>
+        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactoryPattern.uml#_ZGjhYJnKEeqoguC7sxkWiA"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_ZGsEQZnKEeqoguC7sxkWiA"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_ai0rEJnKEeqoguC7sxkWiA" type="Operation_ClassOperationLabel">
-        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactory.uml#_aikzcJnKEeqoguC7sxkWiA"/>
+        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactoryPattern.uml#_aikzcJnKEeqoguC7sxkWiA"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_ai0rEZnKEeqoguC7sxkWiA"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_ZyNGcJnKEeqoguC7sxkWiA" type="Operation_ClassOperationLabel">
-        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactory.uml#_ZyCuYJnKEeqoguC7sxkWiA"/>
+        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactoryPattern.uml#_ZyCuYJnKEeqoguC7sxkWiA"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_ZyNGcZnKEeqoguC7sxkWiA"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_4mR9wKHEEeqCkJE6t619Zw" type="Operation_ClassOperationLabel">
-        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactory.uml#_4l_p4KHEEeqCkJE6t619Zw"/>
+        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactoryPattern.uml#_4l_p4KHEEeqCkJE6t619Zw"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_4mR9waHEEeqCkJE6t619Zw"/>
       </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_E0mrK5nKEeqoguC7sxkWiA"/>
@@ -69,7 +69,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_E0mrMpnKEeqoguC7sxkWiA"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E0mrM5nKEeqoguC7sxkWiA"/>
     </children>
-    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactory.uml#_E0ldAJnKEeqoguC7sxkWiA"/>
+    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactoryPattern.uml#_E0ldAJnKEeqoguC7sxkWiA"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E0mrIZnKEeqoguC7sxkWiA" x="120" y="-80" width="201" height="181"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_G-fv0JnKEeqoguC7sxkWiA" type="Class_Shape">
@@ -85,23 +85,23 @@
     </children>
     <children xmi:type="notation:BasicCompartment" xmi:id="_G-gW6JnKEeqoguC7sxkWiA" type="Class_OperationCompartment">
       <children xmi:type="notation:Shape" xmi:id="_Vk7c8KJKEeqTb8QkBN4-Fg" type="Operation_ClassOperationLabel">
-        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactory.uml#_Vkwd0KJKEeqTb8QkBN4-Fg"/>
+        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactoryPattern.uml#_Vkwd0KJKEeqTb8QkBN4-Fg"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_Vk7c8aJKEeqTb8QkBN4-Fg"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_Vk8rEKJKEeqTb8QkBN4-Fg" type="Operation_ClassOperationLabel">
-        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactory.uml#_Vk1WUKJKEeqTb8QkBN4-Fg"/>
+        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactoryPattern.uml#_Vk1WUKJKEeqTb8QkBN4-Fg"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_Vk8rEaJKEeqTb8QkBN4-Fg"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_Vk8rEqJKEeqTb8QkBN4-Fg" type="Operation_ClassOperationLabel">
-        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactory.uml#_VkzhIKJKEeqTb8QkBN4-Fg"/>
+        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactoryPattern.uml#_VkzhIKJKEeqTb8QkBN4-Fg"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_Vk8rE6JKEeqTb8QkBN4-Fg"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_Vk9SIKJKEeqTb8QkBN4-Fg" type="Operation_ClassOperationLabel">
-        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactory.uml#_Vky6EKJKEeqTb8QkBN4-Fg"/>
+        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactoryPattern.uml#_Vky6EKJKEeqTb8QkBN4-Fg"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_Vk9SIaJKEeqTb8QkBN4-Fg"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_Vk9SIqJKEeqTb8QkBN4-Fg" type="Operation_ClassOperationLabel">
-        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactory.uml#_Vkxr8KJKEeqTb8QkBN4-Fg"/>
+        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactoryPattern.uml#_Vkxr8KJKEeqTb8QkBN4-Fg"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_Vk9SI6JKEeqTb8QkBN4-Fg"/>
       </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_G-gW6ZnKEeqoguC7sxkWiA"/>
@@ -115,7 +115,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_G-gW8JnKEeqoguC7sxkWiA"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_G-gW8ZnKEeqoguC7sxkWiA"/>
     </children>
-    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactory.uml#_G-d6oJnKEeqoguC7sxkWiA"/>
+    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactoryPattern.uml#_G-d6oJnKEeqoguC7sxkWiA"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_G-fv0ZnKEeqoguC7sxkWiA" x="40" y="640" width="201" height="141"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_M3gxoJnKEeqoguC7sxkWiA" type="Class_Shape">
@@ -131,23 +131,23 @@
     </children>
     <children xmi:type="notation:BasicCompartment" xmi:id="_M3hYuJnKEeqoguC7sxkWiA" type="Class_OperationCompartment">
       <children xmi:type="notation:Shape" xmi:id="_RNF6AKJKEeqTb8QkBN4-Fg" type="Operation_ClassOperationLabel">
-        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactory.uml#_RMyYAKJKEeqTb8QkBN4-Fg"/>
+        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactoryPattern.uml#_RMyYAKJKEeqTb8QkBN4-Fg"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_RNF6AaJKEeqTb8QkBN4-Fg"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_RNGhEKJKEeqTb8QkBN4-Fg" type="Operation_ClassOperationLabel">
-        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactory.uml#_RM5FsKJKEeqTb8QkBN4-Fg"/>
+        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactoryPattern.uml#_RM5FsKJKEeqTb8QkBN4-Fg"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_RNGhEaJKEeqTb8QkBN4-Fg"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_RNGhEqJKEeqTb8QkBN4-Fg" type="Operation_ClassOperationLabel">
-        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactory.uml#_RM33kKJKEeqTb8QkBN4-Fg"/>
+        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactoryPattern.uml#_RM33kKJKEeqTb8QkBN4-Fg"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_RNGhE6JKEeqTb8QkBN4-Fg"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_RNHIIKJKEeqTb8QkBN4-Fg" type="Operation_ClassOperationLabel">
-        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactory.uml#_RM2pcKJKEeqTb8QkBN4-Fg"/>
+        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactoryPattern.uml#_RM2pcKJKEeqTb8QkBN4-Fg"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_RNHIIaJKEeqTb8QkBN4-Fg"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_RNHvMKJKEeqTb8QkBN4-Fg" type="Operation_ClassOperationLabel">
-        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactory.uml#_RM00QKJKEeqTb8QkBN4-Fg"/>
+        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactoryPattern.uml#_RM00QKJKEeqTb8QkBN4-Fg"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_RNHvMaJKEeqTb8QkBN4-Fg"/>
       </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_M3hYuZnKEeqoguC7sxkWiA"/>
@@ -161,7 +161,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_M3hYwJnKEeqoguC7sxkWiA"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_M3hYwZnKEeqoguC7sxkWiA"/>
     </children>
-    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactory.uml#_M3fjgJnKEeqoguC7sxkWiA"/>
+    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactoryPattern.uml#_M3fjgJnKEeqoguC7sxkWiA"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_M3gxoZnKEeqoguC7sxkWiA" x="40" y="820" width="201" height="161"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_TiL54JnKEeqoguC7sxkWiA" type="Class_Shape">
@@ -177,23 +177,23 @@
     </children>
     <children xmi:type="notation:BasicCompartment" xmi:id="_TiL56pnKEeqoguC7sxkWiA" type="Class_OperationCompartment">
       <children xmi:type="notation:Shape" xmi:id="_OwiYAKJKEeqTb8QkBN4-Fg" type="Operation_ClassOperationLabel">
-        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactory.uml#_OwUVkKJKEeqTb8QkBN4-Fg"/>
+        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactoryPattern.uml#_OwUVkKJKEeqTb8QkBN4-Fg"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_OwiYAaJKEeqTb8QkBN4-Fg"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_OwjmIKJKEeqTb8QkBN4-Fg" type="Operation_ClassOperationLabel">
-        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactory.uml#_OwRSQKJKEeqTb8QkBN4-Fg"/>
+        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactoryPattern.uml#_OwRSQKJKEeqTb8QkBN4-Fg"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_OwjmIaJKEeqTb8QkBN4-Fg"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_OwjmIqJKEeqTb8QkBN4-Fg" type="Operation_ClassOperationLabel">
-        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactory.uml#_OwX_8KJKEeqTb8QkBN4-Fg"/>
+        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactoryPattern.uml#_OwX_8KJKEeqTb8QkBN4-Fg"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_OwjmI6JKEeqTb8QkBN4-Fg"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_OwkNMKJKEeqTb8QkBN4-Fg" type="Operation_ClassOperationLabel">
-        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactory.uml#_OwTHcKJKEeqTb8QkBN4-Fg"/>
+        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactoryPattern.uml#_OwTHcKJKEeqTb8QkBN4-Fg"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_OwkNMaJKEeqTb8QkBN4-Fg"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_OwkNMqJKEeqTb8QkBN4-Fg" type="Operation_ClassOperationLabel">
-        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactory.uml#_OwWKwKJKEeqTb8QkBN4-Fg"/>
+        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactoryPattern.uml#_OwWKwKJKEeqTb8QkBN4-Fg"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_OwkNM6JKEeqTb8QkBN4-Fg"/>
       </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_TiMg8JnKEeqoguC7sxkWiA"/>
@@ -207,7 +207,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_TiMg95nKEeqoguC7sxkWiA"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TiMg-JnKEeqoguC7sxkWiA"/>
     </children>
-    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactory.uml#_TiKEsJnKEeqoguC7sxkWiA"/>
+    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactoryPattern.uml#_TiKEsJnKEeqoguC7sxkWiA"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TiL54ZnKEeqoguC7sxkWiA" x="40" y="480" width="201" height="141"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_izlnYJnKEeqoguC7sxkWiA" type="Class_Shape">
@@ -233,7 +233,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_izlncpnKEeqoguC7sxkWiA"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_izlnc5nKEeqoguC7sxkWiA"/>
     </children>
-    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactory.uml#_izjLIJnKEeqoguC7sxkWiA"/>
+    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactoryPattern.uml#_izjLIJnKEeqoguC7sxkWiA"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_izlnYZnKEeqoguC7sxkWiA" x="1160" y="-80" width="161" height="161"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_kU_vwJnKEeqoguC7sxkWiA" type="Class_Shape">
@@ -243,15 +243,15 @@
     </children>
     <children xmi:type="notation:BasicCompartment" xmi:id="_kU_vxZnKEeqoguC7sxkWiA" type="Class_AttributeCompartment">
       <children xmi:type="notation:Shape" xmi:id="_qfr1sKH0Eeqd1faAS4zbUA" type="Property_ClassAttributeLabel">
-        <element xmi:type="uml:Property" href="myVelibNetworkAbstractFactory.uml#_qfBuYKH0Eeqd1faAS4zbUA"/>
+        <element xmi:type="uml:Property" href="myVelibNetworkAbstractFactoryPattern.uml#_qfBuYKH0Eeqd1faAS4zbUA"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_qfr1saH0Eeqd1faAS4zbUA"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_uJB68KH0Eeqd1faAS4zbUA" type="Property_ClassAttributeLabel">
-        <element xmi:type="uml:Property" href="myVelibNetworkAbstractFactory.uml#_uIgWgKH0Eeqd1faAS4zbUA"/>
+        <element xmi:type="uml:Property" href="myVelibNetworkAbstractFactoryPattern.uml#_uIgWgKH0Eeqd1faAS4zbUA"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_uJB68aH0Eeqd1faAS4zbUA"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_hvpREKThEeqSCpAxMp_7Qg" type="Property_ClassAttributeLabel">
-        <element xmi:type="uml:Property" href="myVelibNetworkAbstractFactory.uml#_hus14KThEeqSCpAxMp_7Qg"/>
+        <element xmi:type="uml:Property" href="myVelibNetworkAbstractFactoryPattern.uml#_hus14KThEeqSCpAxMp_7Qg"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_hvpREaThEeqSCpAxMp_7Qg"/>
       </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_kU_vxpnKEeqoguC7sxkWiA"/>
@@ -271,7 +271,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_kVAW2JnKEeqoguC7sxkWiA"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kVAW2ZnKEeqoguC7sxkWiA"/>
     </children>
-    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactory.uml#_kU96kJnKEeqoguC7sxkWiA"/>
+    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactoryPattern.uml#_kU96kJnKEeqoguC7sxkWiA"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kU_vwZnKEeqoguC7sxkWiA" x="1520" y="-80" width="161" height="161"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_p8_6EJnKEeqoguC7sxkWiA" type="Class_Shape">
@@ -297,7 +297,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_p9AhKJnKEeqoguC7sxkWiA"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_p9AhKZnKEeqoguC7sxkWiA"/>
     </children>
-    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactory.uml#_p89d0JnKEeqoguC7sxkWiA"/>
+    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactoryPattern.uml#_p89d0JnKEeqoguC7sxkWiA"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_p8_6EZnKEeqoguC7sxkWiA" x="1840" y="-80" width="201" height="161"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_IB6fMJnLEeqoguC7sxkWiA" type="Class_Shape">
@@ -323,7 +323,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_IB7GTpnLEeqoguC7sxkWiA"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IB7GT5nLEeqoguC7sxkWiA"/>
     </children>
-    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactory.uml#_IB4C8JnLEeqoguC7sxkWiA"/>
+    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactoryPattern.uml#_IB4C8JnLEeqoguC7sxkWiA"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IB6fMZnLEeqoguC7sxkWiA" x="1120" y="120" width="101" height="101"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_KnL4UJnLEeqoguC7sxkWiA" type="Class_Shape">
@@ -349,7 +349,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_KnMfcJnLEeqoguC7sxkWiA"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KnMfcZnLEeqoguC7sxkWiA"/>
     </children>
-    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactory.uml#_KnKDIJnLEeqoguC7sxkWiA"/>
+    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactoryPattern.uml#_KnKDIJnLEeqoguC7sxkWiA"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KnL4UZnLEeqoguC7sxkWiA" x="1260" y="120" width="101" height="101"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_VTu6kJnLEeqoguC7sxkWiA" type="Class_Shape">
@@ -375,7 +375,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_VTu6opnLEeqoguC7sxkWiA"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VTu6o5nLEeqoguC7sxkWiA"/>
     </children>
-    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactory.uml#_VTtscJnLEeqoguC7sxkWiA"/>
+    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactoryPattern.uml#_VTtscJnLEeqoguC7sxkWiA"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VTu6kZnLEeqoguC7sxkWiA" x="1460" y="120" width="121" height="101"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_WqU6EJnLEeqoguC7sxkWiA" type="Class_Shape">
@@ -401,7 +401,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_WqVhLpnLEeqoguC7sxkWiA"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WqVhL5nLEeqoguC7sxkWiA"/>
     </children>
-    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactory.uml#_WqR2wJnLEeqoguC7sxkWiA"/>
+    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactoryPattern.uml#_WqR2wJnLEeqoguC7sxkWiA"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WqU6EZnLEeqoguC7sxkWiA" x="1620" y="120" width="121" height="101"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_Y1o7EJnLEeqoguC7sxkWiA" type="Class_Shape">
@@ -427,7 +427,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_Y1piLZnLEeqoguC7sxkWiA"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Y1piLpnLEeqoguC7sxkWiA"/>
     </children>
-    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactory.uml#_Y1me0JnLEeqoguC7sxkWiA"/>
+    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactoryPattern.uml#_Y1me0JnLEeqoguC7sxkWiA"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Y1o7EZnLEeqoguC7sxkWiA" x="1860" y="120" width="161" height="101"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_Zgu-kKCyEeqR5MuaOp_i2g" type="Class_Shape">
@@ -453,7 +453,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_Zg9oH6CyEeqR5MuaOp_i2g"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Zg9oIKCyEeqR5MuaOp_i2g"/>
     </children>
-    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactory.uml#_ZgfuAKCyEeqR5MuaOp_i2g"/>
+    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactoryPattern.uml#_ZgfuAKCyEeqR5MuaOp_i2g"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Zgu-kaCyEeqR5MuaOp_i2g" x="860" y="-80" width="141" height="161"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_gYuKEKCyEeqR5MuaOp_i2g" type="Class_Shape">
@@ -463,47 +463,47 @@
     </children>
     <children xmi:type="notation:BasicCompartment" xmi:id="_gYuKFaCyEeqR5MuaOp_i2g" type="Class_AttributeCompartment">
       <children xmi:type="notation:Shape" xmi:id="_Foa6YKHxEeqd1faAS4zbUA" type="Property_ClassAttributeLabel">
-        <element xmi:type="uml:Property" href="myVelibNetworkAbstractFactory.uml#_Fn1rkKHxEeqd1faAS4zbUA"/>
+        <element xmi:type="uml:Property" href="myVelibNetworkAbstractFactoryPattern.uml#_Fn1rkKHxEeqd1faAS4zbUA"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_Foa6YaHxEeqd1faAS4zbUA"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_Lst_IKHxEeqd1faAS4zbUA" type="Property_ClassAttributeLabel">
-        <element xmi:type="uml:Property" href="myVelibNetworkAbstractFactory.uml#_Lr-YQKHxEeqd1faAS4zbUA"/>
+        <element xmi:type="uml:Property" href="myVelibNetworkAbstractFactoryPattern.uml#_Lr-YQKHxEeqd1faAS4zbUA"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_Lst_IaHxEeqd1faAS4zbUA"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_QhfVsKHxEeqd1faAS4zbUA" type="Property_ClassAttributeLabel">
-        <element xmi:type="uml:Property" href="myVelibNetworkAbstractFactory.uml#_Qg6G4KHxEeqd1faAS4zbUA"/>
+        <element xmi:type="uml:Property" href="myVelibNetworkAbstractFactoryPattern.uml#_Qg6G4KHxEeqd1faAS4zbUA"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_QhfVsaHxEeqd1faAS4zbUA"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_UNBzUKHxEeqd1faAS4zbUA" type="Property_ClassAttributeLabel">
-        <element xmi:type="uml:Property" href="myVelibNetworkAbstractFactory.uml#_UMgO4KHxEeqd1faAS4zbUA"/>
+        <element xmi:type="uml:Property" href="myVelibNetworkAbstractFactoryPattern.uml#_UMgO4KHxEeqd1faAS4zbUA"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_UNBzUaHxEeqd1faAS4zbUA"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_ZDX3MKHxEeqd1faAS4zbUA" type="Property_ClassAttributeLabel">
-        <element xmi:type="uml:Property" href="myVelibNetworkAbstractFactory.uml#_ZC3g4KHxEeqd1faAS4zbUA"/>
+        <element xmi:type="uml:Property" href="myVelibNetworkAbstractFactoryPattern.uml#_ZC3g4KHxEeqd1faAS4zbUA"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_ZDX3MaHxEeqd1faAS4zbUA"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_cbebcKHxEeqd1faAS4zbUA" type="Property_ClassAttributeLabel">
-        <element xmi:type="uml:Property" href="myVelibNetworkAbstractFactory.uml#_cavboKHxEeqd1faAS4zbUA"/>
+        <element xmi:type="uml:Property" href="myVelibNetworkAbstractFactoryPattern.uml#_cavboKHxEeqd1faAS4zbUA"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_cbebcaHxEeqd1faAS4zbUA"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_hcooMKHxEeqd1faAS4zbUA" type="Property_ClassAttributeLabel">
-        <element xmi:type="uml:Property" href="myVelibNetworkAbstractFactory.uml#_hcEngKHxEeqd1faAS4zbUA"/>
+        <element xmi:type="uml:Property" href="myVelibNetworkAbstractFactoryPattern.uml#_hcEngKHxEeqd1faAS4zbUA"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_hcooMaHxEeqd1faAS4zbUA"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_mWghMKHxEeqd1faAS4zbUA" type="Property_ClassAttributeLabel">
-        <element xmi:type="uml:Property" href="myVelibNetworkAbstractFactory.uml#_mVzWkKHxEeqd1faAS4zbUA"/>
+        <element xmi:type="uml:Property" href="myVelibNetworkAbstractFactoryPattern.uml#_mVzWkKHxEeqd1faAS4zbUA"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_mWghMaHxEeqd1faAS4zbUA"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_saCJ4KHxEeqd1faAS4zbUA" type="Property_ClassAttributeLabel">
-        <element xmi:type="uml:Property" href="myVelibNetworkAbstractFactory.uml#_sZeJMKHxEeqd1faAS4zbUA"/>
+        <element xmi:type="uml:Property" href="myVelibNetworkAbstractFactoryPattern.uml#_sZeJMKHxEeqd1faAS4zbUA"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_saCJ4aHxEeqd1faAS4zbUA"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_xmXr4KHxEeqd1faAS4zbUA" type="Property_ClassAttributeLabel">
-        <element xmi:type="uml:Property" href="myVelibNetworkAbstractFactory.uml#_xlzEIKHxEeqd1faAS4zbUA"/>
+        <element xmi:type="uml:Property" href="myVelibNetworkAbstractFactoryPattern.uml#_xlzEIKHxEeqd1faAS4zbUA"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_xmXr4aHxEeqd1faAS4zbUA"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_1hQ0IKHxEeqd1faAS4zbUA" type="Property_ClassAttributeLabel">
-        <element xmi:type="uml:Property" href="myVelibNetworkAbstractFactory.uml#_1gtagKHxEeqd1faAS4zbUA"/>
+        <element xmi:type="uml:Property" href="myVelibNetworkAbstractFactoryPattern.uml#_1gtagKHxEeqd1faAS4zbUA"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_1hQ0IaHxEeqd1faAS4zbUA"/>
       </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_gYuKFqCyEeqR5MuaOp_i2g"/>
@@ -513,15 +513,15 @@
     </children>
     <children xmi:type="notation:BasicCompartment" xmi:id="_gYuxIaCyEeqR5MuaOp_i2g" type="Class_OperationCompartment">
       <children xmi:type="notation:Shape" xmi:id="_yTxvAKHyEeqd1faAS4zbUA" type="Operation_ClassOperationLabel">
-        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactory.uml#_yTOVYKHyEeqd1faAS4zbUA"/>
+        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactoryPattern.uml#_yTOVYKHyEeqd1faAS4zbUA"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_yTxvAaHyEeqd1faAS4zbUA"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_4nGHMKHyEeqd1faAS4zbUA" type="Operation_ClassOperationLabel">
-        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactory.uml#_4mlw4KHyEeqd1faAS4zbUA"/>
+        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactoryPattern.uml#_4mlw4KHyEeqd1faAS4zbUA"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_4nGHMaHyEeqd1faAS4zbUA"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_2t1-wKTgEeqSCpAxMp_7Qg" type="Operation_ClassOperationLabel">
-        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactory.uml#_2rIB8KTgEeqSCpAxMp_7Qg"/>
+        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactoryPattern.uml#_2rIB8KTgEeqSCpAxMp_7Qg"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_2t1-waTgEeqSCpAxMp_7Qg"/>
       </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_gYuxIqCyEeqR5MuaOp_i2g"/>
@@ -535,7 +535,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_gYuxKaCyEeqR5MuaOp_i2g"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gYuxKqCyEeqR5MuaOp_i2g"/>
     </children>
-    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactory.uml#_gYrGwKCyEeqR5MuaOp_i2g"/>
+    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactoryPattern.uml#_gYrGwKCyEeqR5MuaOp_i2g"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gYuKEaCyEeqR5MuaOp_i2g" x="820" y="120" width="200" height="280"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_yrQtUKCyEeqR5MuaOp_i2g" type="Class_Shape">
@@ -551,20 +551,8 @@
     </children>
     <children xmi:type="notation:BasicCompartment" xmi:id="_yrRUZ6CyEeqR5MuaOp_i2g" type="Class_OperationCompartment">
       <children xmi:type="notation:Shape" xmi:id="_HAnHQKHvEeqd1faAS4zbUA" type="Operation_ClassOperationLabel">
-        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactory.uml#_G_zO8KHvEeqd1faAS4zbUA"/>
+        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactoryPattern.uml#_G_zO8KHvEeqd1faAS4zbUA"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_HAnHQaHvEeqd1faAS4zbUA"/>
-      </children>
-      <children xmi:type="notation:Shape" xmi:id="_ALVCUKTgEeqSCpAxMp_7Qg" type="Operation_ClassOperationLabel">
-        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactory.uml#__teBoKTfEeqSCpAxMp_7Qg"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_ALVCUaTgEeqSCpAxMp_7Qg"/>
-      </children>
-      <children xmi:type="notation:Shape" xmi:id="_ZK43MKTgEeqSCpAxMp_7Qg" type="Operation_ClassOperationLabel">
-        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactory.uml#_ZJz5IKTgEeqSCpAxMp_7Qg"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_ZK43MaTgEeqSCpAxMp_7Qg"/>
-      </children>
-      <children xmi:type="notation:Shape" xmi:id="_a7fSIKTgEeqSCpAxMp_7Qg" type="Operation_ClassOperationLabel">
-        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactory.uml#_a6jeAKTgEeqSCpAxMp_7Qg"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_a7fSIaTgEeqSCpAxMp_7Qg"/>
       </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_yrRUaKCyEeqR5MuaOp_i2g"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_yrRUaaCyEeqR5MuaOp_i2g"/>
@@ -577,7 +565,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_yrRUb6CyEeqR5MuaOp_i2g"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yrRUcKCyEeqR5MuaOp_i2g"/>
     </children>
-    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactory.uml#_yrPfMKCyEeqR5MuaOp_i2g"/>
+    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactoryPattern.uml#_yrPfMKCyEeqR5MuaOp_i2g"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yrQtUaCyEeqR5MuaOp_i2g" x="540" y="-80" width="141" height="141"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_GNyRwKCzEeqR5MuaOp_i2g" type="Class_Shape">
@@ -593,23 +581,23 @@
     </children>
     <children xmi:type="notation:BasicCompartment" xmi:id="_GNy42KCzEeqR5MuaOp_i2g" type="Class_OperationCompartment">
       <children xmi:type="notation:Shape" xmi:id="_H5N64KJKEeqTb8QkBN4-Fg" type="Operation_ClassOperationLabel">
-        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactory.uml#_H333EKJKEeqTb8QkBN4-Fg"/>
+        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactoryPattern.uml#_H333EKJKEeqTb8QkBN4-Fg"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_H5N64aJKEeqTb8QkBN4-Fg"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_H5jSEKJKEeqTb8QkBN4-Fg" type="Operation_ClassOperationLabel">
-        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactory.uml#_H3y-kKJKEeqTb8QkBN4-Fg"/>
+        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactoryPattern.uml#_H3y-kKJKEeqTb8QkBN4-Fg"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_H5jSEaJKEeqTb8QkBN4-Fg"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_H5kgMKJKEeqTb8QkBN4-Fg" type="Operation_ClassOperationLabel">
-        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactory.uml#_H3xJYKJKEeqTb8QkBN4-Fg"/>
+        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactoryPattern.uml#_H3xJYKJKEeqTb8QkBN4-Fg"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_H5kgMaJKEeqTb8QkBN4-Fg"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_H5lHQKJKEeqTb8QkBN4-Fg" type="Operation_ClassOperationLabel">
-        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactory.uml#_H36TUKJKEeqTb8QkBN4-Fg"/>
+        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactoryPattern.uml#_H36TUKJKEeqTb8QkBN4-Fg"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_H5lHQaJKEeqTb8QkBN4-Fg"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_H5luUKJKEeqTb8QkBN4-Fg" type="Operation_ClassOperationLabel">
-        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactory.uml#_H32B4KJKEeqTb8QkBN4-Fg"/>
+        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactoryPattern.uml#_H32B4KJKEeqTb8QkBN4-Fg"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_H5luUaJKEeqTb8QkBN4-Fg"/>
       </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_GNy42aCzEeqR5MuaOp_i2g"/>
@@ -623,7 +611,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_GNy44KCzEeqR5MuaOp_i2g"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GNy44aCzEeqR5MuaOp_i2g"/>
     </children>
-    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactory.uml#_GNxqsKCzEeqR5MuaOp_i2g"/>
+    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactoryPattern.uml#_GNxqsKCzEeqR5MuaOp_i2g"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GNyRwaCzEeqR5MuaOp_i2g" x="40" y="160" width="200" height="141"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_J2KtsKCzEeqR5MuaOp_i2g" type="Class_Shape">
@@ -639,23 +627,23 @@
     </children>
     <children xmi:type="notation:BasicCompartment" xmi:id="_J2KtuqCzEeqR5MuaOp_i2g" type="Class_OperationCompartment">
       <children xmi:type="notation:Shape" xmi:id="_KpmX0KJKEeqTb8QkBN4-Fg" type="Operation_ClassOperationLabel">
-        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactory.uml#_KpaKkKJKEeqTb8QkBN4-Fg"/>
+        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactoryPattern.uml#_KpaKkKJKEeqTb8QkBN4-Fg"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_KpmX0aJKEeqTb8QkBN4-Fg"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_Kpnl8KJKEeqTb8QkBN4-Fg" type="Operation_ClassOperationLabel">
-        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactory.uml#_Kpcm0KJKEeqTb8QkBN4-Fg"/>
+        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactoryPattern.uml#_Kpcm0KJKEeqTb8QkBN4-Fg"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_Kpnl8aJKEeqTb8QkBN4-Fg"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_KpoNAKJKEeqTb8QkBN4-Fg" type="Operation_ClassOperationLabel">
-        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactory.uml#_KpVSEKJKEeqTb8QkBN4-Fg"/>
+        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactoryPattern.uml#_KpVSEKJKEeqTb8QkBN4-Fg"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_KpoNAaJKEeqTb8QkBN4-Fg"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_Kpo0EKJKEeqTb8QkBN4-Fg" type="Operation_ClassOperationLabel">
-        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactory.uml#_KpYVYKJKEeqTb8QkBN4-Fg"/>
+        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactoryPattern.uml#_KpYVYKJKEeqTb8QkBN4-Fg"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_Kpo0EaJKEeqTb8QkBN4-Fg"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_KppbIKJKEeqTb8QkBN4-Fg" type="Operation_ClassOperationLabel">
-        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactory.uml#_KpWgMKJKEeqTb8QkBN4-Fg"/>
+        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactoryPattern.uml#_KpWgMKJKEeqTb8QkBN4-Fg"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_KppbIaJKEeqTb8QkBN4-Fg"/>
       </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_J2Ktu6CzEeqR5MuaOp_i2g"/>
@@ -669,7 +657,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_J2LUwqCzEeqR5MuaOp_i2g"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_J2LUw6CzEeqR5MuaOp_i2g"/>
     </children>
-    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactory.uml#_J2JfkKCzEeqR5MuaOp_i2g"/>
+    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactoryPattern.uml#_J2JfkKCzEeqR5MuaOp_i2g"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_J2KtsaCzEeqR5MuaOp_i2g" x="40" y="320" width="201" height="141"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_6C1iYKCzEeqU67QHyqwKYA" type="Class_Shape">
@@ -679,7 +667,7 @@
     </children>
     <children xmi:type="notation:BasicCompartment" xmi:id="_6C2Jc6CzEeqU67QHyqwKYA" type="Class_AttributeCompartment">
       <children xmi:type="notation:Shape" xmi:id="_mJ1pEKHvEeqd1faAS4zbUA" type="Property_ClassAttributeLabel">
-        <element xmi:type="uml:Property" href="myVelibNetworkAbstractFactory.uml#_mI_7kKHvEeqd1faAS4zbUA"/>
+        <element xmi:type="uml:Property" href="myVelibNetworkAbstractFactoryPattern.uml#_mI_7kKHvEeqd1faAS4zbUA"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_mJ1pEaHvEeqd1faAS4zbUA"/>
       </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_6C2JdKCzEeqU67QHyqwKYA"/>
@@ -689,7 +677,7 @@
     </children>
     <children xmi:type="notation:BasicCompartment" xmi:id="_6C2wgKCzEeqU67QHyqwKYA" type="Class_OperationCompartment">
       <children xmi:type="notation:Shape" xmi:id="_fed9QKHvEeqd1faAS4zbUA" type="Operation_ClassOperationLabel">
-        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactory.uml#_feaS4KHvEeqd1faAS4zbUA"/>
+        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactoryPattern.uml#_feaS4KHvEeqd1faAS4zbUA"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_fed9QaHvEeqd1faAS4zbUA"/>
       </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_6C2wgaCzEeqU67QHyqwKYA"/>
@@ -703,7 +691,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_6C2wiKCzEeqU67QHyqwKYA"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6C2wiaCzEeqU67QHyqwKYA"/>
     </children>
-    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactory.uml#_6CzGIKCzEeqU67QHyqwKYA"/>
+    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactoryPattern.uml#_6CzGIKCzEeqU67QHyqwKYA"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6C1iYaCzEeqU67QHyqwKYA" x="480" y="120" width="101" height="101"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_8bElEKCzEeqU67QHyqwKYA" type="Class_Shape">
@@ -729,34 +717,34 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_8bFML6CzEeqU67QHyqwKYA"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8bFMMKCzEeqU67QHyqwKYA"/>
     </children>
-    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactory.uml#_8bD-AKCzEeqU67QHyqwKYA"/>
+    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactoryPattern.uml#_8bD-AKCzEeqU67QHyqwKYA"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8bElEaCzEeqU67QHyqwKYA" x="640" y="120" width="101" height="101"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_5W4mMKHCEeqCkJE6t619Zw" type="Comment_Shape">
     <children xmi:type="notation:DecorationNode" xmi:id="_5W4mMqHCEeqCkJE6t619Zw" type="Comment_BodyLabel"/>
-    <element xmi:type="uml:Comment" href="myVelibNetworkAbstractFactory.uml#_5W3YEKHCEeqCkJE6t619Zw"/>
+    <element xmi:type="uml:Comment" href="myVelibNetworkAbstractFactoryPattern.uml#_5W3YEKHCEeqCkJE6t619Zw"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5W4mMaHCEeqCkJE6t619Zw" x="960" y="-300" width="220"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_tsmB8KHFEeqCkJE6t619Zw" type="Association_Shape">
     <children xmi:type="notation:DecorationNode" xmi:id="_tsmB8qHFEeqCkJE6t619Zw" type="Association_FloatingNameLabel">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_tsmB86HFEeqCkJE6t619Zw" y="15"/>
     </children>
-    <element xmi:type="uml:Association" href="myVelibNetworkAbstractFactory.uml#_tskz0KHFEeqCkJE6t619Zw"/>
+    <element xmi:type="uml:Association" href="myVelibNetworkAbstractFactoryPattern.uml#_tskz0KHFEeqCkJE6t619Zw"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tsmB8aHFEeqCkJE6t619Zw" x="116" y="14"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_MYluAKHuEeqd1faAS4zbUA" type="Comment_Shape">
     <children xmi:type="notation:DecorationNode" xmi:id="_MYoKQKHuEeqd1faAS4zbUA" type="Comment_BodyLabel"/>
-    <element xmi:type="uml:Comment" href="myVelibNetworkAbstractFactory.uml#_MX5KcKHuEeqd1faAS4zbUA"/>
+    <element xmi:type="uml:Comment" href="myVelibNetworkAbstractFactoryPattern.uml#_MX5KcKHuEeqd1faAS4zbUA"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MYluAaHuEeqd1faAS4zbUA" x="460" y="-140"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_pn5g0KHuEeqd1faAS4zbUA" type="Comment_Shape">
     <children xmi:type="notation:DecorationNode" xmi:id="_pn6H4KHuEeqd1faAS4zbUA" type="Comment_BodyLabel"/>
-    <element xmi:type="uml:Comment" href="myVelibNetworkAbstractFactory.uml#_pn4SsKHuEeqd1faAS4zbUA"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pn5g0aHuEeqd1faAS4zbUA" x="1760" y="220"/>
+    <element xmi:type="uml:Comment" href="myVelibNetworkAbstractFactoryPattern.uml#_pn4SsKHuEeqd1faAS4zbUA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pn5g0aHuEeqd1faAS4zbUA" x="1780" y="220"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_W2OYQKHzEeqd1faAS4zbUA" type="Comment_Shape">
     <children xmi:type="notation:DecorationNode" xmi:id="_W2O_UKHzEeqd1faAS4zbUA" type="Comment_BodyLabel"/>
-    <element xmi:type="uml:Comment" href="myVelibNetworkAbstractFactory.uml#_W2LU8KHzEeqd1faAS4zbUA"/>
+    <element xmi:type="uml:Comment" href="myVelibNetworkAbstractFactoryPattern.uml#_W2LU8KHzEeqd1faAS4zbUA"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_W2OYQaHzEeqd1faAS4zbUA" x="1060" y="-140"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_p4DXEKJ6EeqTb8QkBN4-Fg" type="Class_Shape">
@@ -772,7 +760,7 @@
     </children>
     <children xmi:type="notation:BasicCompartment" xmi:id="_qFevEKJ6EeqTb8QkBN4-Fg" type="Class_OperationCompartment">
       <children xmi:type="notation:Shape" xmi:id="_zYOFwKJ6EeqTb8QkBN4-Fg" type="Operation_ClassOperationLabel">
-        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactory.uml#_zVuLYKJ6EeqTb8QkBN4-Fg"/>
+        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactoryPattern.uml#_zVuLYKJ6EeqTb8QkBN4-Fg"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_zYOFwaJ6EeqTb8QkBN4-Fg"/>
       </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_qFevEaJ6EeqTb8QkBN4-Fg"/>
@@ -786,22 +774,108 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_qFn5A6J6EeqTb8QkBN4-Fg"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qFn5BKJ6EeqTb8QkBN4-Fg"/>
     </children>
-    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactory.uml#_pO0M0KJ6EeqTb8QkBN4-Fg"/>
+    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactoryPattern.uml#_pO0M0KJ6EeqTb8QkBN4-Fg"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_p4OWMKJ6EeqTb8QkBN4-Fg" x="340" y="-300" width="233" height="106"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_LthoQKTiEeqSCpAxMp_7Qg" type="Class_Shape">
+    <children xmi:type="notation:DecorationNode" xmi:id="_LtiPUKTiEeqSCpAxMp_7Qg" type="Class_NameLabel"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_LtiPUaTiEeqSCpAxMp_7Qg" type="Class_FloatingNameLabel">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_LtiPUqTiEeqSCpAxMp_7Qg" y="15"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_LtiPU6TiEeqSCpAxMp_7Qg" type="Class_AttributeCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_LtiPVKTiEeqSCpAxMp_7Qg"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_LtiPVaTiEeqSCpAxMp_7Qg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_LtiPVqTiEeqSCpAxMp_7Qg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LtiPV6TiEeqSCpAxMp_7Qg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_LtiPWKTiEeqSCpAxMp_7Qg" type="Class_OperationCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_LtiPWaTiEeqSCpAxMp_7Qg"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_LtiPWqTiEeqSCpAxMp_7Qg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_LtiPW6TiEeqSCpAxMp_7Qg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LtiPXKTiEeqSCpAxMp_7Qg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_Lti2YKTiEeqSCpAxMp_7Qg" type="Class_NestedClassifierCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_Lti2YaTiEeqSCpAxMp_7Qg"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_Lti2YqTiEeqSCpAxMp_7Qg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_Lti2Y6TiEeqSCpAxMp_7Qg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Lti2ZKTiEeqSCpAxMp_7Qg"/>
+    </children>
+    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactoryPattern.uml#_LtDuMKTiEeqSCpAxMp_7Qg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LthoQaTiEeqSCpAxMp_7Qg" x="1860" y="300" width="160"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_z5nT4KTxEeq1oZKG7r-_DQ" type="Class_Shape">
+    <children xmi:type="notation:DecorationNode" xmi:id="_z5n68KTxEeq1oZKG7r-_DQ" type="Class_NameLabel"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_z5n68aTxEeq1oZKG7r-_DQ" type="Class_FloatingNameLabel">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_z5n68qTxEeq1oZKG7r-_DQ" y="15"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_z5n686TxEeq1oZKG7r-_DQ" type="Class_AttributeCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_z5oiAKTxEeq1oZKG7r-_DQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_z5oiAaTxEeq1oZKG7r-_DQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_z5oiAqTxEeq1oZKG7r-_DQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_z5oiA6TxEeq1oZKG7r-_DQ"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_z5oiBKTxEeq1oZKG7r-_DQ" type="Class_OperationCompartment">
+      <children xmi:type="notation:Shape" xmi:id="_WwLqIKTyEeq1oZKG7r-_DQ" type="Operation_ClassOperationLabel">
+        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactoryPattern.uml#_WvBzkKTyEeq1oZKG7r-_DQ"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_WwLqIaTyEeq1oZKG7r-_DQ"/>
+      </children>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_z5oiBaTxEeq1oZKG7r-_DQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_z5oiBqTxEeq1oZKG7r-_DQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_z5oiB6TxEeq1oZKG7r-_DQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_z5oiCKTxEeq1oZKG7r-_DQ"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_z5oiCaTxEeq1oZKG7r-_DQ" type="Class_NestedClassifierCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_z5oiCqTxEeq1oZKG7r-_DQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_z5oiC6TxEeq1oZKG7r-_DQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_z5oiDKTxEeq1oZKG7r-_DQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_z5oiDaTxEeq1oZKG7r-_DQ"/>
+    </children>
+    <element xmi:type="uml:Class" href="myVelibNetworkAbstractFactoryPattern.uml#_z5YqYKTxEeq1oZKG7r-_DQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_z5nT4aTxEeq1oZKG7r-_DQ" x="1760" y="440"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_61jLQKTxEeq1oZKG7r-_DQ" type="Interface_Shape">
+    <children xmi:type="notation:DecorationNode" xmi:id="_61kZYKTxEeq1oZKG7r-_DQ" type="Interface_NameLabel"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_61kZYaTxEeq1oZKG7r-_DQ" type="Interface_FloatingNameLabel">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_61lAcKTxEeq1oZKG7r-_DQ" y="15"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_61lAcaTxEeq1oZKG7r-_DQ" type="Interface_AttributeCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_61lAcqTxEeq1oZKG7r-_DQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_61lAc6TxEeq1oZKG7r-_DQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_61lAdKTxEeq1oZKG7r-_DQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_61lAdaTxEeq1oZKG7r-_DQ"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_61lAdqTxEeq1oZKG7r-_DQ" type="Interface_OperationCompartment">
+      <children xmi:type="notation:Shape" xmi:id="_kFgsgKTyEeq1oZKG7r-_DQ" type="Operation_InterfaceOperationLabel">
+        <element xmi:type="uml:Operation" href="myVelibNetworkAbstractFactoryPattern.uml#_kFZXwKTyEeq1oZKG7r-_DQ"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_kFgsgaTyEeq1oZKG7r-_DQ"/>
+      </children>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_61lAd6TxEeq1oZKG7r-_DQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_61lAeKTxEeq1oZKG7r-_DQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_61lAeaTxEeq1oZKG7r-_DQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_61lAeqTxEeq1oZKG7r-_DQ"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_61lAe6TxEeq1oZKG7r-_DQ" type="Interface_NestedClassifierCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_61lAfKTxEeq1oZKG7r-_DQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_61lAfaTxEeq1oZKG7r-_DQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_61lAfqTxEeq1oZKG7r-_DQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_61lAf6TxEeq1oZKG7r-_DQ"/>
+    </children>
+    <element xmi:type="uml:Interface" href="myVelibNetworkAbstractFactoryPattern.uml#_61drsKTxEeq1oZKG7r-_DQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_61jLQaTxEeq1oZKG7r-_DQ" x="2180" y="440"/>
   </children>
   <styles xmi:type="notation:StringValueStyle" xmi:id="_2uXJMZnJEeqoguC7sxkWiA" name="diagram_compatibility_version" stringValue="1.4.0"/>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_2uXJMpnJEeqoguC7sxkWiA"/>
   <styles xmi:type="style:PapyrusDiagramStyle" xmi:id="_2uXJM5nJEeqoguC7sxkWiA" diagramKindId="org.eclipse.papyrus.uml.diagram.class">
-    <owner xmi:type="uml:Model" href="myVelibNetworkAbstractFactory.uml#_2t7EUJnJEeqoguC7sxkWiA"/>
+    <owner xmi:type="uml:Model" href="myVelibNetworkAbstractFactoryPattern.uml#_2t7EUJnJEeqoguC7sxkWiA"/>
   </styles>
-  <element xmi:type="uml:Model" href="myVelibNetworkAbstractFactory.uml#_2t7EUJnJEeqoguC7sxkWiA"/>
+  <element xmi:type="uml:Model" href="myVelibNetworkAbstractFactoryPattern.uml#_2t7EUJnJEeqoguC7sxkWiA"/>
   <edges xmi:type="notation:Connector" xmi:id="_QNWaIJnMEeqoguC7sxkWiA" type="Generalization_Edge" source="_IB6fMJnLEeqoguC7sxkWiA" target="_izlnYJnKEeqoguC7sxkWiA">
     <children xmi:type="notation:DecorationNode" xmi:id="_QNWaI5nMEeqoguC7sxkWiA" type="Generalization_StereotypeLabel">
       <styles xmi:type="notation:BooleanValueStyle" xmi:id="_ym-q0JnOEeqoguC7sxkWiA" name="IS_UPDATED_POSITION" booleanValue="true"/>
       <layoutConstraint xmi:type="notation:Location" xmi:id="_QNWaJJnMEeqoguC7sxkWiA" y="39"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_QNWaIZnMEeqoguC7sxkWiA"/>
-    <element xmi:type="uml:Generalization" href="myVelibNetworkAbstractFactory.uml#_QNKM4JnMEeqoguC7sxkWiA"/>
+    <element xmi:type="uml:Generalization" href="myVelibNetworkAbstractFactoryPattern.uml#_QNKM4JnMEeqoguC7sxkWiA"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_QNWaIpnMEeqoguC7sxkWiA" points="[1180, 100, -643984, -643984]$[1220, 41, -643984, -643984]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_QNtmgJnMEeqoguC7sxkWiA" id="(0.594059405940594,0.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_QNtmgZnMEeqoguC7sxkWiA" id="(0.37267080745341613,1.0)"/>
@@ -812,7 +886,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_RdJ1JJnMEeqoguC7sxkWiA" x="-1" y="38"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_RdJ1IZnMEeqoguC7sxkWiA"/>
-    <element xmi:type="uml:Generalization" href="myVelibNetworkAbstractFactory.uml#_Rc_dEJnMEeqoguC7sxkWiA"/>
+    <element xmi:type="uml:Generalization" href="myVelibNetworkAbstractFactoryPattern.uml#_Rc_dEJnMEeqoguC7sxkWiA"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_RdJ1IpnMEeqoguC7sxkWiA" points="[1280, 100, -643984, -643984]$[1240, 41, -643984, -643984]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Rdi2sJnMEeqoguC7sxkWiA" id="(0.39603960396039606,0.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Rdi2sZnMEeqoguC7sxkWiA" id="(0.6211180124223602,1.0)"/>
@@ -823,7 +897,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_TjtR9JnMEeqoguC7sxkWiA" y="39"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_TjtR8ZnMEeqoguC7sxkWiA"/>
-    <element xmi:type="uml:Generalization" href="myVelibNetworkAbstractFactory.uml#_TjiS0JnMEeqoguC7sxkWiA"/>
+    <element xmi:type="uml:Generalization" href="myVelibNetworkAbstractFactoryPattern.uml#_TjiS0JnMEeqoguC7sxkWiA"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_TjtR8pnMEeqoguC7sxkWiA" points="[1540, 100, -643984, -643984]$[1580, 41, -643984, -643984]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_TkFFYJnMEeqoguC7sxkWiA" id="(0.49586776859504134,0.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_TkFFYZnMEeqoguC7sxkWiA" id="(0.37267080745341613,1.0)"/>
@@ -834,7 +908,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_UUAGdJnMEeqoguC7sxkWiA" x="-1" y="38"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_UUAGcZnMEeqoguC7sxkWiA"/>
-    <element xmi:type="uml:Generalization" href="myVelibNetworkAbstractFactory.uml#_UT1uYJnMEeqoguC7sxkWiA"/>
+    <element xmi:type="uml:Generalization" href="myVelibNetworkAbstractFactoryPattern.uml#_UT1uYJnMEeqoguC7sxkWiA"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_UUAGcpnMEeqoguC7sxkWiA" points="[1640, 100, -643984, -643984]$[1600, 41, -643984, -643984]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_UUYg8JnMEeqoguC7sxkWiA" id="(0.49586776859504134,0.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_UUYg8ZnMEeqoguC7sxkWiA" id="(0.6211180124223602,1.0)"/>
@@ -845,7 +919,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_p0biBJnMEeqoguC7sxkWiA" y="40"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_p0biAZnMEeqoguC7sxkWiA"/>
-    <element xmi:type="uml:Generalization" href="myVelibNetworkAbstractFactory.uml#_p0Qi4JnMEeqoguC7sxkWiA"/>
+    <element xmi:type="uml:Generalization" href="myVelibNetworkAbstractFactoryPattern.uml#_p0Qi4JnMEeqoguC7sxkWiA"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_p0biApnMEeqoguC7sxkWiA" points="[1940, 80, -643984, -643984]$[1940, -39, -643984, -643984]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_p0yuYJnMEeqoguC7sxkWiA" id="(0.4968944099378882,0.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_p0yuYZnMEeqoguC7sxkWiA" id="(0.4975124378109453,1.0)"/>
@@ -856,7 +930,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_lm10xKCyEeqR5MuaOp_i2g" y="40"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_lm10waCyEeqR5MuaOp_i2g"/>
-    <element xmi:type="uml:Generalization" href="myVelibNetworkAbstractFactory.uml#_lmJ4QKCyEeqR5MuaOp_i2g"/>
+    <element xmi:type="uml:Generalization" href="myVelibNetworkAbstractFactoryPattern.uml#_lmJ4QKCyEeqR5MuaOp_i2g"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_lm10wqCyEeqR5MuaOp_i2g" points="[900, 60, -643984, -643984]$[900, 20, -643984, -643984]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ln1TQKCyEeqR5MuaOp_i2g" id="(0.4999999999999998,0.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ln1TQaCyEeqR5MuaOp_i2g" id="(0.425531914893617,1.0)"/>
@@ -866,7 +940,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_dP7bNKHFEeqCkJE6t619Zw" y="40"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_dP7bMaHFEeqCkJE6t619Zw"/>
-    <element xmi:type="uml:Generalization" href="myVelibNetworkAbstractFactory.uml#_dPnSIKHFEeqCkJE6t619Zw"/>
+    <element xmi:type="uml:Generalization" href="myVelibNetworkAbstractFactoryPattern.uml#_dPnSIKHFEeqCkJE6t619Zw"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_dP7bMqHFEeqCkJE6t619Zw" points="[700, 120, -643984, -643984]$[620, 80, -643984, -643984]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_dQn-wKHFEeqCkJE6t619Zw" id="(0.594059405940594,0.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_dQn-waHFEeqCkJE6t619Zw" id="(0.5673758865248224,1.0)"/>
@@ -876,7 +950,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_eJlnEaHFEeqCkJE6t619Zw" y="40"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_eJlAAaHFEeqCkJE6t619Zw"/>
-    <element xmi:type="uml:Generalization" href="myVelibNetworkAbstractFactory.uml#_eJSFEKHFEeqCkJE6t619Zw"/>
+    <element xmi:type="uml:Generalization" href="myVelibNetworkAbstractFactoryPattern.uml#_eJSFEKHFEeqCkJE6t619Zw"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_eJlAAqHFEeqCkJE6t619Zw" points="[540, 120, -643984, -643984]$[600, 80, -643984, -643984]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_eKMrEKHFEeqCkJE6t619Zw" id="(0.594059405940594,0.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_eKNSIKHFEeqCkJE6t619Zw" id="(0.4255319148936167,1.0)"/>
@@ -887,7 +961,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_hfkEYKHFEeqCkJE6t619Zw" y="40"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_hfjdUaHFEeqCkJE6t619Zw"/>
-    <element xmi:type="uml:Generalization" href="myVelibNetworkAbstractFactory.uml#_hfOtMKHFEeqCkJE6t619Zw"/>
+    <element xmi:type="uml:Generalization" href="myVelibNetworkAbstractFactoryPattern.uml#_hfOtMKHFEeqCkJE6t619Zw"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_hfjdUqHFEeqCkJE6t619Zw" points="[80, 160, -643984, -643984]$[80, 80, -643984, -643984]$[120, 80, -643984, -643984]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_hgWHgKHFEeqCkJE6t619Zw" id="(0.2,0.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_hgWHgaHFEeqCkJE6t619Zw" id="(0.0,0.8839779005524862)"/>
@@ -898,7 +972,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_jkS8RKHFEeqCkJE6t619Zw" y="38"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_jkS8QaHFEeqCkJE6t619Zw"/>
-    <element xmi:type="uml:Generalization" href="myVelibNetworkAbstractFactory.uml#_jj-MIKHFEeqCkJE6t619Zw"/>
+    <element xmi:type="uml:Generalization" href="myVelibNetworkAbstractFactoryPattern.uml#_jj-MIKHFEeqCkJE6t619Zw"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_jkS8QqHFEeqCkJE6t619Zw" points="[40, 400, -643984, -643984]$[20, 400, -643984, -643984]$[20, 60, -643984, -643984]$[120, 60, -643984, -643984]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_jlAG4KHFEeqCkJE6t619Zw" id="(0.0,0.5673758865248227)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_jlAG4aHFEeqCkJE6t619Zw" id="(0.0,0.7734806629834254)"/>
@@ -909,7 +983,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_o8ODNKHFEeqCkJE6t619Zw" x="1" y="39"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_o8ODMaHFEeqCkJE6t619Zw"/>
-    <element xmi:type="uml:Generalization" href="myVelibNetworkAbstractFactory.uml#_o76hMKHFEeqCkJE6t619Zw"/>
+    <element xmi:type="uml:Generalization" href="myVelibNetworkAbstractFactoryPattern.uml#_o76hMKHFEeqCkJE6t619Zw"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_o8ODMqHFEeqCkJE6t619Zw" points="[40, 560, -643984, -643984]$[0, 560, -643984, -643984]$[0, 40, -643984, -643984]$[120, 40, -643984, -643984]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_o85_sKHFEeqCkJE6t619Zw" id="(0.0,0.5673758865248227)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_o85_saHFEeqCkJE6t619Zw" id="(0.0,0.6629834254143646)"/>
@@ -920,7 +994,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_t6mBsKHFEeqCkJE6t619Zw" y="39"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_t6laoaHFEeqCkJE6t619Zw"/>
-    <element xmi:type="uml:Generalization" href="myVelibNetworkAbstractFactory.uml#_t6EdQKHFEeqCkJE6t619Zw"/>
+    <element xmi:type="uml:Generalization" href="myVelibNetworkAbstractFactoryPattern.uml#_t6EdQKHFEeqCkJE6t619Zw"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_t6laoqHFEeqCkJE6t619Zw" points="[40, 720, -643984, -643984]$[-20, 720, -643984, -643984]$[-20, 24, -643984, -643984]$[120, 22, -643984, -643984]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xNEfEKHFEeqCkJE6t619Zw" id="(0.0,0.5673758865248227)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_yEnyIKHFEeqCkJE6t619Zw" id="(0.0,0.36666666666666664)"/>
@@ -931,7 +1005,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_1qyAgaHFEeqCkJE6t619Zw" y="39"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_1qxZcaHFEeqCkJE6t619Zw"/>
-    <element xmi:type="uml:Generalization" href="myVelibNetworkAbstractFactory.uml#_1qWisKHFEeqCkJE6t619Zw"/>
+    <element xmi:type="uml:Generalization" href="myVelibNetworkAbstractFactoryPattern.uml#_1qWisKHFEeqCkJE6t619Zw"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_1qxZcqHFEeqCkJE6t619Zw" points="[40, 900, -643984, -643984]$[-40, 900, -643984, -643984]$[-40, 0, -643984, -643984]$[120, 0, -643984, -643984]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1rhAUKHFEeqCkJE6t619Zw" id="(0.0,0.4968944099378882)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1rhAUaHFEeqCkJE6t619Zw" id="(0.0,0.4419889502762431)"/>
@@ -946,7 +1020,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_Xxqw1qHHEeqCkJE6t619Zw" y="59"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_Xxqw0aHHEeqCkJE6t619Zw"/>
-    <element xmi:type="uml:Dependency" href="myVelibNetworkAbstractFactory.uml#_XxWAsKHHEeqCkJE6t619Zw"/>
+    <element xmi:type="uml:Dependency" href="myVelibNetworkAbstractFactoryPattern.uml#_XxWAsKHHEeqCkJE6t619Zw"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Xxqw0qHHEeqCkJE6t619Zw" points="[240, 220, -643984, -643984]$[400, 220, -643984, -643984]$[400, 0, -643984, -643984]$[540, 0, -643984, -643984]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_XyeCEKHHEeqCkJE6t619Zw" id="(1.0,0.425531914893617)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_XyeCEaHHEeqCkJE6t619Zw" id="(0.0,0.5673758865248227)"/>
@@ -961,7 +1035,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_clJG5qHHEeqCkJE6t619Zw" y="60"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_clJG4aHHEeqCkJE6t619Zw"/>
-    <element xmi:type="uml:Dependency" href="myVelibNetworkAbstractFactory.uml#_clHRsKHHEeqCkJE6t619Zw"/>
+    <element xmi:type="uml:Dependency" href="myVelibNetworkAbstractFactoryPattern.uml#_clHRsKHHEeqCkJE6t619Zw"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_clJG4qHHEeqCkJE6t619Zw" points="[240, 400, -643984, -643984]$[800, 400, -643984, -643984]$[800, 0, -643984, -643984]$[860, 0, -643984, -643984]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cmGwMKHHEeqCkJE6t619Zw" id="(0.9950248756218906,0.5673758865248227)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cmGwMaHHEeqCkJE6t619Zw" id="(0.0,0.4968944099378882)"/>
@@ -976,7 +1050,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_fYbG1qHHEeqCkJE6t619Zw" y="60"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_fYbG0aHHEeqCkJE6t619Zw"/>
-    <element xmi:type="uml:Dependency" href="myVelibNetworkAbstractFactory.uml#_fYZ4sKHHEeqCkJE6t619Zw"/>
+    <element xmi:type="uml:Dependency" href="myVelibNetworkAbstractFactoryPattern.uml#_fYZ4sKHHEeqCkJE6t619Zw"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_fYbG0qHHEeqCkJE6t619Zw" points="[240, 560, -643984, -643984]$[1040, 560, -643984, -643984]$[1040, 0, -643984, -643984]$[1160, 0, -643984, -643984]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_fZJfkKHHEeqCkJE6t619Zw" id="(0.9950248756218906,0.5673758865248227)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_fZJfkaHHEeqCkJE6t619Zw" id="(0.0,0.4968944099378882)"/>
@@ -991,7 +1065,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_jnkn1qHHEeqCkJE6t619Zw" y="60"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_jnkn0aHHEeqCkJE6t619Zw"/>
-    <element xmi:type="uml:Dependency" href="myVelibNetworkAbstractFactory.uml#_jnjZsKHHEeqCkJE6t619Zw"/>
+    <element xmi:type="uml:Dependency" href="myVelibNetworkAbstractFactoryPattern.uml#_jnjZsKHHEeqCkJE6t619Zw"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_jnkn0qHHEeqCkJE6t619Zw" points="[240, 720, -643984, -643984]$[1420, 720, -643984, -643984]$[1420, 0, -643984, -643984]$[1520, 0, -643984, -643984]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_joUOsKHHEeqCkJE6t619Zw" id="(1.0,0.5673758865248227)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_joUOsaHHEeqCkJE6t619Zw" id="(0.0,0.4968944099378882)"/>
@@ -1006,7 +1080,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_onLVZqHHEeqCkJE6t619Zw" y="60"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_onLVYaHHEeqCkJE6t619Zw"/>
-    <element xmi:type="uml:Dependency" href="myVelibNetworkAbstractFactory.uml#_onJgMKHHEeqCkJE6t619Zw"/>
+    <element xmi:type="uml:Dependency" href="myVelibNetworkAbstractFactoryPattern.uml#_onJgMKHHEeqCkJE6t619Zw"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_onLVYqHHEeqCkJE6t619Zw" points="[240, 900, -643984, -643984]$[1760, 900, -643984, -643984]$[1760, 0, -643984, -643984]$[1840, 0, -643984, -643984]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ooHJgKHHEeqCkJE6t619Zw" id="(0.9950248756218906,0.4968944099378882)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ooHJgaHHEeqCkJE6t619Zw" id="(0.0,0.4968944099378882)"/>
@@ -1019,7 +1093,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_y8LaVqHHEeqCkJE6t619Zw" y="60"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_y8LaUaHHEeqCkJE6t619Zw"/>
-    <element xmi:type="uml:Dependency" href="myVelibNetworkAbstractFactory.uml#_y8KMMKHHEeqCkJE6t619Zw"/>
+    <element xmi:type="uml:Dependency" href="myVelibNetworkAbstractFactoryPattern.uml#_y8KMMKHHEeqCkJE6t619Zw"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_y8LaUqHHEeqCkJE6t619Zw" points="[820, -200, -643984, -643984]$[620, -80, -643984, -643984]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_y84k8KHHEeqCkJE6t619Zw" id="(0.12422360248447205,0.9917355371900827)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_y84k8aHHEeqCkJE6t619Zw" id="(0.5673758865248224,0.0)"/>
@@ -1032,7 +1106,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_z925xqHHEeqCkJE6t619Zw" y="60"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_z925waHHEeqCkJE6t619Zw"/>
-    <element xmi:type="uml:Dependency" href="myVelibNetworkAbstractFactory.uml#_z91roKHHEeqCkJE6t619Zw"/>
+    <element xmi:type="uml:Dependency" href="myVelibNetworkAbstractFactoryPattern.uml#_z91roKHHEeqCkJE6t619Zw"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_z925wqHHEeqCkJE6t619Zw" points="[880, -200, -643984, -643984]$[920, -80, -643984, -643984]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_z-oV0KHHEeqCkJE6t619Zw" id="(0.2484472049689441,0.9917355371900827)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_z-oV0aHHEeqCkJE6t619Zw" id="(0.425531914893617,0.0)"/>
@@ -1045,7 +1119,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_1vYhxqHHEeqCkJE6t619Zw" y="60"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_1vYhwaHHEeqCkJE6t619Zw"/>
-    <element xmi:type="uml:Dependency" href="myVelibNetworkAbstractFactory.uml#_1vXToKHHEeqCkJE6t619Zw"/>
+    <element xmi:type="uml:Dependency" href="myVelibNetworkAbstractFactoryPattern.uml#_1vXToKHHEeqCkJE6t619Zw"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_1vYhwqHHEeqCkJE6t619Zw" points="[860, -200, -643984, -643984]$[1240, -80, -643984, -643984]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1wHhkKHHEeqCkJE6t619Zw" id="(0.37267080745341613,0.9917355371900827)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1wHhkaHHEeqCkJE6t619Zw" id="(0.4968944099378882,0.0)"/>
@@ -1058,7 +1132,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_3oPg1qHHEeqCkJE6t619Zw" y="60"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_3oPg0aHHEeqCkJE6t619Zw"/>
-    <element xmi:type="uml:Dependency" href="myVelibNetworkAbstractFactory.uml#_3oOSsKHHEeqCkJE6t619Zw"/>
+    <element xmi:type="uml:Dependency" href="myVelibNetworkAbstractFactoryPattern.uml#_3oOSsKHHEeqCkJE6t619Zw"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3oPg0qHHEeqCkJE6t619Zw" points="[900, -200, -643984, -643984]$[1600, -80, -643984, -643984]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_3o_HsKHHEeqCkJE6t619Zw" id="(0.4968944099378882,0.9917355371900827)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_3o_HsaHHEeqCkJE6t619Zw" id="(0.4968944099378882,0.0)"/>
@@ -1071,7 +1145,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_4kgUxqHHEeqCkJE6t619Zw" y="60"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_4kgUwaHHEeqCkJE6t619Zw"/>
-    <element xmi:type="uml:Dependency" href="myVelibNetworkAbstractFactory.uml#_4kfGoKHHEeqCkJE6t619Zw"/>
+    <element xmi:type="uml:Dependency" href="myVelibNetworkAbstractFactoryPattern.uml#_4kfGoKHHEeqCkJE6t619Zw"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_4kgUwqHHEeqCkJE6t619Zw" points="[920, -200, -643984, -643984]$[1940, -80, -643984, -643984]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_4lZFkKHHEeqCkJE6t619Zw" id="(0.7453416149068323,0.9917355371900827)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_4lZFkaHHEeqCkJE6t619Zw" id="(0.4975124378109453,0.0)"/>
@@ -1084,7 +1158,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_FOXn86J7EeqTb8QkBN4-Fg" y="60"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_FOPFEaJ7EeqTb8QkBN4-Fg"/>
-    <element xmi:type="uml:Dependency" href="myVelibNetworkAbstractFactory.uml#_FNnaAKJ7EeqTb8QkBN4-Fg"/>
+    <element xmi:type="uml:Dependency" href="myVelibNetworkAbstractFactoryPattern.uml#_FNnaAKJ7EeqTb8QkBN4-Fg"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_FOPFEqJ7EeqTb8QkBN4-Fg" points="[800, -260, -643984, -643984]$[572, -260, -643984, -643984]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_FSVh8KJ7EeqTb8QkBN4-Fg" id="(0.0,0.49586776859504134)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_FSWJAKJ7EeqTb8QkBN4-Fg" id="(0.9957081545064378,0.37735849056603776)"/>
@@ -1099,9 +1173,64 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_GTZWUKJ7EeqTb8QkBN4-Fg" y="60"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_GS8DUaJ7EeqTb8QkBN4-Fg"/>
-    <element xmi:type="uml:Dependency" href="myVelibNetworkAbstractFactory.uml#_GS5AAKJ7EeqTb8QkBN4-Fg"/>
+    <element xmi:type="uml:Dependency" href="myVelibNetworkAbstractFactoryPattern.uml#_GS5AAKJ7EeqTb8QkBN4-Fg"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GS8DUqJ7EeqTb8QkBN4-Fg" points="[340, -260, -643984, -643984]$[220, -260, -643984, -643984]$[220, -80, -643984, -643984]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GVC8IKJ7EeqTb8QkBN4-Fg" id="(0.0,0.37735849056603776)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GVC8IaJ7EeqTb8QkBN4-Fg" id="(0.4975124378109453,0.0)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_k8sooKTxEeq1oZKG7r-_DQ" type="Association_Edge" source="_Y1o7EJnLEeqoguC7sxkWiA" target="_LthoQKTiEeqSCpAxMp_7Qg">
+    <children xmi:type="notation:DecorationNode" xmi:id="_k81ykKTxEeq1oZKG7r-_DQ" type="Association_StereotypeLabel">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_k81ykaTxEeq1oZKG7r-_DQ" y="-20"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_k82ZoKTxEeq1oZKG7r-_DQ" type="Association_NameLabel">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_k82ZoaTxEeq1oZKG7r-_DQ" y="20"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_k82ZoqTxEeq1oZKG7r-_DQ" type="Association_TargetRoleLabel">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_k82Zo6TxEeq1oZKG7r-_DQ" x="-45" y="-137"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_k82ZpKTxEeq1oZKG7r-_DQ" type="Association_SourceRoleLabel">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_k82ZpaTxEeq1oZKG7r-_DQ" x="59" y="125"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_k82ZpqTxEeq1oZKG7r-_DQ" type="Association_SourceMultiplicityLabel">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_k82Zp6TxEeq1oZKG7r-_DQ" x="-45" y="115"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_k82ZqKTxEeq1oZKG7r-_DQ" type="Association_TargetMultiplicityLabel">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_k82ZqaTxEeq1oZKG7r-_DQ" x="59" y="-111"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_k8sooaTxEeq1oZKG7r-_DQ"/>
+    <element xmi:type="uml:Association" href="myVelibNetworkAbstractFactoryPattern.uml#_k7BNoKTxEeq1oZKG7r-_DQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_k8sooqTxEeq1oZKG7r-_DQ" points="[1940, 220, -643984, -643984]$[1940, 300, -643984, -643984]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_k_8J4KTxEeq1oZKG7r-_DQ" id="(0.4968944099378882,0.9980198019801981)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_k_8w8KTxEeq1oZKG7r-_DQ" id="(0.5,0.0)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_5qo3UKTxEeq1oZKG7r-_DQ" type="Dependency_Edge" source="_LthoQKTiEeqSCpAxMp_7Qg" target="_z5nT4KTxEeq1oZKG7r-_DQ">
+    <children xmi:type="notation:DecorationNode" xmi:id="_5qpeYKTxEeq1oZKG7r-_DQ" type="Dependency_NameLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_haepoKTyEeq1oZKG7r-_DQ" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_5qpeYaTxEeq1oZKG7r-_DQ" x="1" y="38"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_5qpeYqTxEeq1oZKG7r-_DQ" type="Dependency_StereotypeLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_hbbE0KTyEeq1oZKG7r-_DQ" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_5qpeY6TxEeq1oZKG7r-_DQ" x="1" y="58"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_5qo3UaTxEeq1oZKG7r-_DQ"/>
+    <element xmi:type="uml:Dependency" href="myVelibNetworkAbstractFactoryPattern.uml#_5qgUcKTxEeq1oZKG7r-_DQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_5qo3UqTxEeq1oZKG7r-_DQ" points="[1940, 400, -643984, -643984]$[1940, 440, -643984, -643984]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_5yQiQKTxEeq1oZKG7r-_DQ" id="(0.5,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_5yRJUKTxEeq1oZKG7r-_DQ" id="(0.4945054945054945,0.0)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_JM-j0KTyEeq1oZKG7r-_DQ" type="InterfaceRealization_Edge" source="_z5nT4KTxEeq1oZKG7r-_DQ" target="_61jLQKTxEeq1oZKG7r-_DQ">
+    <children xmi:type="notation:DecorationNode" xmi:id="_JM_K4KTyEeq1oZKG7r-_DQ" type="InterfaceRealization_StereotypeLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_hYqEsKTyEeq1oZKG7r-_DQ" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_JM_K4aTyEeq1oZKG7r-_DQ" y="40"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_JM_K4qTyEeq1oZKG7r-_DQ" type="InterfaceRealization_NameLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_hZmf4KTyEeq1oZKG7r-_DQ" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_JM_K46TyEeq1oZKG7r-_DQ" y="60"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_JM-j0aTyEeq1oZKG7r-_DQ"/>
+    <element xmi:type="uml:InterfaceRealization" href="myVelibNetworkAbstractFactoryPattern.uml#_JMEk4KTyEeq1oZKG7r-_DQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_JM-j0qTyEeq1oZKG7r-_DQ" points="[2041, 500, -643984, -643984]$[2180, 500, -643984, -643984]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_JPZlsKTyEeq1oZKG7r-_DQ" id="(1.0,0.6)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_JPaMwKTyEeq1oZKG7r-_DQ" id="(0.0,0.5769230769230769)"/>
   </edges>
 </notation:Diagram>

@@ -21,10 +21,7 @@ mentionned yet</body>
     </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Interface" xmi:id="_CV_TYKG8EeqCkJE6t619Zw" name="ParkingSlotObservable">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_Zyu1MqG9EeqCkJE6t619Zw" name="stationobserver" type="_CwTQ0KG8EeqCkJE6t619Zw" association="_ZyuOIKG9EeqCkJE6t619Zw">
-      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Zyu1M6G9EeqCkJE6t619Zw"/>
-      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Zyu1NKG9EeqCkJE6t619Zw" value="1"/>
-    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_Zyu1MqG9EeqCkJE6t619Zw" name="stationobserver" type="_CwTQ0KG8EeqCkJE6t619Zw" association="_ZyuOIKG9EeqCkJE6t619Zw"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_toc34KG8EeqCkJE6t619Zw" name="registerObserver">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_zr0vkKG8EeqCkJE6t619Zw" name="observer" type="_CwTQ0KG8EeqCkJE6t619Zw"/>
     </ownedOperation>
@@ -58,6 +55,9 @@ mentionned yet</body>
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
     </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_aDZR8KG-EeqCkJE6t619Zw" name="uniqueStationObserver" visibility="private" type="_CwTQ0KG8EeqCkJE6t619Zw"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_ZbT8AKTkEeqSCpAxMp_7Qg" name="activityLogs" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EMap"/>
+    </ownedAttribute>
     <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_cbXg0KG8EeqCkJE6t619Zw" client="_Pxz_UKG8EeqCkJE6t619Zw" supplier="_CV_TYKG8EeqCkJE6t619Zw" contract="_CV_TYKG8EeqCkJE6t619Zw"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_0B-wUKG9EeqCkJE6t619Zw" name="notifyObserver">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_0B-wUaG9EeqCkJE6t619Zw" name="newIsOutOfOrder">
@@ -76,7 +76,50 @@ mentionned yet</body>
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Zyu1MKG9EeqCkJE6t619Zw" source="org.eclipse.papyrus">
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Zyu1MaG9EeqCkJE6t619Zw" key="nature" value="UML_Nature"/>
     </eAnnotations>
-    <ownedEnd xmi:type="uml:Property" xmi:id="_Zyu1NaG9EeqCkJE6t619Zw" name="parkingslotobservable" type="_CV_TYKG8EeqCkJE6t619Zw" association="_ZyuOIKG9EeqCkJE6t619Zw"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_Zyu1NaG9EeqCkJE6t619Zw" name="parkingslotobservable" type="_CV_TYKG8EeqCkJE6t619Zw" association="_ZyuOIKG9EeqCkJE6t619Zw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OPBpwKTkEeqSCpAxMp_7Qg"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OPHwYKTkEeqSCpAxMp_7Qg" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_n895gKTiEeqSCpAxMp_7Qg" name="ActivityLog">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_1PBlcKTiEeqSCpAxMp_7Qg" name="counter" visibility="private" isStatic="true" isReadOnly="true">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_8i3mgKTiEeqSCpAxMp_7Qg" name="isSetToOccupied" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_Cah9cKTjEeqSCpAxMp_7Qg" name="ID" visibility="private" isReadOnly="true">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_Ghw4kKTjEeqSCpAxMp_7Qg" name="date">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_ptKPUaTjEeqSCpAxMp_7Qg" name="parkingslot" type="_Pxz_UKG8EeqCkJE6t619Zw" association="_ptJoQKTjEeqSCpAxMp_7Qg"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_R992IKTjEeqSCpAxMp_7Qg" name="getDateDiff" isStatic="true">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_WeA54KTjEeqSCpAxMp_7Qg" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_gKDhYKTjEeqSCpAxMp_7Qg" name="infDate">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_kN-CwKTjEeqSCpAxMp_7Qg" name="supDate">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_XYKN8KTjEeqSCpAxMp_7Qg" name="getDate" isStatic="true">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_nlLPIKTjEeqSCpAxMp_7Qg" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_ptJoQKTjEeqSCpAxMp_7Qg" memberEnd="_ptKPUaTjEeqSCpAxMp_7Qg _ptKPVKTjEeqSCpAxMp_7Qg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ptJoQaTjEeqSCpAxMp_7Qg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ptKPUKTjEeqSCpAxMp_7Qg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_ptKPVKTjEeqSCpAxMp_7Qg" name="activitylog" type="_n895gKTiEeqSCpAxMp_7Qg" association="_ptJoQKTjEeqSCpAxMp_7Qg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_FkosgKTkEeqSCpAxMp_7Qg"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_FLJOcKTkEeqSCpAxMp_7Qg" value="*"/>
+    </ownedEnd>
   </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_5RydEKG9EeqCkJE6t619Zw">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5RzEIKG9EeqCkJE6t619Zw" source="http://www.eclipse.org/uml2/2.0.0/UML">

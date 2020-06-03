@@ -7,7 +7,7 @@ import java.util.Date;
 /**
  * <b>Bicycle is a class that represents the bicycles that will be available in the Velib Network.</b>
  * <p>
- * An instance of Bycicle is characterized by :
+ * An instance of Bicycle is characterized by :
  * <ul>
  * <li>An ID</li>
  * </ul>

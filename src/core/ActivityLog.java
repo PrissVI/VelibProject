@@ -28,6 +28,7 @@ public class ActivityLog implements Serializable {
 	}
 
 	/*METHODS*/
+	//custom methods
 	/**
 	 * Computes a diff between two dates.
 	 * @param Date: date1, the oldest date

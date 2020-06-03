@@ -8,7 +8,7 @@
 check out the the stationAndCardVisitorPattern UML.</body>
   </ownedComment>
   <ownedComment xmi:type="uml:Comment" xmi:id="_pn4SsKHuEeqd1faAS4zbUA">
-    <body>for more details on the ParkingSlots class,&#xD;
+    <body>for more details on the ParkingSlots class and its child,&#xD;
 check out the the stationAndParkingSlotsObserverPattern UML.</body>
   </ownedComment>
   <ownedComment xmi:type="uml:Comment" xmi:id="_W2LU8KHzEeqd1faAS4zbUA">
@@ -177,6 +177,10 @@ check out the the stationAndCardVisitorPattern UML.</body>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_Y1me0JnLEeqoguC7sxkWiA" name="ParkingSlot">
     <generalization xmi:type="uml:Generalization" xmi:id="_p0Qi4JnMEeqoguC7sxkWiA" general="_p89d0JnKEeqoguC7sxkWiA"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_k7FfEKTxEeq1oZKG7r-_DQ" name="activitylog" type="_LtDuMKTiEeqSCpAxMp_7Qg" association="_k7BNoKTxEeq1oZKG7r-_DQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_k7FfEaTxEeq1oZKG7r-_DQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_k7GGIKTxEeq1oZKG7r-_DQ" value="1"/>
+    </ownedAttribute>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_ZgfuAKCyEeqR5MuaOp_i2g" name="Person" isAbstract="true"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_gYrGwKCyEeqR5MuaOp_i2g" name="User">
@@ -230,31 +234,6 @@ check out the the stationAndCardVisitorPattern UML.</body>
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_RmPpMKHvEeqd1faAS4zbUA" name="user" type="_ZgfuAKCyEeqR5MuaOp_i2g"/>
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_ap-TgKHvEeqd1faAS4zbUA" name="duration">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
-      </ownedParameter>
-    </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="__teBoKTfEeqSCpAxMp_7Qg" name="identifyUser">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_NSXxEKTgEeqSCpAxMp_7Qg" name="user" type="_gYrGwKCyEeqR5MuaOp_i2g"/>
-    </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_ZJz5IKTgEeqSCpAxMp_7Qg" name="getStatistics">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_kSF1IKTgEeqSCpAxMp_7Qg" direction="return">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-      </ownedParameter>
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_HZ4eQKThEeqSCpAxMp_7Qg" name="infDate">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
-      </ownedParameter>
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_Jy6LIKThEeqSCpAxMp_7Qg" name="supDate">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
-      </ownedParameter>
-    </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_a6jeAKTgEeqSCpAxMp_7Qg" name="getOccupationRate">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_hAL_gKTgEeqSCpAxMp_7Qg" direction="return">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDouble"/>
-      </ownedParameter>
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_Na0F8KThEeqSCpAxMp_7Qg" name="infDate">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
-      </ownedParameter>
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_PLINAKThEeqSCpAxMp_7Qg" name="supDate">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
       </ownedParameter>
     </ownedOperation>
   </packagedElement>
@@ -360,6 +339,33 @@ check out the the stationAndCardVisitorPattern UML.</body>
   </packagedElement>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_FNnaAKJ7EeqTb8QkBN4-Fg" client="_6c7ssJnJEeqoguC7sxkWiA" supplier="_pO0M0KJ6EeqTb8QkBN4-Fg"/>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_GS5AAKJ7EeqTb8QkBN4-Fg" client="_pO0M0KJ6EeqTb8QkBN4-Fg" supplier="_E0ldAJnKEeqoguC7sxkWiA"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_LtDuMKTiEeqSCpAxMp_7Qg" name="ActivityLog"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_k7BNoKTxEeq1oZKG7r-_DQ" memberEnd="_k7FfEKTxEeq1oZKG7r-_DQ _k7GGIaTxEeq1oZKG7r-_DQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k7EQ8KTxEeq1oZKG7r-_DQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k7EQ8aTxEeq1oZKG7r-_DQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_k7GGIaTxEeq1oZKG7r-_DQ" name="parkingslot" type="_Y1me0JnLEeqoguC7sxkWiA" association="_k7BNoKTxEeq1oZKG7r-_DQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_z5YqYKTxEeq1oZKG7r-_DQ" name="DateComparatorForActivityLogs">
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_JMEk4KTyEeq1oZKG7r-_DQ" client="_z5YqYKTxEeq1oZKG7r-_DQ" supplier="_61drsKTxEeq1oZKG7r-_DQ" contract="_61drsKTxEeq1oZKG7r-_DQ"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_WvBzkKTyEeq1oZKG7r-_DQ" name="compare">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_btaZIKTyEeq1oZKG7r-_DQ" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_fZwvEKTyEeq1oZKG7r-_DQ" name="arg0" type="_LtDuMKTiEeqSCpAxMp_7Qg"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_g4tZUKTyEeq1oZKG7r-_DQ" name="arg1" type="_LtDuMKTiEeqSCpAxMp_7Qg"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_5qgUcKTxEeq1oZKG7r-_DQ" client="_LtDuMKTiEeqSCpAxMp_7Qg" supplier="_z5YqYKTxEeq1oZKG7r-_DQ"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_61drsKTxEeq1oZKG7r-_DQ" name="Comparator&lt;ActivityLog>">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_kFZXwKTyEeq1oZKG7r-_DQ" name="compare">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_kFZXwaTyEeq1oZKG7r-_DQ" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_kFZXwqTyEeq1oZKG7r-_DQ" name="arg0" type="_LtDuMKTiEeqSCpAxMp_7Qg"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_kFZXw6TyEeq1oZKG7r-_DQ" name="arg1" type="_LtDuMKTiEeqSCpAxMp_7Qg"/>
+    </ownedOperation>
+  </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_M3OqcKHxEeqd1faAS4zbUA">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_M3P4kKHxEeqd1faAS4zbUA" source="http://www.eclipse.org/uml2/2.0.0/UML">
       <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>

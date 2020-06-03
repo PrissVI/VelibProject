@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_Nk8RUKTsEeqSCpAxMp_7Qg" name="models">
+  <ownedComment xmi:type="uml:Comment" xmi:id="_9NWs8KTtEeqSCpAxMp_7Qg">
+    <body>(Actually having the Comparator&lt;Station> Interface as the &quot;SortingStrategy&quot; Interface would have been easier.&#xD;
+However, at first I did not think abt setting infDate and supDate as attributes of the SortLeastOccupied...)</body>
+  </ownedComment>
+  <ownedComment xmi:type="uml:Comment" xmi:id="_ZWwAkKTuEeqSCpAxMp_7Qg">
+    <body>For more details on MyVelibNetwork class,&#xD;
+checkout the myVelibNetworkRidePlanningStrategyPattern&#xD;
+diagram</body>
+  </ownedComment>
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_NnDKIKTsEeqSCpAxMp_7Qg">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_1_t3AKTsEeqSCpAxMp_7Qg" name="SortMostUsed">
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_xRDTAKTtEeqSCpAxMp_7Qg" client="_1_t3AKTsEeqSCpAxMp_7Qg" supplier="_8_DnsKTsEeqSCpAxMp_7Qg" contract="_8_DnsKTsEeqSCpAxMp_7Qg"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_kXgi0KTvEeqSCpAxMp_7Qg" name="sort">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_kXgi0aTvEeqSCpAxMp_7Qg" name="stations">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EMap"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_kXgi0qTvEeqSCpAxMp_7Qg" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEList"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_8_DnsKTsEeqSCpAxMp_7Qg" name="SortingStrategy">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_aLy8wKTvEeqSCpAxMp_7Qg" name="sort">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_gOsTUKTvEeqSCpAxMp_7Qg" name="stations">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EMap"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_iQdWwKTvEeqSCpAxMp_7Qg" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEList"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_FNOjAKTtEeqSCpAxMp_7Qg" name="SortLeastOccupied">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_x7d3EKTvEeqSCpAxMp_7Qg" name="myInfDate" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_1hjM8KTvEeqSCpAxMp_7Qg" name="mySupDate" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+    </ownedAttribute>
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_zdZ10KTtEeqSCpAxMp_7Qg" client="_FNOjAKTtEeqSCpAxMp_7Qg" supplier="_8_DnsKTsEeqSCpAxMp_7Qg" contract="_8_DnsKTsEeqSCpAxMp_7Qg"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_nre1AKTvEeqSCpAxMp_7Qg" name="sort">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_nre1AaTvEeqSCpAxMp_7Qg" name="stations">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EMap"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_nre1AqTvEeqSCpAxMp_7Qg" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEList"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_8s4yQKTvEeqSCpAxMp_7Qg" name="convertToDate" isStatic="true">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="__VyHIKTvEeqSCpAxMp_7Qg" name="s">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_B1E0EKTwEeqSCpAxMp_7Qg" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_JPYJ0KTtEeqSCpAxMp_7Qg" name="Conparator&lt;Station>">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_sCnX4KTwEeqSCpAxMp_7Qg" name="compare">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_sCnX4aTwEeqSCpAxMp_7Qg" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_sCnX4qTwEeqSCpAxMp_7Qg" name="arg0">
+        <type xmi:type="uml:Class" href="myVelibNetworkAbstractFactoryPattern.uml#_yrPfMKCyEeqR5MuaOp_i2g"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_sCnX46TwEeqSCpAxMp_7Qg" name="arg1">
+        <type xmi:type="uml:Class" href="myVelibNetworkAbstractFactoryPattern.uml#_yrPfMKCyEeqR5MuaOp_i2g"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_QlHoUKTtEeqSCpAxMp_7Qg" name="MyVelibNetwork"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_WNJAwKTtEeqSCpAxMp_7Qg" name="Comparator&lt;SimpleEntry&lt;Station,Double>>">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_dkAZQKTwEeqSCpAxMp_7Qg" name="compare">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_dkAZQaTwEeqSCpAxMp_7Qg" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_dkAZQqTwEeqSCpAxMp_7Qg" name="arg0">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFeatureMapEntry"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_dkAZQ6TwEeqSCpAxMp_7Qg" name="arg1">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFeatureMapEntry"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_YiSTMKTtEeqSCpAxMp_7Qg" name="OccupationComparatorForStationOccupationPairs">
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_63qA4KTtEeqSCpAxMp_7Qg" client="_YiSTMKTtEeqSCpAxMp_7Qg" supplier="_WNJAwKTtEeqSCpAxMp_7Qg" contract="_WNJAwKTtEeqSCpAxMp_7Qg"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_QkKesKTwEeqSCpAxMp_7Qg" name="compare">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_TDWd8KTwEeqSCpAxMp_7Qg" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_YDFHUKTwEeqSCpAxMp_7Qg" name="arg0">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFeatureMapEntry"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_ZtokoKTwEeqSCpAxMp_7Qg" name="arg1">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFeatureMapEntry"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_eAtDsKTtEeqSCpAxMp_7Qg" name="UsageComparatorForStations">
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_74QiQKTtEeqSCpAxMp_7Qg" client="_eAtDsKTtEeqSCpAxMp_7Qg" supplier="_JPYJ0KTtEeqSCpAxMp_7Qg" contract="_JPYJ0KTtEeqSCpAxMp_7Qg"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_hVGFQKTwEeqSCpAxMp_7Qg" name="compare">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_jmv-0KTwEeqSCpAxMp_7Qg" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_m8WosKTwEeqSCpAxMp_7Qg" name="arg0">
+        <type xmi:type="uml:Class" href="myVelibNetworkAbstractFactoryPattern.uml#_yrPfMKCyEeqR5MuaOp_i2g"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_ofAuQKTwEeqSCpAxMp_7Qg" name="arg1">
+        <type xmi:type="uml:Class" href="myVelibNetworkAbstractFactoryPattern.uml#_yrPfMKCyEeqR5MuaOp_i2g"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_T1BdYKTuEeqSCpAxMp_7Qg" client="_1_t3AKTsEeqSCpAxMp_7Qg" supplier="_eAtDsKTtEeqSCpAxMp_7Qg"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_UkS-MKTuEeqSCpAxMp_7Qg" client="_FNOjAKTtEeqSCpAxMp_7Qg" supplier="_YiSTMKTtEeqSCpAxMp_7Qg"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_X-PVgKTuEeqSCpAxMp_7Qg" client="_QlHoUKTtEeqSCpAxMp_7Qg" supplier="_8_DnsKTsEeqSCpAxMp_7Qg"/>
+</uml:Model>
