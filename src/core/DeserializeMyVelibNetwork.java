@@ -4,34 +4,39 @@ import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.io.IOException;
 
+/**
+ * DeserializeMyVelibNetwork is a class that is used to read a previously serialized instance of MyVelibNetwork from a file and recreated it in the main memory.
+ * 
+ * @author Ali Raïki
+ */
 public class DeserializeMyVelibNetwork {
 	
-	public static void main(String[] args) {
-
+	/**
+	 * This method takes a file that represents a serialization of an instance of MyVelibNetwork, and recreates it in the main memory.
+	 * @param fileName
+	 * 				The name of the serialization file
+	 */
+	public static void deserializeNetwork(String fileName) {
 		MyVelibNetwork network = null;
 
 		try {
-
-			FileInputStream fileIn = new FileInputStream("network.ser");
+			FileInputStream fileIn = new FileInputStream(fileName);
 			ObjectInputStream in = new ObjectInputStream(fileIn);
 			network = (MyVelibNetwork) in.readObject(); //casting
 			in.close();
 			fileIn.close();
-
+			System.out.println("Deserialized MyVelibNetwork...");
+			System.out.println("Network : " + network );
 		} catch(IOException i) {
 
-			i.printStackTrace();
-			return;
+			System.err.println(i.getMessage());
 
 		} catch(ClassNotFoundException c) {
 
-			System.out.println("PersistentTime class not found");
-			c.printStackTrace();
-			return;
+			System.err.println(c.getMessage());
 
 		}
 
-		System.out.println("Deserialized PersistentTime...");
-		System.out.println("Date : " + network );
 	}
+
 }

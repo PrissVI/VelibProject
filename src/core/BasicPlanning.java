@@ -3,8 +3,29 @@ package core;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * BasicPlanning is a class that implements RidePlanning, and that minimizes the walking distance from a start destination to the start station and from the end station to the end destination.
+ * 
+ * @author Ali Raïki
+ */
 public class BasicPlanning implements RidePlanning {
 
+	/**
+	 * This method is used to find the stations that correspond most to what the user wants, which is described in the comment above.
+	 * @param x1
+	 * 			The easting of the starting point.
+	 * @param y1
+	 * 			The northing of the starting point.
+	 * @param x2
+	 * 			The easting of the destination.
+	 * @param y2
+	 * 			The northing of the starting point.
+	 * @param bicycleType
+	 * 			The type of bicycle that the user wants.
+	 * @param network
+	 * 			The network in which we look for stations.
+	 * @return an ArrayList of stations (the start and the end station).
+	 */
 	@Override
 	public ArrayList<Station> planRide(double x1, double y1, double x2, double y2, String bicycleType, MyVelibNetwork network) {
 		double finalDistanceFromStart = Double.POSITIVE_INFINITY;
@@ -18,7 +39,6 @@ public class BasicPlanning implements RidePlanning {
 		ArrayList<Station> stationList = new ArrayList<Station>();
 		
 		HashMap<Integer, Station> stations = network.getStations();
-		System.out.println(stations);
 		
 		//Loop for the start station
 		for(Station station : stations.values()) {
