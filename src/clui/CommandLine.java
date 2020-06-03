@@ -51,9 +51,10 @@ public class CommandLine {
 					+ "\n" + "• online <velibnetworkName, stationID> : to put online the station stationID of the myVelib network velibnetworkName"
 					+ "\n" + "• planRide <velibnetworkName, startX, startY, endX, endY, bicycleType, ridePolicy> : to find the best start and end stations in the myVelib network velibnetworkName, with a start in (startX, startY) and an end in (endX, endY), with a specific bicycle type ('ELECTRICAL' or 'MECHANICAL'), w.r.t the policies : 'BASIC', 'AVOID-PLUS' or 'PREFER-PLUS'."
 					+ "\n" + "• move <userID, stationID> : to move the user userID to the station stationID"
-					+ "\n" + "• rentBike <userID, stationID, date> : to let the user userID renting a bike from station stationID at a certain date (if no bikes are available will behave accordingly)"
+					+ "\n" + "• rentBike <userID, stationID, bicycleType, date> : to let the user userID renting a bike of type bicycleType from station stationID at a certain date (if no bikes are available will behave accordingly)"
 					+ "\n" + "• returnBike <userID, stationID, date> : to let the user userID returning a bike to station stationID at a given instant of date date (if no parking bay is available will behave accordingly). This command should display the cost of the rent."
 					+ "\n" + "• displayStation <velibnetworkName, stationID, (optional) infDate, (optional) supDate> : to display the statistics of station stationID of a myVelib network velibnetwork, between the dates infDate and supDate."
+					+ "\n" + "• getUser <velibnetworkName, userID> : to display basic information about the user userID of a myVelib network velibnetwork (like the name, the type of card, location etc.)."
 					+ "\n" + "• displayUser <velibnetworkName, userID> : to display the statistics of user userID of a myVelib network velibnetwork."
 					+ "\n" + "• sortStation <velibnetworkName, sortpolicy> : to display the stations in increasing order w.r.t. to the sorting policy of user sortpolicy (MOST-USED, LEAST-OCCUPIED or LEAST-OCCUPIED-WITH-DATES)."
 					+ "\n" + "• display <velibnetworkName>: to display the entire status (stations, parking bays, users) of the myVelib network velibnetworkName."
@@ -157,10 +158,10 @@ public class CommandLine {
 						if (velibNetwork.getStations().keySet().contains(stationID)) {
 							stationInput = velibNetwork.getStations().get(stationID);
 							stationInput.setOnline(false);
-							System.out.println("The station n°" + stationID + " of the network '" + networkName + "' has been set to offline");
+							System.out.println("The station n°" + stationID + " of the MyVelibNetwork '" + networkName + "' has been set to offline");
 						}
 						else {
-							System.err.println("This station does not exist in this velib network");
+							System.err.println("This station does not exist in this MyVelib network");
 						}
 					}
 				} catch (Exception e) {
@@ -195,10 +196,10 @@ public class CommandLine {
 						if (velibNetwork.getStations().keySet().contains(stationID)) {
 							stationInput = velibNetwork.getStations().get(stationID);
 							stationInput.setOnline(true);
-							System.out.println("The station n°" + stationID + " of the network '" + networkName + "' has been set to online");
+							System.out.println("The station n°" + stationID + " of the MyVelibNetwork '" + networkName + "' has been set to online");
 						}
 						else {
-							System.err.println("This station does not exist in this velib network");
+							System.err.println("This station does not exist in this MyVelib network");
 						}
 					}
 				} catch (Exception e) {
@@ -280,7 +281,8 @@ public class CommandLine {
 				try {
 					int userID = Integer.parseInt(splitEntryList.get(0));
 					int stationID = Integer.parseInt(splitEntryList.get(1));
-					Date date = SortLeastOccupied.convertToDate(splitEntryList.get(2));
+					String bicycleType = splitEntryList.get(2);
+					Date date = SortLeastOccupied.convertToDate(splitEntryList.get(3));
 					MyVelibNetwork velibNetwork = null;
 					User userInput = null;
 					Station stationInput = null;
@@ -296,7 +298,7 @@ public class CommandLine {
 					} else {
 						if(velibNetwork.getUsers().keySet().contains(userID)) {
 							userInput = velibNetwork.getUsers().get(userID);
-							userInput.rentBicycle(stationInput, date);
+							userInput.rentBicycle(stationInput, bicycleType, date);
 						} else {
 							System.err.println("This user does not exist.");
 						}
@@ -453,7 +455,79 @@ public class CommandLine {
 			}
 			System.out.println("---------------End of command------------------");
 		}
+		
+		else if(command.equalsIgnoreCase("getUser")) {
+			System.out.println("---------------Result of command------------------");
+			splitEntryList.remove(0);
+			if(splitEntryList.size()==2) {
+				try {
+					String networkName = splitEntryList.get(0);	
+					int userID = Integer.parseInt(splitEntryList.get(1));
+					MyVelibNetwork velibNetwork = null;
+					User userInput = null;
 
+					for (MyVelibNetwork network : networks.values()) {
+						if (networkName.equalsIgnoreCase(network.getName())) {
+							velibNetwork = network;
+							break;
+						}
+					}
+					if (velibNetwork == null) {
+						System.err.println("The myVelib network entered does not exist");
+					} else {
+						if (velibNetwork.getUsers().keySet().contains(userID)) {
+							userInput = velibNetwork.getUsers().get(userID);
+							System.out.println(userInput);
+						}
+						else {
+							System.err.println("This user does not exist in this velib network");
+						}
+					}
+				} catch (Exception e) {
+					System.err.println(e.getMessage());
+				}
+			} else {
+				System.err.println("Too many or not enough parameters");
+			}
+			System.out.println("---------------End of command------------------");
+		}
+		
+		else if(command.equalsIgnoreCase("getStation")) {
+			System.out.println("---------------Result of command------------------");
+			splitEntryList.remove(0);
+			if(splitEntryList.size()==2) {
+				try {
+					String networkName = splitEntryList.get(0);	
+					int stationID = Integer.parseInt(splitEntryList.get(1));
+					MyVelibNetwork velibNetwork = null;
+					Station stationInput = null;
+
+					for (MyVelibNetwork network : networks.values()) {
+						if (networkName.equalsIgnoreCase(network.getName())) {
+							velibNetwork = network;
+							break;
+						}
+					}
+					if (velibNetwork == null) {
+						System.err.println("The myVelib network entered does not exist");
+					} else {
+						if (velibNetwork.getStations().keySet().contains(stationID)) {
+							stationInput = velibNetwork.getStations().get(stationID);
+							System.out.println(stationInput);
+						}
+						else {
+							System.err.println("This station does not exist in this velib network");
+						}
+					}
+				} catch (Exception e) {
+					System.err.println(e.getMessage());
+				}
+			} else {
+				System.err.println("Too many or not enough parameters");
+			}
+			System.out.println("---------------End of command------------------");
+		}
+		
 		else if(command.equalsIgnoreCase("displayUser")) {
 			System.out.println("---------------Result of command------------------");
 			splitEntryList.remove(0);
@@ -555,7 +629,7 @@ public class CommandLine {
 			}
 			System.out.println("---------------End of command------------------");
 		}	    	
-
+		
 		else if(command.equalsIgnoreCase("getUsers")) {
 			System.out.println("---------------Result of command------------------");
 			splitEntryList.remove(0);
