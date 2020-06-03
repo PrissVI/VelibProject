@@ -185,7 +185,12 @@ public class User extends Person {
 	 * Rents a bicycle available in the considered station.
 	 * @param	Station where the user wants to rent a bicycle
 	 */
-	public void rentBicycle(Station station, Date rentDate) throws RuntimeException {
+	public void rentBicycle(Station station, String bikeType, Date rentDate) throws RuntimeException {
+		//
+		if (!bikeType.equalsIgnoreCase("MECHANICAL") && !bikeType.equalsIgnoreCase("ELECTRICAL")) {
+			throw new RuntimeException(bikeType + " is not a supported type of bicycle.");
+		}
+		//
 		if (x != station.getX() || y != station.getY()) {
 			throw new RuntimeException("Cannot rent bicycle if station " + station.getID() + " not reached.");
 		}
@@ -198,7 +203,14 @@ public class User extends Person {
 		else {	
 			station.identifyUser(this);
 			for (ParkingSlot ps: station.getParkingSlots().values()) {
-				if (!ps.isOutOfOrder() && ps.getBicycleStored() != null) {
+				//
+				boolean bikeTypeCond = (bikeType.equalsIgnoreCase("MECHANICAL")? (ps.getBicycleStored() instanceof MechanicalBike): ps.getBicycleStored() instanceof ElectricalBike);
+				//
+				if (!ps.isOutOfOrder() 
+					&& ps.getBicycleStored() != null 
+					&& bikeTypeCond
+				) 
+				{
 					this.setRentedBicycle(ps.getBicycleStored());
 					//
 					rentedBicycle.setRentDate(rentDate);
@@ -208,7 +220,7 @@ public class User extends Person {
 					return;
 				}
 			}
-			throw new RuntimeException("Cannot rent bicycle if station " + station.getID() + " has no available bicycle.");
+			throw new RuntimeException("Cannot rent bicycle if station " + station.getID() + " has no available bicycle of the desired type. Go to another station.");
 		}
 	}
 	

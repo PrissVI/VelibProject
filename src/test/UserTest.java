@@ -39,7 +39,7 @@ class UserTest {
 		
 		Date d1 = ActivityLog.getDate(2020, 4, 5, 10, 0, 0);
 		
-		u1.rentBicycle(st1, d1);
+		u1.rentBicycle(st1, "mechanical", d1);
 		//"User ... registered with his credit card."
 		
 		assertEquals(u1.getRentedBicycle(),b1);
@@ -71,7 +71,7 @@ class UserTest {
 		Date d1 = ActivityLog.getDate(2020, 4, 5, 10, 0, 0);
 		
 		Exception exception = assertThrows(RuntimeException.class, () -> {
-			u1.rentBicycle(st1, d1);
+			u1.rentBicycle(st1, "mechanical", d1);
 		});
 		
 		String expectedMessage = "Cannot rent bicycle if station " + st1.getID() + " not reached.";
@@ -103,7 +103,7 @@ class UserTest {
 		Date d1 = ActivityLog.getDate(2020, 4, 5, 10, 0, 0);
 		
 		Exception exception = assertThrows(RuntimeException.class, () -> {
-			u1.rentBicycle(st1, d1);
+			u1.rentBicycle(st1, "mechanical", d1);
 		});
 		
 		String expectedMessage = "Cannot rent bicycle if station " + st1.getID() + " if offline.";
@@ -132,13 +132,13 @@ class UserTest {
 		
 		Date d1 = ActivityLog.getDate(2020, 4, 5, 10, 0, 0);
 		
-		u1.rentBicycle(st1, d1);
+		u1.rentBicycle(st1, "mechanical", d1);
 		//user ... registered with his credit card.
 		
 		Date d2 = ActivityLog.getDate(2020, 4, 5, 10, 5, 0);
 		
 		Exception exception = assertThrows(RuntimeException.class, () -> {
-			u1.rentBicycle(st1, d2);
+			u1.rentBicycle(st1, "mechanical", d2);
 		});
 		
 		String expectedMessage = "Cannot rent bicycle if user " + u1.getID() + " is already renting one.";
@@ -169,17 +169,16 @@ class UserTest {
 		Date d2 = ActivityLog.getDate(2020, 4, 5, 10, 0, 0);
 		
 		Exception exception = assertThrows(RuntimeException.class, () -> {
-			u1.rentBicycle(st1, d2);
+			u1.rentBicycle(st1, "mechanical", d2);
 		});
 		
-		String expectedMessage = "Cannot rent bicycle if station " + st1.getID() + " has no available bicycle.";
+		String expectedMessage = "Cannot rent bicycle if station " + st1.getID() + " has no available bicycle of the desired type. Go to another station.";
 		String actualMessage = exception.getMessage();
 		
 		assertEquals(expectedMessage,actualMessage);
 	}
 	
 	
-	//5 exceptions à tester
 	/**
 	 * Test for returnBicycle(...) method on User
  	 * Here is a normal test case, where everything works as expected.
@@ -388,4 +387,35 @@ class UserTest {
 		
 		assertEquals(expectedMessage,actualMessage);
 	}
+	
+
+	/**
+	 * (initially forgotten) test for rentBicycle(...) method on User
+	 * Here the user wants to rent an unavailable type of bike => rent operation should throw an exception
+	 */
+	@Test
+	void test12() {
+		Station st1 = new StdStation(1,2);
+		Bicycle b1 = new MechanicalBike();
+		ParkingSlot ps1 = new ParkingSlot(b1);
+		ParkingSlot ps2 = new ParkingSlot();
+		HashMap<Integer,ParkingSlot> parkingSlots = new HashMap<Integer,ParkingSlot>();
+		parkingSlots.put(ps1.getID(),ps1);
+		parkingSlots.put(ps2.getID(),ps2);
+		st1.setParkingSlots(parkingSlots);
+		
+		User u1 = new User("Rick",1,2);
+		
+		Date d1 = ActivityLog.getDate(2020, 4, 5, 10, 0, 0);
+		
+		Exception exception = assertThrows(RuntimeException.class, () -> {
+			u1.rentBicycle(st1, "test", d1);
+		});
+		
+		String expectedMessage = "test is not a supported type of bicycle.";
+		String actualMessage = exception.getMessage();
+		
+		assertEquals(expectedMessage,actualMessage);
+	}
+	
 }

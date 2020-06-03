@@ -216,11 +216,17 @@ check out the the stationAndCardVisitorPattern UML.</body>
     </ownedAttribute>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_yTOVYKHyEeqd1faAS4zbUA" name="rentBicycle">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_2Fno8KHyEeqd1faAS4zbUA" name="station" type="_yrPfMKCyEeqR5MuaOp_i2g"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_-9rSoKW_Eeql5NQSdAOfRw" name="bikeType">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_HcvwsKXAEeql5NQSdAOfRw" name="rentDate">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+      </ownedParameter>
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_4mlw4KHyEeqd1faAS4zbUA" name="returnBicycle">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_-FUDYKHyEeqd1faAS4zbUA" name="station" type="_yrPfMKCyEeqR5MuaOp_i2g"/>
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_DZZMIKHzEeqd1faAS4zbUA" name="tripDuration">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_C6z2kKXAEeql5NQSdAOfRw" name="returnDate">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
       </ownedParameter>
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_2rIB8KTgEeqSCpAxMp_7Qg" name="getStatistics">

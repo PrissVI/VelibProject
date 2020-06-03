@@ -227,14 +227,14 @@ public class MyVelibNetworkTest {
 		u1.setX(st1.getX());
 		u1.setY(st1.getY());
 		
-		u1.rentBicycle(st1, d1);
+		u1.rentBicycle(st1, "mechanical", d1);
 		
 		u1.setX(st2.getX());
 		u1.setY(st2.getY());
 		
 		u1.returnBicycle(st2, d2);
 		
-		u1.rentBicycle(st2, d3);
+		u1.rentBicycle(st2, "mechanical", d3);
 		
 		u1.setX(st1.getX());
 		u1.setY(st1.getY());
@@ -301,14 +301,14 @@ public class MyVelibNetworkTest {
 		u1.setX(st1.getX());
 		u1.setY(st1.getY());
 		
-		u1.rentBicycle(st1, d1);
+		u1.rentBicycle(st1, "mechanical", d1);
 		
 		u1.setX(st2.getX());
 		u1.setY(st2.getY());
 		
 		u1.returnBicycle(st2, d2);
 		
-		u1.rentBicycle(st2, d3);
+		u1.rentBicycle(st2, "mechanical", d3);
 		
 		u1.setX(st1.getX());
 		u1.setY(st1.getY());
@@ -377,14 +377,14 @@ public class MyVelibNetworkTest {
 		u1.setX(st1.getX());
 		u1.setY(st1.getY());
 		
-		u1.rentBicycle(st1, d1);
+		u1.rentBicycle(st1, "mechanical", d1);
 		
 		u1.setX(st2.getX());
 		u1.setY(st2.getY());
 		
 		u1.returnBicycle(st2, d2);
 		
-		u1.rentBicycle(st2, d3);
+		u1.rentBicycle(st2, "mechanical", d3);
 		
 		u1.setX(st1.getX());
 		u1.setY(st1.getY());
@@ -464,14 +464,14 @@ public class MyVelibNetworkTest {
 		u1.setX(st1.getX());
 		u1.setY(st1.getY());
 		
-		u1.rentBicycle(st1, d1);
+		u1.rentBicycle(st1, "mechanical", d1);
 		
 		u1.setX(st2.getX());
 		u1.setY(st2.getY());
 		
 		u1.returnBicycle(st2, d2);
 		
-		u1.rentBicycle(st2, d3);
+		u1.rentBicycle(st2, "mechanical", d3);
 		
 		u1.setX(st1.getX());
 		u1.setY(st1.getY());
