@@ -195,4 +195,17 @@
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_IypJUKTTEeqJMNR_mlRyVg" id="(0.0,0.49586776859504134)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_IypJUaTTEeqJMNR_mlRyVg" id="(1.0,0.49586776859504134)"/>
   </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_1noNcKW4EeqJMNR_mlRyVg" type="Dependency_Edge" source="_I8QrQKTGEeqJMNR_mlRyVg" target="_L7omcKTGEeqJMNR_mlRyVg">
+    <children xmi:type="notation:DecorationNode" xmi:id="_1noNc6W4EeqJMNR_mlRyVg" type="Dependency_NameLabel">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_1noNdKW4EeqJMNR_mlRyVg" y="40"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_1no0gKW4EeqJMNR_mlRyVg" type="Dependency_StereotypeLabel">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_1no0gaW4EeqJMNR_mlRyVg" y="60"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_1noNcaW4EeqJMNR_mlRyVg"/>
+    <element xmi:type="uml:Dependency" href="clui.uml#_1njU8KW4EeqJMNR_mlRyVg"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_1noNcqW4EeqJMNR_mlRyVg" points="[680, 100, -643984, -643984]$[680, 140, -643984, -643984]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1n-ywKW4EeqJMNR_mlRyVg" id="(0.4968944099378882,0.9958847736625513)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1n-ywaW4EeqJMNR_mlRyVg" id="(0.4975124378109453,0.0)"/>
+  </edges>
 </notation:Diagram>
