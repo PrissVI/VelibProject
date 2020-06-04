@@ -13,6 +13,7 @@ public class LaunchTerminal {
 	
 	public static void main(String[] args) {
 		
+		GetCommands.readTextFileLineByLine("my_velib.ini");
 		System.out.println("Welcome to the myVelib App! Type 'help' for a list of commands.");
 		Scanner input = new Scanner(System.in); // used to read the keyboard
 		

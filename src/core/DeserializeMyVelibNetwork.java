@@ -2,6 +2,9 @@ package core;
 
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
+
+import clui.CommandLine;
+
 import java.io.IOException;
 
 /**
@@ -15,8 +18,9 @@ public class DeserializeMyVelibNetwork {
 	 * This method takes a file that represents a serialization of an instance of MyVelibNetwork, and recreates it in the main memory.
 	 * @param fileName
 	 * 				The name of the serialization file
+	 * @return the deserialized myVelib network
 	 */
-	public static void deserializeNetwork(String fileName) {
+	public static MyVelibNetwork deserializeNetwork(String fileName) {
 		MyVelibNetwork network = null;
 
 		try {
@@ -27,6 +31,7 @@ public class DeserializeMyVelibNetwork {
 			fileIn.close();
 			System.out.println("Deserialized MyVelibNetwork...");
 			System.out.println("Network : " + network );
+			return network;
 		} catch(IOException i) {
 
 			System.err.println(i.getMessage());
@@ -36,7 +41,7 @@ public class DeserializeMyVelibNetwork {
 			System.err.println(c.getMessage());
 
 		}
-
+		return network;
 	}
 
 }

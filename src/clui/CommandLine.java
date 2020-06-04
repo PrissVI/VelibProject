@@ -29,7 +29,7 @@ import core.User;
 
 public class CommandLine {
 
-	static HashMap<Integer,MyVelibNetwork> networks = new HashMap<Integer, MyVelibNetwork>();
+	public static HashMap<Integer,MyVelibNetwork> networks = new HashMap<Integer, MyVelibNetwork>();
 	boolean exit = false;
 
 	/**
@@ -55,8 +55,9 @@ public class CommandLine {
 					+ "\n" + "• returnBike <userID, stationID, date> : to let the user userID returning a bike to station stationID at a given instant of date date (if no parking bay is available will behave accordingly). This command should display the cost of the rent."
 					+ "\n" + "• displayStation <velibnetworkName, stationID, (optional) infDate, (optional) supDate> : to display the statistics of station stationID of a myVelib network velibnetwork, between the dates infDate and supDate."
 					+ "\n" + "• getUser <velibnetworkName, userID> : to display basic information about the user userID of a myVelib network velibnetwork (like the name, the type of card, location etc.)."
+					+ "\n" + "• getStation <velibnetworkName, stationID> : to display basic information about the station stationID of a myVelib network velibnetwork."
 					+ "\n" + "• displayUser <velibnetworkName, userID> : to display the statistics of user userID of a myVelib network velibnetwork."
-					+ "\n" + "• sortStation <velibnetworkName, sortpolicy> : to display the stations in increasing order w.r.t. to the sorting policy of user sortpolicy (MOST-USED, LEAST-OCCUPIED or LEAST-OCCUPIED-WITH-DATES)."
+					+ "\n" + "• sortStations <velibnetworkName, sortpolicy> : to display the stations in increasing order w.r.t. to the sorting policy of user sortpolicy (MOST-USED, LEAST-OCCUPIED or LEAST-OCCUPIED-WITH-DATES)."
 					+ "\n" + "• display <velibnetworkName>: to display the entire status (stations, parking bays, users) of the myVelib network velibnetworkName."
 					+ "\n" + "• getUsers <velibnetworkName>: to display the users of the myVelib network velibnetworkName."
 					+ "\n" + "• getStations <velibnetworkName>: to display the stations of the myVelib network velibnetworkName."
@@ -278,7 +279,7 @@ public class CommandLine {
 		else if(command.equalsIgnoreCase("rentBike")) {
 			System.out.println("---------------Result of command------------------");
 			splitEntryList.remove(0);
-			if(splitEntryList.size()==3) {
+			if(splitEntryList.size()==4) {
 				try {
 					int userID = Integer.parseInt(splitEntryList.get(0));
 					int stationID = Integer.parseInt(splitEntryList.get(1));
@@ -565,7 +566,7 @@ public class CommandLine {
 			System.out.println("---------------End of command------------------");
 		}
 
-		else if(command.equalsIgnoreCase("sortStation")) {
+		else if(command.equalsIgnoreCase("sortStations")) {
 			System.out.println("---------------Result of command------------------");
 			splitEntryList.remove(0);
 			if(splitEntryList.size()==2) {
@@ -606,7 +607,7 @@ public class CommandLine {
 		else if(command.equalsIgnoreCase("display")) {
 			System.out.println("---------------Result of command------------------");
 			splitEntryList.remove(0);
-			if(splitEntryList.size()==2) {
+			if(splitEntryList.size()==1) {
 				try {
 					String networkName = splitEntryList.get(0);
 					MyVelibNetwork velibNetwork = null;
@@ -721,6 +722,7 @@ public class CommandLine {
 				try {
 					String filename = splitEntryList.get(0);
 					GetCommands.readTextFileLineByLine(filename);
+					
 				} catch (Exception e) {
 					System.err.println("Incorrect parameters");
 					System.err.println(e.getMessage());
@@ -760,7 +762,8 @@ public class CommandLine {
 			splitEntryList.remove(0);
 			if(splitEntryList.size()==1) {
 				String fileName = splitEntryList.get(0);
-				DeserializeMyVelibNetwork.deserializeNetwork(fileName);
+				MyVelibNetwork network = DeserializeMyVelibNetwork.deserializeNetwork(fileName);
+				networks.put(network.getID(), network);
 
 			} else {
 				System.err.println("Too many or not enough parameters");
