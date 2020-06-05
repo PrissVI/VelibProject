@@ -1,0 +1,1 @@
+setup network 100 20 10 2100

@@ -1,0 +1,14 @@
+adduser Paolo none initial_network
+adduser Arnault vlibre initial_network
+move 1 1
+move 2 2
+rentbike 1 1 electrical 2020/04/06-12:00:00
+rentbike 2 2 mechanical 2020/04/06-12:00:00
+move 1 2
+move 2 1
+returnbike 1 2 2020/04/06-13:00:00
+returnbike 2 1 2020/04/06-11:00:00
+sortstations initial_network most-used
+sortstations initial_network least-occupied
+displaystations initial_network 1
+displaystations initial_network 2

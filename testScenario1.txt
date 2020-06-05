@@ -1,0 +1,16 @@
+adduser Ali vmax initial_network
+adduser Mathieu vlibre initial_network
+move 1 1
+move 2 2
+rentbike 1 1 electrical 2020/04/06-12:00:00
+rentbike 2 2 mechanical 2020/04/06-12:00:00
+move 1 2
+move 2 1
+offline initial_network 2
+returnbike 1 2 2020/04/06-13:00:00
+returnbike 2 1 2020/04/06-13:00:00
+online initial_network 2
+displaystation initial_network 1
+displaystation initial_network 2
+displayuser initial_network 1
+displayuser initial_network 2

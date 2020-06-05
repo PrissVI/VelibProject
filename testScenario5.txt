@@ -1,0 +1,2 @@
+setup network 20 10 4 150
+save network saveNetwork.ser

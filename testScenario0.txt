@@ -1,0 +1,1 @@
+display initial_network
