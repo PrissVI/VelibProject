@@ -18,18 +18,6 @@ public class StdStation extends Station {
 	public StdStation(double x, double y, HashMap<Integer, ParkingSlot> parkingSlots) {
 		super(x, y, parkingSlots);
 	}
-
-	/*
-	@Override
-	//should we keep throwing the exception?
-	public void chargeUser(User user, int duration) {
-		try {
-			super.chargeUser(user, duration);
-		} catch(Exception e) {
-			System.out.println(e.getMessage());
-		}
-	}
-	*/
 	
 	
 	//toString

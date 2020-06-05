@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /** 
- * User to instantiate Stations (thus StdStations and PlusStations), extending the AbstractFactory abstract class
+ * Used to instantiate Stations (thus StdStations and PlusStations), extending the AbstractFactory abstract class
  * @author Mathieu Sibué
 */
 
@@ -32,18 +32,19 @@ public class ConcreteStationFactory extends AbstractFactory {
 	
 	/**
 	 * Method used to instantiate different types of Station objects (for now, only StdStation and PlusStation exist)
-	 * @param ArrayList<Object>: the parameters used to instantiate Station objects of a specific type.
-	 * <p>To instantiate a certain type of Station, at least 3 parameters are expected  in the ArrayList (in this precise order):
-	 * <ul>
-	 * 		<li>String: the type of station we want to create</li>
-	 * 		<li>Double: the station's x coordinate</li>
-	 * 		<li>Double: the station's y coordinate</li>
-	 * </ul>
-	 * Other optional parameters that can be appended (to call overloaded constructors of Station) in the following order:
-	 * <ul>
-	 * 		<li>HashMap<Integer,ParkingSlot>: the station's initial parking</li>
-	 * </ul>
-	 * </p>
+	 * @param params
+	 * 			ArrayList of Objects: the parameters used to instantiate Station objects of a specific type.
+	 * 			<p>To instantiate a certain type of Station, at least 3 parameters are expected  in the ArrayList (in this precise order):
+	 * 			<ul>
+	 * 					<li>String: the type of station we want to create</li>
+	 * 					<li>Double: the station's x coordinate</li>
+	 * 					<li>Double: the station's y coordinate</li>
+	 * 			</ul>
+	 * 			Other optional parameters that can be appended (to call overloaded constructors of Station) in the following order:
+	 * 			<ul>
+	 * 					<li>HashMap<Integer,ParkingSlot>: the station's initial parking</li>
+	 * 			</ul>
+	 * 			</p>
 	 * @return Station: an object of a subclass of Station
 	*/
 	@Override

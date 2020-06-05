@@ -86,6 +86,7 @@ public class MyVelibNetwork implements Serializable {
 		return personFactory;
 	}
 
+	//custom methods
 	/**
 	 * Adds a number of stations and parking slots to the object.
 	 * @param nbStations
@@ -329,7 +330,7 @@ public class MyVelibNetwork implements Serializable {
 	
 	/**
 	 * Method to return the earliest and latest recorded activities in the network so far.
-	 * @return ArrayList<Date> with earliest and latest recorded activities
+	 * @return ArrayList of Dates with earliest and latest recorded activities
 	 */
 	public ArrayList<Date> getEarliestAndLatestActivity() {
 		if (stations == null || stations.size() == 0) {
@@ -374,8 +375,8 @@ public class MyVelibNetwork implements Serializable {
 	
 	/**
 	 * Computes some statistics for user given his userID
-	 * @param userID (int)
-	 * @return
+	 * @param userID 
+	 * @return a string summing up the user's statistics
 	 * @throws RuntimeException
 	 */
 	public String getUserBalance(int userID) throws RuntimeException {
@@ -388,10 +389,13 @@ public class MyVelibNetwork implements Serializable {
 	
 	/**
 	 * Computes some statistics for a station given its stationID
-	 * @param stationID (int)
-	 * @param infDate (Date, that has to be created by the CLUI from a user input parsed)
-	 * @param supDate (Date, that has to be created by the CLUI from a user input parsed)
-	 * @return the station's statistics
+	 * @param stationID 
+	 * 			(int)
+	 * @param infDate 
+	 * 			(Date, that has to be created by the CLUI from a user input parsed)
+	 * @param supDate 
+	 * 			(Date, that has to be created by the CLUI from a user input parsed)
+	 * @return the station's statistics in the form of a string
 	 * @throws RuntimeException
 	 */
 	public String getStationBalance(int stationID, Date infDate, Date supDate) throws RuntimeException {
@@ -406,8 +410,9 @@ public class MyVelibNetwork implements Serializable {
 	
 	/**
 	 * Computes some statistics for a station given its stationID; overloaded second version that searches for oldest activity and latest activity for infDate and supDate
-	 * @param stationID (int)
-	 * @return the station's statistics
+	 * @param stationID 
+	 * 			(int)
+	 * @return the station's statistics in the form of a string
 	 * @throws RuntimeException
 	 */
 	public String getStationBalance(int stationID) throws RuntimeException {
@@ -423,8 +428,9 @@ public class MyVelibNetwork implements Serializable {
 	
 	/**
 	 * Sorts stations according to policies defined by the client
-	 * @param choice (String, can only take two values for now: "MOST USED" and "LEAST OCCUPIED"
-	 * @return
+	 * @param choice 
+	 * 			(String, can only take three values for now: "MOST USED", "LEAST OCCUPIED" and "LEAST OCCUPIED WITH DATES")
+	 * @return a sorted ArrayList of stations
 	 * @throws RuntimeException
 	 */
 	public ArrayList<Station> sortStations(String choice) throws RuntimeException {

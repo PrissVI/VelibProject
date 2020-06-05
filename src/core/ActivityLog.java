@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 /** 
- * Represents an activity log from the logs of parking slots
+ * Represents an activity log from the usage records of parking slots
  * @author Mathieu Sibué
 */
 public class ActivityLog implements Serializable {
@@ -31,8 +31,10 @@ public class ActivityLog implements Serializable {
 	//custom methods
 	/**
 	 * Computes a diff between two dates.
-	 * @param Date: date1, the oldest date
-	 * @param Date: date2, the newest date
+	 * @param date1
+	 * 			Date, the oldest date
+	 * @param date2
+	 * 			Date, the newest date
 	 * @return the diff value, in minutes
 	 */
 	public static int getDateDiff(Date date1, Date date2) {
@@ -42,12 +44,18 @@ public class ActivityLog implements Serializable {
 	
 	/**
 	 * Creates a Date object.
-	 * @param int: the year of the date
-	 * @param int: the month of the date
-	 * @param int: the day of the date
-	 * @param int: the hour of the date
-	 * @param int: the minute of the date
-	 * @param int: the second of the date
+	 * @param year
+	 * 			int: the year of the date
+	 * @param month
+	 * 			int: the month of the date
+	 * @param day
+	 * 			int: the day of the date
+	 * @param hour
+	 * 			int: the hour of the date
+	 * @param minute
+	 * 			int: the minute of the date
+	 * @param second
+	 * 			int: the second of the date
 	 * @return Date: the date representation of the inputs
 	 */
     public static Date getDate(int year, int month, int day, int hour, int minute, int second) {

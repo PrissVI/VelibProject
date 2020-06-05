@@ -2,6 +2,11 @@ package core;
 
 import java.util.Comparator;
 
+/**
+ * Implementation of the interface Comparator (of Stations) to order stations wrt their usage.
+ * @author Mathieu Sibué
+ *
+ */
 public class UsageComparatorForStations implements Comparator<Station> {
 
 	@Override

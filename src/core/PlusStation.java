@@ -26,15 +26,6 @@ public class PlusStation extends Station {
 	//explicit method from superclass
 	@Override
 	public void chargeUser(User user, int duration) throws RuntimeException {
-		/*
-		try {
-			super.chargeUser(user, duration);
-			Card userCard = user.getRegistrationCard();
-			userCard.setTimeCredit(userCard.getTimeCredit() + additionalTimeCredit);
-		} catch(Exception e) {
-			System.out.println(e.getMessage());
-		}
-		*/
 		super.chargeUser(user, duration);
 		Card userCard = user.getRegistrationCard();
 		if (userCard != null) {

@@ -3,27 +3,28 @@ package core;
 import java.util.ArrayList;
 
 /** 
- * User to instantiate Persons (thus Users), extending the AbstractFactory abstract class
+ * Used to instantiate Persons (thus Users), extending the AbstractFactory abstract class
  * @author Mathieu Sibué
 */
 public class ConcretePersonFactory extends AbstractFactory {
 
 	/**
 	 * Method used to instantiate different types of Person objects (for now, only Users exist)
-	 * @param ArrayList<Object>: the parameters used to instantiate Person objects of a specific type (eg. Users).
-	 * <p>To instantiate a user, at least 4 parameters are expected in the ArrayList (in this precise order):
-	 * <ul>
-	 * 		<li>String: "USER" (to specify we want to create a User person)</li>
-	 * 		<li>String: the user's name</li>
-	 * 		<li>Double: the user's x coordinate</li>
-	 * 		<li>Double: the user's y coordinate</li>
-	 * </ul>
-	 * Other optional parameters that can be appended (to call overloaded constructors of User) in the following order to create a User (which is a specific subclass of Person):
-	 * <ul>
-	 * 		<li>Double: the user's initial credit card balance</li>
-	 * 		<li>Card: the user's registration card</li>
-	 * </ul>
-	 * </p>
+	 * @param params
+	 * 			ArrayList of Objects: the parameters used to instantiate Person objects of a specific type (eg. Users).
+	 * 			<p>To instantiate a user, at least 4 parameters are expected in the ArrayList (in this precise order):
+	 * 			<ul>
+	 * 					<li>String: "USER" (to specify we want to create a User person)</li>
+	 *			 		<li>String: the user's name</li>
+	 * 					<li>Double: the user's x coordinate</li>
+	 * 					<li>Double: the user's y coordinate</li>
+	 *			 </ul>
+	 * 			Other optional parameters that can be appended (to call overloaded constructors of User) in the following order to create a User (which is a specific subclass of Person):
+	 * 			<ul>
+	 * 					<li>Double: the user's initial credit card balance</li>
+	 * 					<li>Card: the user's registration card</li>
+	 *			 </ul>
+	 *			 </p>
 	 * @return Person: an object of a subclass of Person
 	*/
 	@Override

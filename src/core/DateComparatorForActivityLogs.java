@@ -1,9 +1,13 @@
 package core;
 
-//import java.util.ArrayList;
 import java.util.Comparator;
-//import java.util.Date;
 
+
+/**
+ * Implementation of the interface Comparator (of ActivityLogs) to order the activity logs stored in each parking slot.
+ * @author Mathieu Sibué
+ *
+ */
 public class DateComparatorForActivityLogs implements Comparator<ActivityLog> {
 
 	@Override

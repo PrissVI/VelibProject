@@ -10,5 +10,5 @@ returnbike 1 2 2020/04/06-13:00:00
 returnbike 2 1 2020/04/06-11:00:00
 sortstations initial_network most-used
 sortstations initial_network least-occupied
-displaystations initial_network 1
-displaystations initial_network 2
+displaystation initial_network 1
+displaystation initial_network 2

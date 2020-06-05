@@ -1,14 +1,15 @@
 package core;
 
 /** 
- * User to instantiate concrete Factories from the AbstractFactory abstract class
+ * Used to instantiate concrete Factories from the AbstractFactory abstract class
  * @author Mathieu Sibué
 */
 public class FactoryProducer {
 	
 	/**
 	 * Creates a concrete Factory of either Slots, Stations, Cards, Persons or Bicycle given an identifier
-	 * @param String: type of factory we want to create
+	 * @param choice
+	 * 			String: type of factory we want to create
 	 * @return AbstractFactory: the concrete factory we wanted to create
 	*/
 	public static AbstractFactory createFactory(String choice) {

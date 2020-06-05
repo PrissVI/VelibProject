@@ -198,7 +198,8 @@ public abstract class Station implements StationObserver, Serializable  {
 
 	/**
 	 * Identifies a user via the station's terminal. Prints the mean of identification
-	 * @param User: the user willing to rent a bike
+	 * @param user
+	 * 			User: the user willing to rent a bike
 	 */
 	public void identifyUser(User user) {
 		if (user.getRegistrationCard() != null) {
@@ -210,8 +211,10 @@ public abstract class Station implements StationObserver, Serializable  {
 	
 	/**
 	 * Charges a user for its bicycle trip depending on the station's fees. Should only be called in returnBicycle(...) method from User
-	 * @param User: the user willing to return its rented bike after using it
-	 * @param double: the time (in minutes) spent on the bike
+	 * @param user
+	 * 			User: the user willing to return its rented bike after using it
+	 * @param duration
+	 * 			double: the time (in minutes) spent on the bike
 	 */
 	/*
 	abstract void chargeUser(User user, int duration);
@@ -251,8 +254,10 @@ public abstract class Station implements StationObserver, Serializable  {
 	
 	/**
 	 * Computes the occupation rate of a given station during a certain time window.
-	 * @param Date: the inf date of the time window
-	 * @param Date: the sup date of the time window
+	 * @param infDate
+	 * 			Date: the inf date of the time window
+	 * @param supDate
+	 * 			Date: the sup date of the time window
 	 */
 	public double getOccupationRate(Date infDate, Date supDate) throws RuntimeException {
 		double res = 0;
@@ -326,8 +331,11 @@ public abstract class Station implements StationObserver, Serializable  {
 
 	/**
 	 * Computes some statistics of the considered station (sort of a toString with no print).
-	 * @param Date: the inf date of the time window
-	 * @param Date: the sup date of the time window
+	 * @param infDate
+	 * 			Date: the inf date of the time window
+	 * @param supDate
+	 * 			Date: the sup date of the time window
+	 * @return a string summing up the station's statistics
 	 */
 	public String getStatistics(Date infDate, Date supDate) {
 		String res = "\nStation " + this.getID() + " balance:" + "\n"

@@ -3,7 +3,7 @@ package core;
 import java.util.ArrayList;
 
 /** 
- * User to instantiate Bicycles (thus ElectricalBikes and MechanicalBikes), extending the AbstractFactory abstract class
+ * Used to instantiate Bicycles (thus ElectricalBikes and MechanicalBikes), extending the AbstractFactory abstract class
  * @author Mathieu Sibué
 */
 public class ConcreteBicycleFactory extends AbstractFactory {
@@ -23,6 +23,17 @@ public class ConcreteBicycleFactory extends AbstractFactory {
 		return null;
 	}
 
+	/**
+	 * Method used to instantiate different types of Bicycle objects (for now, only MechanicalBike and ElectricalBike exist)
+	 * @param params
+	 * 			ArrayList of Objects: the parameters used to instantiate Card objects of a specific type.
+	 * 			<p>To instantiate a certain type of Card, 1 parameter is expected in the ArrayList:
+	 * 			<ul>
+	 * 					<li>String: the subclass of Card we want to instantiate</li>
+	 *			</ul>
+	 * 			</p>
+	 * @return Bicycle: an object of a subclass of Bicycle
+	*/
 	@Override
 	public Bicycle createBicycle(ArrayList<Object> params) {
 		if (params == null) {

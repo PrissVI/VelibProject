@@ -3,7 +3,7 @@ package core;
 import java.util.ArrayList;
 
 /** 
- * User to instantiate Slots (thus ParkingSlots), extending the AbstractFactory abstract class
+ * Userd to instantiate Slots (thus ParkingSlots), extending the AbstractFactory abstract class
  * @author Mathieu Sibué
 */
 public class ConcreteSlotFactory extends AbstractFactory {
@@ -15,16 +15,17 @@ public class ConcreteSlotFactory extends AbstractFactory {
 	
 	/**
 	 * Method used to instantiate different types of Slot objects (for now, only ParkingSlot exists)
-	 * @param ArrayList<Object>: the parameters used to instantiate Slot objects of a specific type.
-	 * <p>To instantiate a certain type of Slot, at least 1 parameter is expected  in the ArrayList:
-	 * <ul>
-	 * 		<li>String: the subclass of Slot we want to instantiate</li>
-	 * </ul>
-	 * Another optional parameter can be appended (to call an overloaded constructor of ParkingSlot) to create a ParkingSlot, which is a subclass of Slot:
-	 * <ul>
-	 * 		<li>Bicycle: a Bicycle initially stored in the ParkingSlot</li>
-	 * </ul>
-	 * </p>
+	 * @param params
+	 * 			ArrayList of Objects: the parameters used to instantiate Slot objects of a specific type.
+	 * 			<p>To instantiate a certain type of Slot, at least 1 parameter is expected  in the ArrayList:
+	 * 			<ul>
+	 * 					<li>String: the subclass of Slot we want to instantiate</li>
+	 * 			</ul>
+	 * 			Another optional parameter can be appended (to call an overloaded constructor of ParkingSlot) to create a ParkingSlot, which is a subclass of Slot:
+	 * 			<ul>
+	 * 					<li>Bicycle: a Bicycle initially stored in the ParkingSlot</li>
+	 * 			</ul>
+	 * 			</p>
 	 * @return Slot: an object of a subclass of Slot
 	*/
 	@Override

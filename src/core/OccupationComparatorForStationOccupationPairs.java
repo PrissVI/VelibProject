@@ -3,9 +3,12 @@ package core;
 import java.util.AbstractMap.SimpleEntry;
 //import java.util.ArrayList;
 import java.util.Comparator;
-//import java.util.Date;
-//import java.util.HashMap;
 
+/**
+ * Implementation of the interface Comparator (of SimpleEntries of Station and Double) to order stations wrt their occupation rate stored in the Double value of the entry
+ * @author Mathieu Sibué
+ *
+ */
 public class OccupationComparatorForStationOccupationPairs implements Comparator<SimpleEntry<Station,Double>> {
 
 	@Override

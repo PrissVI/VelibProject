@@ -183,7 +183,12 @@ public class User extends Person {
 	//custom methods 
 	/**
 	 * Rents a bicycle available in the considered station.
-	 * @param	Station where the user wants to rent a bicycle
+	 * @param station
+	 * 			Station where the user wants to rent a bicycle
+	 * @param bikeType
+	 * 			String representing the type of bike to be rented
+	 * @param rentDate
+	 * 			Date of the rent operation
 	 */
 	public void rentBicycle(Station station, String bikeType, Date rentDate) throws RuntimeException {
 		//
@@ -226,7 +231,10 @@ public class User extends Person {
 	
 	/**
 	 * Returns the user's rented bicycle in the considered station.
-	 * @param Station: station where the user wants to return the bike
+	 * @param station
+	 * 				Station: station where the user wants to return the bike
+	 * @param returnDate
+	 * 				Date: date of the return operation
 	 */
 	public void returnBicycle(Station station, Date returnDate) throws RuntimeException {
 		if (x != station.getX() || y != station.getY()) {
@@ -264,6 +272,7 @@ public class User extends Person {
 	
 	/**
 	 * Computes some statistics of the considered user (sort of a toString with no print).
+	 * @return a string giving out some stats abt the user
 	 */
 	public String getStatistics() {
 		String res = "\nUser " + this.getID() + " balance:" + "\n"

@@ -1,6 +1,6 @@
-adduser Ali vmax network
-adduser Mathieu vlibre network
-plan ride network 4 5 1 3 electrical avoid-plus
+adduser Ali vmax initial_network
+adduser Mathieu vlibre initial_network
+planride initial_network 4 5 1 3 electrical avoid-plus
 move 1 1
 move 2 2
 rentbike 1 1 electrical 2020/04/06-12:00:00
@@ -9,4 +9,4 @@ move 1 2
 move 2 1
 returnbike 1 2 2020/04/06-13:45:00
 returnbike 2 1 2020/04/06-12:20:00
-getstations network
+getstations initial_network

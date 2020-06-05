@@ -12,7 +12,8 @@ public interface SortingStrategy {
 	/**
 	 * Sorts the stations stored in the myVelibNetwork HashMap<Integer,Station> called stations wrt different policies.
 	 * @param stations
-	 * @return
+	 * 			an HashMap of <Integer,Station> for which stations have to be sorted
+	 * @return an ArrayList of the sorted stations
 	 */
 	public ArrayList<Station> sort(HashMap<Integer,Station> stations);
 }
